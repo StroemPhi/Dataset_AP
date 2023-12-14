@@ -13,6 +13,7 @@ prefixes:
   linkml: https://w3id.org/linkml/
   schema: http://schema.org/
   bioschema: https://bioschemas.org/properties/
+  dct: purl.org/dc/terms/
   example: https://example.org/
   iao: http://purl.obolibrary.org/obo/IAO_/
   obi: http://purl.obolibrary.org/obo/OBI_/
@@ -84,6 +85,64 @@ classes:
       - variableMeasured
       # from BioSchema profile v1.0
       - conformsTo
+    slot_usage:
+      # required
+      conformsTo:
+        required: true
+      description:
+        required: true
+      keywords:
+        required: true
+      license:
+        required: true
+      name:
+        required: true
+      url:
+        required: true
+      # recommended
+      alternateName:
+        recommended: true
+      citation:
+        recommended: true
+      creator:
+        recommended: true
+      datePublished:
+        recommended: true
+      distribution:
+        recommended: true
+      includedInDataCatalog:
+        recommended: true
+      isBasedOn:
+        recommended: true
+        description: Use to link a Dataset to the Study that it was generated from.
+      measurementTechnique:
+        recommended: true
+      publisher:
+        recommended: true
+      variableMeasured:
+        recommended: true
+      version:
+        recommended: true
+      # optional
+      dateCreated:
+        comments:
+          - optional slot in https://bioschemas.org/profiles/Dataset/1.0-RELEASE
+      dateModified:
+        comments:
+          - optional slot in https://bioschemas.org/profiles/Dataset/1.0-RELEASE
+      hasPart:
+        comments:
+          - optional slot in https://bioschemas.org/profiles/Dataset/1.0-RELEASE
+      isPartOf:
+        comments:
+          - optional slot in https://bioschemas.org/profiles/Dataset/1.0-RELEASE
+      isAccessibleForFree:
+        comments:
+          - optional slot in https://bioschemas.org/profiles/Dataset/1.0-RELEASE
+      maintainer:
+        comments:
+          - optional slot in https://bioschemas.org/profiles/Dataset/1.0-RELEASE
+
   DatasetCollection:
     class_uri: schema:DataCatalog
     is_a: CreativeWork
@@ -188,6 +247,12 @@ slots:
   hasPart:
   isAccessibleForFree:
   isBasedOn:
+    slot_uri: schema:isBasedOn
+    description: >- 
+      A resource that was used in the creation of this resource. 
+      This term can be repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html. 
+      Supersedes isBasedOnUrl.
+
   isPartOf:
   keywords:
   license:
@@ -210,6 +275,7 @@ slots:
       A data catalog which contains this dataset. Supersedes includedDataCatalog, `catalog`. 
       Inverse property [[dataset]]
     inverse: datasets
+    range: DatasetCollection
     exact_mappings:
       - schema:catalog        # deprecated predecessor
   issn:
@@ -231,6 +297,7 @@ slots:
     slot_uri: schema:variableMeasured
   conformsTo:                 # from BioSchema profile v1.0
     slot_uri: dct:conformsTo
+    required: true
 
   # DatasetCollection slots
   datasets:

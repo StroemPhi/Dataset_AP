@@ -2,7 +2,7 @@
    "bioschema": "https://bioschemas.org/properties/",
    "dataset_ap": "https://w3id.org/storemphi/Dataset_AP/",
    "dcat": "http://www.w3.org/ns/dcat#",
-   "dct": "http://example.org/UNKNOWN/dct/",
+   "dct": "purl.org/dc/terms/",
    "example": "https://example.org/",
    "iao": "http://purl.obolibrary.org/obo/IAO_/",
    "linkml": "https://w3id.org/linkml/",

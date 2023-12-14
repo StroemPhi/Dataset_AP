@@ -1,6 +1,36 @@
 # Example data object
 ---
-identifier: example:DatasetCollection-001
+identifier: example:DatasetCollection_001
 datasets:
+  # required
   - identifier: example:Dataset001
-    name: dataset-001
+    conformsTo:
+    description:
+    license:
+    keywords:
+    url:
+    name: Dataset_001
+  #recommended
+    alternateName:
+    citation:
+    creator:
+    datePublished:
+    distribution: example:DatasetDistribution_001
+    includedInDataCatalog: example:DatasetCollection_001
+    isBasedOn: Use to link a Dataset to the Study that it was generated from.
+    measurementTechnique: example:OntologyAssayTerm
+    publisher:
+    variableMeasured: example:OntologyPropertyTerm
+    version:
+  #optional
+    dateCreated:
+    dateModified:
+    hasPart:
+    isPartOf:
+    isAccessibleForFree: True
+    maintainer:
+    maintainer:
+
+
+
+

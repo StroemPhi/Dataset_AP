@@ -133,6 +133,7 @@
                     "type": "string"
                 },
                 "isBasedOn": {
+                    "description": "A resource that was used in the creation of this resource.  This term can be repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html.  Supersedes isBasedOnUrl.",
                     "type": "string"
                 },
                 "isPartOf": {
@@ -226,6 +227,7 @@
                     "type": "string"
                 },
                 "isBasedOn": {
+                    "description": "Use to link a Dataset to the Study that it was generated from.",
                     "type": "string"
                 },
                 "isPartOf": {
@@ -275,7 +277,13 @@
                 }
             },
             "required": [
-                "identifier"
+                "conformsTo",
+                "keywords",
+                "license",
+                "identifier",
+                "description",
+                "name",
+                "url"
             ],
             "title": "Dataset",
             "type": "object"
@@ -300,14 +308,7 @@
                 },
                 "datasets": {
                     "additionalProperties": {
-                        "anyOf": [
-                            {
-                                "$ref": "#/$defs/Dataset__identifier_optional"
-                            },
-                            {
-                                "type": "null"
-                            }
-                        ]
+                        "$ref": "#/$defs/Dataset__identifier_optional"
                     },
                     "description": "A dataset contained in this catalog.",
                     "type": "object"
@@ -337,6 +338,7 @@
                     "type": "string"
                 },
                 "isBasedOn": {
+                    "description": "A resource that was used in the creation of this resource.  This term can be repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html.  Supersedes isBasedOnUrl.",
                     "type": "string"
                 },
                 "isPartOf": {
@@ -439,6 +441,7 @@
                     "type": "string"
                 },
                 "isBasedOn": {
+                    "description": "Use to link a Dataset to the Study that it was generated from.",
                     "type": "string"
                 },
                 "isPartOf": {
@@ -487,7 +490,14 @@
                     "type": "string"
                 }
             },
-            "required": [],
+            "required": [
+                "conformsTo",
+                "keywords",
+                "license",
+                "description",
+                "name",
+                "url"
+            ],
             "title": "Dataset",
             "type": "object"
         },
@@ -672,14 +682,7 @@
         },
         "datasets": {
             "additionalProperties": {
-                "anyOf": [
-                    {
-                        "$ref": "#/$defs/Dataset__identifier_optional"
-                    },
-                    {
-                        "type": "null"
-                    }
-                ]
+                "$ref": "#/$defs/Dataset__identifier_optional"
             },
             "description": "A dataset contained in this catalog.",
             "type": "object"
@@ -709,6 +712,7 @@
             "type": "string"
         },
         "isBasedOn": {
+            "description": "A resource that was used in the creation of this resource.  This term can be repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html.  Supersedes isBasedOnUrl.",
             "type": "string"
         },
         "isPartOf": {

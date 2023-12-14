@@ -1,5 +1,5 @@
 # Auto generated from dataset_ap.yaml by pythongen.py version: 0.0.1
-# Generation date: 2023-12-14T22:27:28
+# Generation date: 2023-12-14T23:14:13
 # Schema: Dataset_AP
 #
 # id: https://w3id.org/storemphi/Dataset_AP
@@ -34,7 +34,7 @@ dataclasses._init_fn = dataclasses_init_fn_with_kwargs
 BIOSCHEMA = CurieNamespace('bioschema', 'https://bioschemas.org/properties/')
 DATASET_AP = CurieNamespace('dataset_ap', 'https://w3id.org/storemphi/Dataset_AP/')
 DCAT = CurieNamespace('dcat', 'http://www.w3.org/ns/dcat#')
-DCT = CurieNamespace('dct', 'http://example.org/UNKNOWN/dct/')
+DCT = CurieNamespace('dct', 'purl.org/dc/terms/')
 EXAMPLE = CurieNamespace('example', 'https://example.org/')
 IAO = CurieNamespace('iao', 'http://purl.obolibrary.org/obo/IAO_/')
 LINKML = CurieNamespace('linkml', 'https://w3id.org/linkml/')
@@ -246,19 +246,67 @@ class Dataset(CreativeWork):
     class_model_uri: ClassVar[URIRef] = DATASET_AP.Dataset
 
     identifier: Union[str, DatasetIdentifier] = None
+    conformsTo: str = None
+    description: str = None
+    keywords: str = None
+    license: str = None
+    name: str = None
+    url: Union[str, URIorCURIE] = None
     distribution: Optional[str] = None
     includedInDataCatalog: Optional[Union[str, DatasetCollectionIdentifier]] = None
     issn: Optional[str] = None
     measurementMethod: Optional[str] = None
     measurementTechnique: Optional[str] = None
     variableMeasured: Optional[str] = None
-    conformsTo: Optional[str] = None
+    alternateName: Optional[Union[str, List[str]]] = empty_list()
+    citation: Optional[str] = None
+    creator: Optional[str] = None
+    datePublished: Optional[str] = None
+    isBasedOn: Optional[str] = None
+    publisher: Optional[str] = None
+    version: Optional[str] = None
+    dateCreated: Optional[str] = None
+    dateModified: Optional[str] = None
+    hasPart: Optional[str] = None
+    isPartOf: Optional[str] = None
+    isAccessibleForFree: Optional[str] = None
+    maintainer: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.identifier):
             self.MissingRequiredField("identifier")
         if not isinstance(self.identifier, DatasetIdentifier):
             self.identifier = DatasetIdentifier(self.identifier)
+
+        if self._is_empty(self.conformsTo):
+            self.MissingRequiredField("conformsTo")
+        if not isinstance(self.conformsTo, str):
+            self.conformsTo = str(self.conformsTo)
+
+        if self._is_empty(self.description):
+            self.MissingRequiredField("description")
+        if not isinstance(self.description, str):
+            self.description = str(self.description)
+
+        if self._is_empty(self.keywords):
+            self.MissingRequiredField("keywords")
+        if not isinstance(self.keywords, str):
+            self.keywords = str(self.keywords)
+
+        if self._is_empty(self.license):
+            self.MissingRequiredField("license")
+        if not isinstance(self.license, str):
+            self.license = str(self.license)
+
+        if self._is_empty(self.name):
+            self.MissingRequiredField("name")
+        if not isinstance(self.name, str):
+            self.name = str(self.name)
+
+        if self._is_empty(self.url):
+            self.MissingRequiredField("url")
+        if not isinstance(self.url, URIorCURIE):
+            self.url = URIorCURIE(self.url)
 
         if self.distribution is not None and not isinstance(self.distribution, str):
             self.distribution = str(self.distribution)
@@ -278,8 +326,45 @@ class Dataset(CreativeWork):
         if self.variableMeasured is not None and not isinstance(self.variableMeasured, str):
             self.variableMeasured = str(self.variableMeasured)
 
-        if self.conformsTo is not None and not isinstance(self.conformsTo, str):
-            self.conformsTo = str(self.conformsTo)
+        if not isinstance(self.alternateName, list):
+            self.alternateName = [self.alternateName] if self.alternateName is not None else []
+        self.alternateName = [v if isinstance(v, str) else str(v) for v in self.alternateName]
+
+        if self.citation is not None and not isinstance(self.citation, str):
+            self.citation = str(self.citation)
+
+        if self.creator is not None and not isinstance(self.creator, str):
+            self.creator = str(self.creator)
+
+        if self.datePublished is not None and not isinstance(self.datePublished, str):
+            self.datePublished = str(self.datePublished)
+
+        if self.isBasedOn is not None and not isinstance(self.isBasedOn, str):
+            self.isBasedOn = str(self.isBasedOn)
+
+        if self.publisher is not None and not isinstance(self.publisher, str):
+            self.publisher = str(self.publisher)
+
+        if self.version is not None and not isinstance(self.version, str):
+            self.version = str(self.version)
+
+        if self.dateCreated is not None and not isinstance(self.dateCreated, str):
+            self.dateCreated = str(self.dateCreated)
+
+        if self.dateModified is not None and not isinstance(self.dateModified, str):
+            self.dateModified = str(self.dateModified)
+
+        if self.hasPart is not None and not isinstance(self.hasPart, str):
+            self.hasPart = str(self.hasPart)
+
+        if self.isPartOf is not None and not isinstance(self.isPartOf, str):
+            self.isPartOf = str(self.isPartOf)
+
+        if self.isAccessibleForFree is not None and not isinstance(self.isAccessibleForFree, str):
+            self.isAccessibleForFree = str(self.isAccessibleForFree)
+
+        if self.maintainer is not None and not isinstance(self.maintainer, str):
+            self.maintainer = str(self.maintainer)
 
         super().__post_init__(**kwargs)
 
@@ -494,7 +579,7 @@ slots.hasPart = Slot(uri=DATASET_AP.hasPart, name="hasPart", curie=DATASET_AP.cu
 slots.isAccessibleForFree = Slot(uri=DATASET_AP.isAccessibleForFree, name="isAccessibleForFree", curie=DATASET_AP.curie('isAccessibleForFree'),
                    model_uri=DATASET_AP.isAccessibleForFree, domain=None, range=Optional[str])
 
-slots.isBasedOn = Slot(uri=DATASET_AP.isBasedOn, name="isBasedOn", curie=DATASET_AP.curie('isBasedOn'),
+slots.isBasedOn = Slot(uri=SCHEMA.isBasedOn, name="isBasedOn", curie=SCHEMA.curie('isBasedOn'),
                    model_uri=DATASET_AP.isBasedOn, domain=None, range=Optional[str])
 
 slots.isPartOf = Slot(uri=DATASET_AP.isPartOf, name="isPartOf", curie=DATASET_AP.curie('isPartOf'),
@@ -534,7 +619,7 @@ slots.variableMeasured = Slot(uri=SCHEMA.variableMeasured, name="variableMeasure
                    model_uri=DATASET_AP.variableMeasured, domain=None, range=Optional[str])
 
 slots.conformsTo = Slot(uri=DCT.conformsTo, name="conformsTo", curie=DCT.curie('conformsTo'),
-                   model_uri=DATASET_AP.conformsTo, domain=None, range=Optional[str])
+                   model_uri=DATASET_AP.conformsTo, domain=None, range=str)
 
 slots.datasets = Slot(uri=SCHEMA.dataset, name="datasets", curie=SCHEMA.curie('dataset'),
                    model_uri=DATASET_AP.datasets, domain=None, range=Union[Dict[Union[str, DatasetIdentifier], Union[dict, Dataset]], List[Union[dict, Dataset]]])
@@ -547,3 +632,72 @@ slots.has_output = Slot(uri=DATASET_AP.has_output, name="has_output", curie=DATA
 
 slots.has_parameter = Slot(uri=DATASET_AP.has_parameter, name="has_parameter", curie=DATASET_AP.curie('has_parameter'),
                    model_uri=DATASET_AP.has_parameter, domain=Assay, range=Optional[str])
+
+slots.Dataset_conformsTo = Slot(uri=DCT.conformsTo, name="Dataset_conformsTo", curie=DCT.curie('conformsTo'),
+                   model_uri=DATASET_AP.Dataset_conformsTo, domain=Dataset, range=str)
+
+slots.Dataset_description = Slot(uri=SCHEMA.description, name="Dataset_description", curie=SCHEMA.curie('description'),
+                   model_uri=DATASET_AP.Dataset_description, domain=Dataset, range=str)
+
+slots.Dataset_keywords = Slot(uri=DATASET_AP.keywords, name="Dataset_keywords", curie=DATASET_AP.curie('keywords'),
+                   model_uri=DATASET_AP.Dataset_keywords, domain=Dataset, range=str)
+
+slots.Dataset_license = Slot(uri=DATASET_AP.license, name="Dataset_license", curie=DATASET_AP.curie('license'),
+                   model_uri=DATASET_AP.Dataset_license, domain=Dataset, range=str)
+
+slots.Dataset_name = Slot(uri=SCHEMA.name, name="Dataset_name", curie=SCHEMA.curie('name'),
+                   model_uri=DATASET_AP.Dataset_name, domain=Dataset, range=str)
+
+slots.Dataset_url = Slot(uri=SCHEMA.url, name="Dataset_url", curie=SCHEMA.curie('url'),
+                   model_uri=DATASET_AP.Dataset_url, domain=Dataset, range=Union[str, URIorCURIE])
+
+slots.Dataset_alternateName = Slot(uri=SCHEMA.alternateName, name="Dataset_alternateName", curie=SCHEMA.curie('alternateName'),
+                   model_uri=DATASET_AP.Dataset_alternateName, domain=Dataset, range=Optional[Union[str, List[str]]])
+
+slots.Dataset_citation = Slot(uri=DATASET_AP.citation, name="Dataset_citation", curie=DATASET_AP.curie('citation'),
+                   model_uri=DATASET_AP.Dataset_citation, domain=Dataset, range=Optional[str])
+
+slots.Dataset_creator = Slot(uri=SCHEMA.creator, name="Dataset_creator", curie=SCHEMA.curie('creator'),
+                   model_uri=DATASET_AP.Dataset_creator, domain=Dataset, range=Optional[str])
+
+slots.Dataset_datePublished = Slot(uri=DATASET_AP.datePublished, name="Dataset_datePublished", curie=DATASET_AP.curie('datePublished'),
+                   model_uri=DATASET_AP.Dataset_datePublished, domain=Dataset, range=Optional[str])
+
+slots.Dataset_distribution = Slot(uri=SCHEMA.distribution, name="Dataset_distribution", curie=SCHEMA.curie('distribution'),
+                   model_uri=DATASET_AP.Dataset_distribution, domain=Dataset, range=Optional[str])
+
+slots.Dataset_includedInDataCatalog = Slot(uri=SCHEMA.includedInDataCatalog, name="Dataset_includedInDataCatalog", curie=SCHEMA.curie('includedInDataCatalog'),
+                   model_uri=DATASET_AP.Dataset_includedInDataCatalog, domain=Dataset, range=Optional[Union[str, DatasetCollectionIdentifier]])
+
+slots.Dataset_isBasedOn = Slot(uri=SCHEMA.isBasedOn, name="Dataset_isBasedOn", curie=SCHEMA.curie('isBasedOn'),
+                   model_uri=DATASET_AP.Dataset_isBasedOn, domain=Dataset, range=Optional[str])
+
+slots.Dataset_measurementTechnique = Slot(uri=SCHEMA.measurementTechnique, name="Dataset_measurementTechnique", curie=SCHEMA.curie('measurementTechnique'),
+                   model_uri=DATASET_AP.Dataset_measurementTechnique, domain=Dataset, range=Optional[str])
+
+slots.Dataset_publisher = Slot(uri=DATASET_AP.publisher, name="Dataset_publisher", curie=DATASET_AP.curie('publisher'),
+                   model_uri=DATASET_AP.Dataset_publisher, domain=Dataset, range=Optional[str])
+
+slots.Dataset_variableMeasured = Slot(uri=SCHEMA.variableMeasured, name="Dataset_variableMeasured", curie=SCHEMA.curie('variableMeasured'),
+                   model_uri=DATASET_AP.Dataset_variableMeasured, domain=Dataset, range=Optional[str])
+
+slots.Dataset_version = Slot(uri=DATASET_AP.version, name="Dataset_version", curie=DATASET_AP.curie('version'),
+                   model_uri=DATASET_AP.Dataset_version, domain=Dataset, range=Optional[str])
+
+slots.Dataset_dateCreated = Slot(uri=SCHEMA.dateCreated, name="Dataset_dateCreated", curie=SCHEMA.curie('dateCreated'),
+                   model_uri=DATASET_AP.Dataset_dateCreated, domain=Dataset, range=Optional[str])
+
+slots.Dataset_dateModified = Slot(uri=DATASET_AP.dateModified, name="Dataset_dateModified", curie=DATASET_AP.curie('dateModified'),
+                   model_uri=DATASET_AP.Dataset_dateModified, domain=Dataset, range=Optional[str])
+
+slots.Dataset_hasPart = Slot(uri=DATASET_AP.hasPart, name="Dataset_hasPart", curie=DATASET_AP.curie('hasPart'),
+                   model_uri=DATASET_AP.Dataset_hasPart, domain=Dataset, range=Optional[str])
+
+slots.Dataset_isPartOf = Slot(uri=DATASET_AP.isPartOf, name="Dataset_isPartOf", curie=DATASET_AP.curie('isPartOf'),
+                   model_uri=DATASET_AP.Dataset_isPartOf, domain=Dataset, range=Optional[str])
+
+slots.Dataset_isAccessibleForFree = Slot(uri=DATASET_AP.isAccessibleForFree, name="Dataset_isAccessibleForFree", curie=DATASET_AP.curie('isAccessibleForFree'),
+                   model_uri=DATASET_AP.Dataset_isAccessibleForFree, domain=Dataset, range=Optional[str])
+
+slots.Dataset_maintainer = Slot(uri=DATASET_AP.maintainer, name="Dataset_maintainer", curie=DATASET_AP.curie('maintainer'),
+                   model_uri=DATASET_AP.Dataset_maintainer, domain=Dataset, range=Optional[str])

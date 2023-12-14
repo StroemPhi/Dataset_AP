@@ -3,8 +3,8 @@ PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX linkml: <https://w3id.org/linkml/>
 PREFIX schema1: <http://schema.org/>
+PREFIX dct: <purl.org/dc/terms/>
 PREFIX obi: <http://purl.obolibrary.org/obo/OBI_/>
-PREFIX dct: <http://example.org/UNKNOWN/dct/>
 
 
 linkml:String xsd:string
@@ -84,7 +84,7 @@ linkml:Sparqlpath xsd:string
              <datePublished> @linkml:String ? ;
              <hasPart> @linkml:String ? ;
              <isAccessibleForFree> @linkml:String ? ;
-             <isBasedOn> @linkml:String ? ;
+             schema1:isBasedOn @linkml:String ? ;
              <isPartOf> @linkml:String ? ;
              <keywords> @linkml:String ? ;
              <license> @linkml:String ? ;
@@ -106,7 +106,25 @@ linkml:Sparqlpath xsd:string
           schema1:measurementMethod @linkml:String ? ;
           schema1:measurementTechnique @linkml:String ? ;
           schema1:variableMeasured @linkml:String ? ;
-          dct:conformsTo @linkml:String ?
+          dct:conformsTo @linkml:String ;
+          schema1:description @linkml:String ;
+          <keywords> @linkml:String ;
+          <license> @linkml:String ;
+          schema1:name @linkml:String ;
+          schema1:url @linkml:Uriorcurie ;
+          schema1:alternateName @linkml:String * ;
+          <citation> @linkml:String ? ;
+          schema1:creator @linkml:String ? ;
+          <datePublished> @linkml:String ? ;
+          schema1:isBasedOn @linkml:String ? ;
+          <publisher> @linkml:String ? ;
+          <version> @linkml:String ? ;
+          schema1:dateCreated @linkml:String ? ;
+          <dateModified> @linkml:String ? ;
+          <hasPart> @linkml:String ? ;
+          <isPartOf> @linkml:String ? ;
+          <isAccessibleForFree> @linkml:String ? ;
+          <maintainer> @linkml:String ?
        ) ;
        rdf:type [ schema1:Dataset ]
     )

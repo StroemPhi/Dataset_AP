@@ -51,32 +51,32 @@ type CreativeWork
 type Dataset
   {
     identifier: Uriorcurie!
-    alternateName: [String]
-    description: String
-    name: String
     sameAs: String
-    url: Uriorcurie
-    citation: String
-    creator: String
-    dateCreated: String
-    dateModified: String
-    datePublished: String
-    hasPart: String
-    isAccessibleForFree: String
-    isBasedOn: String
-    isPartOf: String
-    keywords: String
-    license: String
-    maintainer: String
-    publisher: String
-    version: String
     distribution: String
     includedInDataCatalog: DatasetCollection
     issn: String
     measurementMethod: String
     measurementTechnique: String
     variableMeasured: String
-    conformsTo: String
+    conformsTo: String!
+    description: String!
+    keywords: String!
+    license: String!
+    name: String!
+    url: Uriorcurie!
+    alternateName: [String]
+    citation: String
+    creator: String
+    datePublished: String
+    isBasedOn: String
+    publisher: String
+    version: String
+    dateCreated: String
+    dateModified: String
+    hasPart: String
+    isPartOf: String
+    isAccessibleForFree: String
+    maintainer: String
   }
 
 type DatasetCollection
