@@ -1,5 +1,6 @@
 # Example data object
 ---
-entries:
-  - id: example:Dataset001
+identifier: example:DatasetCollection-001
+datasets:
+  - identifier: example:Dataset001
     name: dataset-001

@@ -1,23 +1,143 @@
+message Assay
+ {
+  evaluatedThing hasInput = 0
+  dataset hasOutput = 0
+ }
+message ChemicalEntity
+ {
+  uriorcurie identifier = 0
+ repeated  string alternateName = 0
+  string description = 0
+  string name = 0
+  string sameAs = 0
+  uriorcurie url = 0
+ }
+message ChemicalReaction
+ {
+  uriorcurie identifier = 0
+ repeated  string alternateName = 0
+  string description = 0
+  string name = 0
+  string sameAs = 0
+  uriorcurie url = 0
+ }
+// The most generic kind of creative work, including books, movies, photographs, software programs, etc.
+message CreativeWork
+ {
+  uriorcurie identifier = 0
+ repeated  string alternateName = 0
+  string description = 0
+  string name = 0
+  string sameAs = 0
+  uriorcurie url = 0
+  string citation = 0
+  string creator = 0
+  string dateCreated = 0
+  string dateModified = 0
+  string datePublished = 0
+  string hasPart = 0
+  string isAccessibleForFree = 0
+  string isBasedOn = 0
+  string isPartOf = 0
+  string keywords = 0
+  string license = 0
+  string maintainer = 0
+  string publisher = 0
+  string version = 0
+ }
 // Represents a Dataset
 message Dataset
  {
-  uriorcurie id = 0
-  string name = 0
+  uriorcurie identifier = 0
+ repeated  string alternateName = 0
   string description = 0
-  string primaryEmail = 0
-  date birthDate = 0
-  integer ageInYears = 0
-  personStatus vitalStatus = 0
+  string name = 0
+  string sameAs = 0
+  uriorcurie url = 0
+  string citation = 0
+  string creator = 0
+  string dateCreated = 0
+  string dateModified = 0
+  string datePublished = 0
+  string hasPart = 0
+  string isAccessibleForFree = 0
+  string isBasedOn = 0
+  string isPartOf = 0
+  string keywords = 0
+  string license = 0
+  string maintainer = 0
+  string publisher = 0
+  string version = 0
+  string distribution = 0
+  datasetCollection includedInDataCatalog = 0
+  string issn = 0
+  string measurementMethod = 0
+  string measurementTechnique = 0
+  string variableMeasured = 0
+  string conformsTo = 0
  }
-// A holder for Dataset objects
+// A collection of datasets.
 message DatasetCollection
  {
- repeated  dataset entries = 0
- }
-// A generic grouping for any identifiable entity
-message NamedThing
- {
-  uriorcurie id = 0
-  string name = 0
+  uriorcurie identifier = 0
+ repeated  string alternateName = 0
   string description = 0
+  string name = 0
+  string sameAs = 0
+  uriorcurie url = 0
+  string citation = 0
+  string creator = 0
+  string dateCreated = 0
+  string dateModified = 0
+  string datePublished = 0
+  string hasPart = 0
+  string isAccessibleForFree = 0
+  string isBasedOn = 0
+  string isPartOf = 0
+  string keywords = 0
+  string license = 0
+  string maintainer = 0
+  string publisher = 0
+  string version = 0
+ repeated  dataset datasets = 0
+  string measurementMethod = 0
+  string measurementTechnique = 0
+ }
+// A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.
+message Intangible
+ {
+  uriorcurie identifier = 0
+ repeated  string alternateName = 0
+  string description = 0
+  string name = 0
+  string sameAs = 0
+  uriorcurie url = 0
+ }
+message MaterialEntity
+ {
+  uriorcurie identifier = 0
+ repeated  string alternateName = 0
+  string description = 0
+  string name = 0
+  string sameAs = 0
+  uriorcurie url = 0
+ }
+message ReactionStep
+ {
+  uriorcurie identifier = 0
+ repeated  string alternateName = 0
+  string description = 0
+  string name = 0
+  string sameAs = 0
+  uriorcurie url = 0
+ }
+// The most generic type of item.
+message Thing
+ {
+  uriorcurie identifier = 0
+ repeated  string alternateName = 0
+  string description = 0
+  string name = 0
+  string sameAs = 0
+  uriorcurie url = 0
  }

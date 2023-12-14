@@ -1,23 +1,162 @@
+type Assay
+  {
+    hasInput: EvaluatedThing
+    hasOutput: Dataset
+  }
+
+type ChemicalEntity
+  {
+    identifier: Uriorcurie!
+    alternateName: [String]
+    description: String
+    name: String
+    sameAs: String
+    url: Uriorcurie
+  }
+
+type ChemicalReaction
+  {
+    identifier: Uriorcurie!
+    alternateName: [String]
+    description: String
+    name: String
+    sameAs: String
+    url: Uriorcurie
+  }
+
+type CreativeWork
+  {
+    identifier: Uriorcurie!
+    alternateName: [String]
+    description: String
+    name: String
+    sameAs: String
+    url: Uriorcurie
+    citation: String
+    creator: String
+    dateCreated: String
+    dateModified: String
+    datePublished: String
+    hasPart: String
+    isAccessibleForFree: String
+    isBasedOn: String
+    isPartOf: String
+    keywords: String
+    license: String
+    maintainer: String
+    publisher: String
+    version: String
+  }
+
 type Dataset
   {
-    id: Uriorcurie!
-    name: String
+    identifier: Uriorcurie!
+    alternateName: [String]
     description: String
-    primaryEmail: String
-    birthDate: Date
-    ageInYears: Integer
-    vitalStatus: PersonStatus
+    name: String
+    sameAs: String
+    url: Uriorcurie
+    citation: String
+    creator: String
+    dateCreated: String
+    dateModified: String
+    datePublished: String
+    hasPart: String
+    isAccessibleForFree: String
+    isBasedOn: String
+    isPartOf: String
+    keywords: String
+    license: String
+    maintainer: String
+    publisher: String
+    version: String
+    distribution: String
+    includedInDataCatalog: DatasetCollection
+    issn: String
+    measurementMethod: String
+    measurementTechnique: String
+    variableMeasured: String
+    conformsTo: String
   }
 
 type DatasetCollection
   {
-    entries: [Dataset]
+    identifier: Uriorcurie!
+    alternateName: [String]
+    description: String
+    name: String
+    sameAs: String
+    url: Uriorcurie
+    citation: String
+    creator: String
+    dateCreated: String
+    dateModified: String
+    datePublished: String
+    hasPart: String
+    isAccessibleForFree: String
+    isBasedOn: String
+    isPartOf: String
+    keywords: String
+    license: String
+    maintainer: String
+    publisher: String
+    version: String
+    datasets: [Dataset]!
+    measurementMethod: String
+    measurementTechnique: String
   }
 
-type NamedThing
+interface EvaluatedThing
   {
-    id: Uriorcurie!
-    name: String
+    identifier: Uriorcurie!
+    alternateName: [String]
     description: String
+    name: String
+    sameAs: String
+    url: Uriorcurie
+  }
+
+type Intangible
+  {
+    identifier: Uriorcurie!
+    alternateName: [String]
+    description: String
+    name: String
+    sameAs: String
+    url: Uriorcurie
+  }
+
+type MaterialEntity
+  {
+    identifier: Uriorcurie!
+    alternateName: [String]
+    description: String
+    name: String
+    sameAs: String
+    url: Uriorcurie
+  }
+
+type PlannedProcess
+  {
+  }
+
+type ReactionStep
+  {
+    identifier: Uriorcurie!
+    alternateName: [String]
+    description: String
+    name: String
+    sameAs: String
+    url: Uriorcurie
+  }
+
+type Thing
+  {
+    identifier: Uriorcurie!
+    alternateName: [String]
+    description: String
+    name: String
+    sameAs: String
+    url: Uriorcurie
   }
 

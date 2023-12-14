@@ -83,23 +83,17 @@ classes:
       - measurementTechnique
       - variableMeasured
       # from BioSchema profile v1.0
-      - conformsT
+      - conformsTo
   DatasetCollection:
     class_uri: schema:DataCatalog
     is_a: CreativeWork
     tree_root: true
-    name: DataCatalog
+    aliases:
+      - DataCatalog
     description: >-
       A collection of datasets.
-    attributes:
-      datasets:
-        slot_uri: schema:dataset
-        description: A dataset contained in this catalog.
-        range: Dataset
-        multivalued: true
-        inlined: true
-        required: true
     slots:
+      - datasets
       - measurementMethod
       - measurementTechnique
     exact_mappings:
@@ -120,9 +114,11 @@ classes:
     is_a: ChemicalReaction
   PlannedProcess:
     class_uri: obi:0000011
+    aliases:
       - Workflow # BioSchema
   Assay:
-    is_a: Workflow
+    is_a: PlannedProcess
+    class_uri: obi:0000070
     slots:
       - has_input
       - has_output
@@ -178,6 +174,7 @@ slots:
     description: The subject matter of the content. Inverse property of `subjectOf`
     domain: CreativeWork
     range: Thing
+  citation:
   creator:
     slot_uri: schema:creator
     description: The creator/author of this CreativeWork.
@@ -186,7 +183,17 @@ slots:
   dateCreated:
     slot_uri: schema:dateCreated
     description: The date on which the CreativeWork was created or the item was added to a DataFeed.
-    range: DateOrDatetime
+  dateModified:
+  datePublished:
+  hasPart:
+  isAccessibleForFree:
+  isBasedOn:
+  isPartOf:
+  keywords:
+  license:
+  maintainer:
+  publisher:
+  version:
 
   # Dataset slots
   distribution:
@@ -202,9 +209,9 @@ slots:
     description: >-
       A data catalog which contains this dataset. Supersedes includedDataCatalog, `catalog`. 
       Inverse property [[dataset]]
-    inverse: dataset
+    inverse: datasets
     exact_mappings:
-      - schema:catalog # deprecated predecessor
+      - schema:catalog        # deprecated predecessor
   issn:
     slot_uri: schema:issn
     description: >-
@@ -222,10 +229,17 @@ slots:
       for Observation, a StatisticalVariable).
   variableMeasured:
     slot_uri: schema:variableMeasured
-  # from BioSchema profile v1.0:
-  conformsTo:
+  conformsTo:                 # from BioSchema profile v1.0
     slot_uri: dct:conformsTo
 
+  # DatasetCollection slots
+  datasets:
+    slot_uri: schema:dataset
+    description: A dataset contained in this catalog.
+    range: Dataset
+    multivalued: true
+    inlined: true
+    required: true
 
 
   # NFDI4Chem specific slots

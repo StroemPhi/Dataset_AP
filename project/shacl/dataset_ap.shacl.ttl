@@ -1,79 +1,584 @@
-@prefix PATO: <http://purl.obolibrary.org/obo/PATO_> .
 @prefix dataset_ap: <https://w3id.org/storemphi/Dataset_AP/> .
+@prefix obi: <http://purl.obolibrary.org/obo/OBI_/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix schema1: <http://schema.org/> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+obi:0000011 a sh:NodeShape ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:targetClass obi:0000011 .
+
+obi:0000070 a sh:NodeShape ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:class schema1:Dataset ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 1 ;
+            sh:path dataset_ap:has_output ],
+        [ sh:class dataset_ap:EvaluatedThing ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 0 ;
+            sh:path dataset_ap:has_input ] ;
+    sh:targetClass obi:0000070 .
+
+schema1:CreativeWork a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "The most generic kind of creative work, including books, movies, photographs, software programs, etc." ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:order 12 ;
+            sh:path dataset_ap:publisher ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:order 11 ;
+            sh:path dataset_ap:maintainer ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:order 4 ;
+            sh:path dataset_ap:datePublished ],
+        [ sh:description "A unique identifier for a thing" ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:order 14 ;
+            sh:path schema1:identifier ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:order 10 ;
+            sh:path dataset_ap:license ],
+        [ sh:datatype xsd:string ;
+            sh:description "A description of the item." ;
+            sh:maxCount 1 ;
+            sh:order 16 ;
+            sh:path schema1:description ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:order 8 ;
+            sh:path dataset_ap:isPartOf ],
+        [ sh:datatype xsd:string ;
+            sh:description "The creator/author of this CreativeWork." ;
+            sh:maxCount 1 ;
+            sh:order 1 ;
+            sh:path schema1:creator ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:order 3 ;
+            sh:path dataset_ap:dateModified ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:order 7 ;
+            sh:path dataset_ap:isBasedOn ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:order 6 ;
+            sh:path dataset_ap:isAccessibleForFree ],
+        [ sh:datatype xsd:string ;
+            sh:description "The name of the item." ;
+            sh:maxCount 1 ;
+            sh:order 17 ;
+            sh:path schema1:name ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:order 5 ;
+            sh:path dataset_ap:hasPart ],
+        [ sh:description "URL of the item." ;
+            sh:maxCount 1 ;
+            sh:order 19 ;
+            sh:path schema1:url ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:order 13 ;
+            sh:path dataset_ap:version ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:order 9 ;
+            sh:path dataset_ap:keywords ],
+        [ sh:datatype xsd:string ;
+            sh:description "URL of a reference Web page that unambiguously indicates the item's identity.  E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website." ;
+            sh:maxCount 1 ;
+            sh:order 18 ;
+            sh:path schema1:sameAs ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:order 0 ;
+            sh:path dataset_ap:citation ],
+        [ sh:datatype xsd:string ;
+            sh:description "An alias for the item." ;
+            sh:order 15 ;
+            sh:path schema1:alternateName ],
+        [ sh:datatype xsd:string ;
+            sh:description "The date on which the CreativeWork was created or the item was added to a DataFeed." ;
+            sh:maxCount 1 ;
+            sh:order 2 ;
+            sh:path schema1:dateCreated ] ;
+    sh:targetClass schema1:CreativeWork .
+
+schema1:DataCatalog a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "A collection of datasets." ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:order 7 ;
+            sh:path dataset_ap:datePublished ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:order 13 ;
+            sh:path dataset_ap:license ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:order 12 ;
+            sh:path dataset_ap:keywords ],
+        [ sh:datatype xsd:string ;
+            sh:description "The creator/author of this CreativeWork." ;
+            sh:maxCount 1 ;
+            sh:order 4 ;
+            sh:path schema1:creator ],
+        [ sh:datatype xsd:string ;
+            sh:description "A description of the item." ;
+            sh:maxCount 1 ;
+            sh:order 19 ;
+            sh:path schema1:description ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:order 3 ;
+            sh:path dataset_ap:citation ],
+        [ sh:description "A unique identifier for a thing" ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:order 17 ;
+            sh:path schema1:identifier ],
+        [ sh:datatype xsd:string ;
+            sh:description "An alias for the item." ;
+            sh:order 18 ;
+            sh:path schema1:alternateName ],
+        [ sh:datatype xsd:string ;
+            sh:description "URL of a reference Web page that unambiguously indicates the item's identity.  E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website." ;
+            sh:maxCount 1 ;
+            sh:order 21 ;
+            sh:path schema1:sameAs ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:order 11 ;
+            sh:path dataset_ap:isPartOf ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:order 10 ;
+            sh:path dataset_ap:isBasedOn ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:order 16 ;
+            sh:path dataset_ap:version ],
+        [ sh:description "URL of the item." ;
+            sh:maxCount 1 ;
+            sh:order 22 ;
+            sh:path schema1:url ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:order 14 ;
+            sh:path dataset_ap:maintainer ],
+        [ sh:class schema1:Dataset ;
+            sh:description "A dataset contained in this catalog." ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 0 ;
+            sh:path schema1:dataset ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:order 8 ;
+            sh:path dataset_ap:hasPart ],
+        [ sh:datatype xsd:string ;
+            sh:description "The name of the item." ;
+            sh:maxCount 1 ;
+            sh:order 20 ;
+            sh:path schema1:name ],
+        [ sh:datatype xsd:string ;
+            sh:description "The date on which the CreativeWork was created or the item was added to a DataFeed." ;
+            sh:maxCount 1 ;
+            sh:order 5 ;
+            sh:path schema1:dateCreated ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:order 15 ;
+            sh:path dataset_ap:publisher ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:order 9 ;
+            sh:path dataset_ap:isAccessibleForFree ],
+        [ sh:datatype xsd:string ;
+            sh:description "A technique, method or technology used in an Observation, StatisticalVariable or Dataset (or DataDownload, DataCatalog),  corresponding to the method used for measuring the corresponding variable(s) (for datasets, described using variableMeasured;  for Observation, a StatisticalVariable)." ;
+            sh:maxCount 1 ;
+            sh:order 2 ;
+            sh:path schema1:measurementTechnique ],
+        [ sh:datatype xsd:string ;
+            sh:description "A subproperty of measurementTechnique that can be used for specifying specific methods, in particular via MeasurementMethodEnum." ;
+            sh:maxCount 1 ;
+            sh:order 1 ;
+            sh:path schema1:measurementMethod ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:order 6 ;
+            sh:path dataset_ap:dateModified ] ;
+    sh:targetClass schema1:DataCatalog .
+
+schema1:Intangible a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc." ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:description "URL of a reference Web page that unambiguously indicates the item's identity.  E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website." ;
+            sh:maxCount 1 ;
+            sh:order 4 ;
+            sh:path schema1:sameAs ],
+        [ sh:description "URL of the item." ;
+            sh:maxCount 1 ;
+            sh:order 5 ;
+            sh:path schema1:url ],
+        [ sh:datatype xsd:string ;
+            sh:description "An alias for the item." ;
+            sh:order 1 ;
+            sh:path schema1:alternateName ],
+        [ sh:description "A unique identifier for a thing" ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:order 0 ;
+            sh:path schema1:identifier ],
+        [ sh:datatype xsd:string ;
+            sh:description "The name of the item." ;
+            sh:maxCount 1 ;
+            sh:order 3 ;
+            sh:path schema1:name ],
+        [ sh:datatype xsd:string ;
+            sh:description "A description of the item." ;
+            sh:maxCount 1 ;
+            sh:order 2 ;
+            sh:path schema1:description ] ;
+    sh:targetClass schema1:Intangible .
+
 schema1:Thing a sh:NodeShape ;
     sh:closed true ;
-    sh:description "A generic grouping for any identifiable entity" ;
+    sh:description "The most generic type of item." ;
     sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:description "A unique identifier for a thing" ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:description "A description of the item." ;
+            sh:maxCount 1 ;
+            sh:order 2 ;
+            sh:path schema1:description ],
+        [ sh:description "URL of the item." ;
+            sh:maxCount 1 ;
+            sh:order 5 ;
+            sh:path schema1:url ],
+        [ sh:description "A unique identifier for a thing" ;
             sh:maxCount 1 ;
             sh:order 0 ;
             sh:path schema1:identifier ],
         [ sh:datatype xsd:string ;
-            sh:description "A human-readable description for a thing" ;
+            sh:description "The name of the item." ;
+            sh:maxCount 1 ;
+            sh:order 3 ;
+            sh:path schema1:name ],
+        [ sh:datatype xsd:string ;
+            sh:description "URL of a reference Web page that unambiguously indicates the item's identity.  E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website." ;
+            sh:maxCount 1 ;
+            sh:order 4 ;
+            sh:path schema1:sameAs ],
+        [ sh:datatype xsd:string ;
+            sh:description "An alias for the item." ;
+            sh:order 1 ;
+            sh:path schema1:alternateName ] ;
+    sh:targetClass schema1:Thing .
+
+dataset_ap:ChemicalEntity a sh:NodeShape ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:description "The name of the item." ;
+            sh:maxCount 1 ;
+            sh:order 3 ;
+            sh:path schema1:name ],
+        [ sh:datatype xsd:string ;
+            sh:description "URL of a reference Web page that unambiguously indicates the item's identity.  E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website." ;
+            sh:maxCount 1 ;
+            sh:order 4 ;
+            sh:path schema1:sameAs ],
+        [ sh:description "A unique identifier for a thing" ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:order 0 ;
+            sh:path schema1:identifier ],
+        [ sh:description "URL of the item." ;
+            sh:maxCount 1 ;
+            sh:order 5 ;
+            sh:path schema1:url ],
+        [ sh:datatype xsd:string ;
+            sh:description "An alias for the item." ;
+            sh:order 1 ;
+            sh:path schema1:alternateName ],
+        [ sh:datatype xsd:string ;
+            sh:description "A description of the item." ;
+            sh:maxCount 1 ;
+            sh:order 2 ;
+            sh:path schema1:description ] ;
+    sh:targetClass dataset_ap:ChemicalEntity .
+
+dataset_ap:ChemicalReaction a sh:NodeShape ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:description "A unique identifier for a thing" ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:order 0 ;
+            sh:path schema1:identifier ],
+        [ sh:datatype xsd:string ;
+            sh:description "A description of the item." ;
+            sh:maxCount 1 ;
+            sh:order 2 ;
+            sh:path schema1:description ],
+        [ sh:description "URL of the item." ;
+            sh:maxCount 1 ;
+            sh:order 5 ;
+            sh:path schema1:url ],
+        [ sh:datatype xsd:string ;
+            sh:description "An alias for the item." ;
+            sh:order 1 ;
+            sh:path schema1:alternateName ],
+        [ sh:datatype xsd:string ;
+            sh:description "URL of a reference Web page that unambiguously indicates the item's identity.  E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website." ;
+            sh:maxCount 1 ;
+            sh:order 4 ;
+            sh:path schema1:sameAs ],
+        [ sh:datatype xsd:string ;
+            sh:description "The name of the item." ;
+            sh:maxCount 1 ;
+            sh:order 3 ;
+            sh:path schema1:name ] ;
+    sh:targetClass dataset_ap:ChemicalReaction .
+
+dataset_ap:MaterialEntity a sh:NodeShape ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:description "A unique identifier for a thing" ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:order 0 ;
+            sh:path schema1:identifier ],
+        [ sh:datatype xsd:string ;
+            sh:description "The name of the item." ;
+            sh:maxCount 1 ;
+            sh:order 3 ;
+            sh:path schema1:name ],
+        [ sh:datatype xsd:string ;
+            sh:description "A description of the item." ;
             sh:maxCount 1 ;
             sh:order 2 ;
             sh:path schema1:description ],
         [ sh:datatype xsd:string ;
-            sh:description "A human-readable name for a thing" ;
-            sh:maxCount 1 ;
+            sh:description "An alias for the item." ;
             sh:order 1 ;
-            sh:path schema1:name ] ;
-    sh:targetClass schema1:Thing .
+            sh:path schema1:alternateName ],
+        [ sh:datatype xsd:string ;
+            sh:description "URL of a reference Web page that unambiguously indicates the item's identity.  E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website." ;
+            sh:maxCount 1 ;
+            sh:order 4 ;
+            sh:path schema1:sameAs ],
+        [ sh:description "URL of the item." ;
+            sh:maxCount 1 ;
+            sh:order 5 ;
+            sh:path schema1:url ] ;
+    sh:targetClass dataset_ap:MaterialEntity .
 
-dataset_ap:DatasetCollection a sh:NodeShape ;
+dataset_ap:ReactionStep a sh:NodeShape ;
     sh:closed true ;
-    sh:description "A holder for Dataset objects" ;
     sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:class dataset_ap:Dataset ;
-            sh:nodeKind sh:IRI ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:description "The name of the item." ;
+            sh:maxCount 1 ;
+            sh:order 3 ;
+            sh:path schema1:name ],
+        [ sh:description "URL of the item." ;
+            sh:maxCount 1 ;
+            sh:order 5 ;
+            sh:path schema1:url ],
+        [ sh:datatype xsd:string ;
+            sh:description "URL of a reference Web page that unambiguously indicates the item's identity.  E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website." ;
+            sh:maxCount 1 ;
+            sh:order 4 ;
+            sh:path schema1:sameAs ],
+        [ sh:description "A unique identifier for a thing" ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
             sh:order 0 ;
-            sh:path dataset_ap:entries ] ;
-    sh:targetClass dataset_ap:DatasetCollection .
+            sh:path schema1:identifier ],
+        [ sh:datatype xsd:string ;
+            sh:description "A description of the item." ;
+            sh:maxCount 1 ;
+            sh:order 2 ;
+            sh:path schema1:description ],
+        [ sh:datatype xsd:string ;
+            sh:description "An alias for the item." ;
+            sh:order 1 ;
+            sh:path schema1:alternateName ] ;
+    sh:targetClass dataset_ap:ReactionStep .
 
-dataset_ap:Dataset a sh:NodeShape ;
+dataset_ap:EvaluatedThing a sh:NodeShape ;
+    sh:closed false ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:description "The name of the item." ;
+            sh:maxCount 1 ;
+            sh:order 3 ;
+            sh:path schema1:name ],
+        [ sh:description "A unique identifier for a thing" ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:order 0 ;
+            sh:path schema1:identifier ],
+        [ sh:datatype xsd:string ;
+            sh:description "URL of a reference Web page that unambiguously indicates the item's identity.  E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website." ;
+            sh:maxCount 1 ;
+            sh:order 4 ;
+            sh:path schema1:sameAs ],
+        [ sh:datatype xsd:string ;
+            sh:description "A description of the item." ;
+            sh:maxCount 1 ;
+            sh:order 2 ;
+            sh:path schema1:description ],
+        [ sh:datatype xsd:string ;
+            sh:description "An alias for the item." ;
+            sh:order 1 ;
+            sh:path schema1:alternateName ],
+        [ sh:description "URL of the item." ;
+            sh:maxCount 1 ;
+            sh:order 5 ;
+            sh:path schema1:url ] ;
+    sh:targetClass dataset_ap:EvaluatedThing .
+
+schema1:Dataset a sh:NodeShape ;
     sh:closed true ;
     sh:description "Represents a Dataset" ;
     sh:ignoredProperties ( rdf:type ) ;
     sh:property [ sh:datatype xsd:string ;
-            sh:description "A human-readable description for a thing" ;
             sh:maxCount 1 ;
-            sh:order 6 ;
+            sh:order 18 ;
+            sh:path dataset_ap:maintainer ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:order 15 ;
+            sh:path dataset_ap:isPartOf ],
+        [ sh:description "URL of the item." ;
+            sh:maxCount 1 ;
+            sh:order 26 ;
+            sh:path schema1:url ],
+        [ sh:datatype xsd:string ;
+            sh:description "A subproperty of measurementTechnique that can be used for specifying specific methods, in particular via MeasurementMethodEnum." ;
+            sh:maxCount 1 ;
+            sh:order 3 ;
+            sh:path schema1:measurementMethod ],
+        [ sh:datatype xsd:string ;
+            sh:description "A description of the item." ;
+            sh:maxCount 1 ;
+            sh:order 23 ;
             sh:path schema1:description ],
+        [ sh:datatype xsd:string ;
+            sh:description "A technique, method or technology used in an Observation, StatisticalVariable or Dataset (or DataDownload, DataCatalog),  corresponding to the method used for measuring the corresponding variable(s) (for datasets, described using variableMeasured;  for Observation, a StatisticalVariable)." ;
+            sh:maxCount 1 ;
+            sh:order 4 ;
+            sh:path schema1:measurementTechnique ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:order 19 ;
+            sh:path dataset_ap:publisher ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:order 10 ;
+            sh:path dataset_ap:dateModified ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:order 16 ;
+            sh:path dataset_ap:keywords ],
+        [ sh:datatype xsd:string ;
+            sh:description "The creator/author of this CreativeWork." ;
+            sh:maxCount 1 ;
+            sh:order 8 ;
+            sh:path schema1:creator ],
+        [ sh:datatype xsd:string ;
+            sh:description "URL of a reference Web page that unambiguously indicates the item's identity.  E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website." ;
+            sh:maxCount 1 ;
+            sh:order 25 ;
+            sh:path schema1:sameAs ],
         [ sh:description "A unique identifier for a thing" ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
-            sh:order 4 ;
+            sh:order 21 ;
             sh:path schema1:identifier ],
-        [ sh:datatype xsd:date ;
-            sh:description "Date on which a person is born" ;
-            sh:maxCount 1 ;
-            sh:order 1 ;
-            sh:path schema1:birthDate ],
-        [ sh:description "living or dead status" ;
-            sh:in ( PATO:0001421 PATO:0001422 "UNKNOWN" ) ;
-            sh:maxCount 1 ;
-            sh:order 3 ;
-            sh:path dataset_ap:vital_status ],
-        [ sh:datatype xsd:integer ;
-            sh:description "Number of years since birth" ;
-            sh:maxCount 1 ;
-            sh:order 2 ;
-            sh:path dataset_ap:age_in_years ],
         [ sh:datatype xsd:string ;
-            sh:description "The main email address of a person" ;
             sh:maxCount 1 ;
-            sh:order 0 ;
-            sh:path schema1:email ;
-            sh:pattern "^\\S+@[\\S+\\.]+\\S+" ],
+            sh:order 14 ;
+            sh:path dataset_ap:isBasedOn ],
         [ sh:datatype xsd:string ;
-            sh:description "A human-readable name for a thing" ;
             sh:maxCount 1 ;
             sh:order 5 ;
-            sh:path schema1:name ] ;
-    sh:targetClass dataset_ap:Dataset .
+            sh:path schema1:variableMeasured ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:order 13 ;
+            sh:path dataset_ap:isAccessibleForFree ],
+        [ sh:datatype xsd:string ;
+            sh:description "The date on which the CreativeWork was created or the item was added to a DataFeed." ;
+            sh:maxCount 1 ;
+            sh:order 9 ;
+            sh:path schema1:dateCreated ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:order 7 ;
+            sh:path dataset_ap:citation ],
+        [ sh:datatype xsd:string ;
+            sh:description "The name of the item." ;
+            sh:maxCount 1 ;
+            sh:order 24 ;
+            sh:path schema1:name ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:order 12 ;
+            sh:path dataset_ap:hasPart ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:order 6 ;
+            sh:path <dct:conformsTo> ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:order 11 ;
+            sh:path dataset_ap:datePublished ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:order 20 ;
+            sh:path dataset_ap:version ],
+        [ sh:datatype xsd:string ;
+            sh:description "A downloadable form of this dataset, at a specific location, in a specific format.  This property can be repeated if different variations are available.  There is no expectation that different downloadable distributions must contain exactly equivalent information  (see also DCAT on this point).  Different distributions might include or exclude different subsets of the entire dataset, for example." ;
+            sh:maxCount 1 ;
+            sh:order 0 ;
+            sh:path schema1:distribution ],
+        [ sh:datatype xsd:string ;
+            sh:description "The International Standard Serial Number (ISSN) that identifies this serial publication.  You can repeat this property to identify different formats of, or the linking ISSN (ISSN-L) for, this serial publication." ;
+            sh:maxCount 1 ;
+            sh:order 2 ;
+            sh:path schema1:issn ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:order 17 ;
+            sh:path dataset_ap:license ],
+        [ sh:datatype xsd:string ;
+            sh:description "An alias for the item." ;
+            sh:order 22 ;
+            sh:path schema1:alternateName ],
+        [ sh:datatype xsd:string ;
+            sh:description "A data catalog which contains this dataset. Supersedes includedDataCatalog, `catalog`.  Inverse property [[dataset]]" ;
+            sh:maxCount 1 ;
+            sh:order 1 ;
+            sh:path schema1:includedInDataCatalog ] ;
+    sh:targetClass schema1:Dataset .
 

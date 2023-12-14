@@ -1,6 +1,6 @@
 {
   "name": "Dataset_AP",
-  "description": "An attempt to create a metadata schema for datasets that is mapped to standard ontologies and application profiles, like schema.org and DCAT-AP.",
+  "description": "A LinkML representation of https://bioschemas.org/profiles/Dataset/1.0-RELEASE.",
   "title": "Dataset_AP",
   "see_also": [
     "https://storemphi.github.io/Dataset_AP"
@@ -20,20 +20,28 @@
       "prefix_reference": "https://w3id.org/linkml/"
     },
     {
-      "prefix_prefix": "biolink",
-      "prefix_reference": "https://w3id.org/biolink/"
-    },
-    {
       "prefix_prefix": "schema",
       "prefix_reference": "http://schema.org/"
     },
     {
-      "prefix_prefix": "PATO",
-      "prefix_reference": "http://purl.obolibrary.org/obo/PATO_"
+      "prefix_prefix": "bioschema",
+      "prefix_reference": "https://bioschemas.org/properties/"
     },
     {
       "prefix_prefix": "example",
       "prefix_reference": "https://example.org/"
+    },
+    {
+      "prefix_prefix": "iao",
+      "prefix_reference": "http://purl.obolibrary.org/obo/IAO_/"
+    },
+    {
+      "prefix_prefix": "obi",
+      "prefix_reference": "http://purl.obolibrary.org/obo/OBI_/"
+    },
+    {
+      "prefix_prefix": "dcat",
+      "prefix_reference": "http://www.w3.org/ns/dcat#"
     }
   ],
   "default_prefix": "dataset_ap",
@@ -348,46 +356,23 @@
       "@type": "TypeDefinition"
     }
   ],
-  "enums": [
-    {
-      "name": "PersonStatus",
-      "definition_uri": "https://w3id.org/storemphi/Dataset_AP/PersonStatus",
-      "from_schema": "https://w3id.org/storemphi/Dataset_AP",
-      "permissible_values": [
-        {
-          "text": "ALIVE",
-          "description": "the person is living",
-          "meaning": "PATO:0001421"
-        },
-        {
-          "text": "DEAD",
-          "description": "the person is deceased",
-          "meaning": "PATO:0001422"
-        },
-        {
-          "text": "UNKNOWN",
-          "description": "the vital status is not known",
-          "todos": [
-            "map this to an ontology"
-          ]
-        }
-      ]
-    }
-  ],
   "slots": [
     {
-      "name": "id",
-      "definition_uri": "https://w3id.org/storemphi/Dataset_AP/id",
+      "name": "identifier",
+      "definition_uri": "https://w3id.org/storemphi/Dataset_AP/identifier",
       "description": "A unique identifier for a thing",
       "from_schema": "https://w3id.org/storemphi/Dataset_AP",
       "mappings": [
         "http://schema.org/identifier"
       ],
+      "exact_mappings": [
+        "http://example.org/UNKNOWN/dct/identifier"
+      ],
       "slot_uri": "http://schema.org/identifier",
       "identifier": true,
-      "owner": "NamedThing",
+      "owner": "Thing",
       "domain_of": [
-        "NamedThing"
+        "Thing"
       ],
       "range": "uriorcurie",
       "required": true,
@@ -396,44 +381,316 @@
     {
       "name": "name",
       "definition_uri": "https://w3id.org/storemphi/Dataset_AP/name",
-      "description": "A human-readable name for a thing",
+      "description": "The name of the item.",
       "from_schema": "https://w3id.org/storemphi/Dataset_AP",
       "mappings": [
         "http://schema.org/name"
       ],
+      "close_mappings": [
+        "http://example.org/UNKNOWN/dct/title"
+      ],
       "slot_uri": "http://schema.org/name",
-      "owner": "NamedThing",
+      "owner": "Thing",
       "domain_of": [
-        "NamedThing"
+        "Thing"
       ],
       "range": "string",
+      "recommended": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "alternateName",
+      "definition_uri": "https://w3id.org/storemphi/Dataset_AP/alternateName",
+      "description": "An alias for the item.",
+      "from_schema": "https://w3id.org/storemphi/Dataset_AP",
+      "mappings": [
+        "http://schema.org/alternateName"
+      ],
+      "exact_mappings": [
+        "http://example.org/UNKNOWN/dct/alternative"
+      ],
+      "slot_uri": "http://schema.org/alternateName",
+      "multivalued": true,
+      "owner": "Thing",
+      "domain_of": [
+        "Thing"
+      ],
+      "range": "string",
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
       "name": "description",
       "definition_uri": "https://w3id.org/storemphi/Dataset_AP/description",
-      "description": "A human-readable description for a thing",
+      "description": "A description of the item.",
       "from_schema": "https://w3id.org/storemphi/Dataset_AP",
       "mappings": [
         "http://schema.org/description"
       ],
+      "exact_mappings": [
+        "http://example.org/UNKNOWN/dct/description"
+      ],
       "slot_uri": "http://schema.org/description",
-      "owner": "NamedThing",
+      "owner": "Thing",
       "domain_of": [
-        "NamedThing"
+        "Thing"
       ],
       "range": "string",
       "@type": "SlotDefinition"
     },
     {
-      "name": "primary_email",
-      "definition_uri": "https://w3id.org/storemphi/Dataset_AP/primary_email",
-      "description": "The main email address of a person",
+      "name": "sameAs",
+      "definition_uri": "https://w3id.org/storemphi/Dataset_AP/sameAs",
+      "description": "URL of a reference Web page that unambiguously indicates the item's identity.  E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.",
       "from_schema": "https://w3id.org/storemphi/Dataset_AP",
       "mappings": [
-        "http://schema.org/email"
+        "http://schema.org/sameAs"
       ],
-      "slot_uri": "http://schema.org/email",
+      "slot_uri": "http://schema.org/sameAs",
+      "owner": "Thing",
+      "domain_of": [
+        "Thing"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "url",
+      "definition_uri": "https://w3id.org/storemphi/Dataset_AP/url",
+      "description": "URL of the item.",
+      "comments": [
+        "This slot MUST not be used to provide an IRI for an ontology or an ontology term, use schema:identifier for this. The range (expected type) of schema:url is an URL."
+      ],
+      "from_schema": "https://w3id.org/storemphi/Dataset_AP",
+      "mappings": [
+        "http://schema.org/url"
+      ],
+      "slot_uri": "http://schema.org/url",
+      "owner": "Thing",
+      "domain_of": [
+        "Thing"
+      ],
+      "range": "uriorcurie",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "subjectOf",
+      "definition_uri": "https://w3id.org/storemphi/Dataset_AP/subjectOf",
+      "description": "A CreativeWork about this Thing.",
+      "from_schema": "https://w3id.org/storemphi/Dataset_AP",
+      "mappings": [
+        "http://schema.org/subjectOf"
+      ],
+      "domain": "Thing",
+      "slot_uri": "http://schema.org/subjectOf",
+      "owner": "subjectOf",
+      "inverse": "about",
+      "range": "CreativeWork",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "about",
+      "definition_uri": "https://w3id.org/storemphi/Dataset_AP/about",
+      "description": "The subject matter of the content. Inverse property of `subjectOf`",
+      "from_schema": "https://w3id.org/storemphi/Dataset_AP",
+      "mappings": [
+        "http://schema.org/about"
+      ],
+      "domain": "CreativeWork",
+      "slot_uri": "http://schema.org/about",
+      "owner": "about",
+      "inverse": "subjectOf",
+      "range": "Thing",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "citation",
+      "definition_uri": "https://w3id.org/storemphi/Dataset_AP/citation",
+      "from_schema": "https://w3id.org/storemphi/Dataset_AP",
+      "slot_uri": "https://w3id.org/storemphi/Dataset_AP/citation",
+      "owner": "CreativeWork",
+      "domain_of": [
+        "CreativeWork"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "creator",
+      "definition_uri": "https://w3id.org/storemphi/Dataset_AP/creator",
+      "description": "The creator/author of this CreativeWork.",
+      "todos": [
+        "Add domain & range constrains, if this slot is actually needed/used in our context, otherwise drop it."
+      ],
+      "from_schema": "https://w3id.org/storemphi/Dataset_AP",
+      "mappings": [
+        "http://schema.org/creator"
+      ],
+      "slot_uri": "http://schema.org/creator",
+      "owner": "CreativeWork",
+      "domain_of": [
+        "CreativeWork"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "dateCreated",
+      "definition_uri": "https://w3id.org/storemphi/Dataset_AP/dateCreated",
+      "description": "The date on which the CreativeWork was created or the item was added to a DataFeed.",
+      "from_schema": "https://w3id.org/storemphi/Dataset_AP",
+      "mappings": [
+        "http://schema.org/dateCreated"
+      ],
+      "slot_uri": "http://schema.org/dateCreated",
+      "owner": "CreativeWork",
+      "domain_of": [
+        "CreativeWork"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "dateModified",
+      "definition_uri": "https://w3id.org/storemphi/Dataset_AP/dateModified",
+      "from_schema": "https://w3id.org/storemphi/Dataset_AP",
+      "slot_uri": "https://w3id.org/storemphi/Dataset_AP/dateModified",
+      "owner": "CreativeWork",
+      "domain_of": [
+        "CreativeWork"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "datePublished",
+      "definition_uri": "https://w3id.org/storemphi/Dataset_AP/datePublished",
+      "from_schema": "https://w3id.org/storemphi/Dataset_AP",
+      "slot_uri": "https://w3id.org/storemphi/Dataset_AP/datePublished",
+      "owner": "CreativeWork",
+      "domain_of": [
+        "CreativeWork"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "hasPart",
+      "definition_uri": "https://w3id.org/storemphi/Dataset_AP/hasPart",
+      "from_schema": "https://w3id.org/storemphi/Dataset_AP",
+      "slot_uri": "https://w3id.org/storemphi/Dataset_AP/hasPart",
+      "owner": "CreativeWork",
+      "domain_of": [
+        "CreativeWork"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "isAccessibleForFree",
+      "definition_uri": "https://w3id.org/storemphi/Dataset_AP/isAccessibleForFree",
+      "from_schema": "https://w3id.org/storemphi/Dataset_AP",
+      "slot_uri": "https://w3id.org/storemphi/Dataset_AP/isAccessibleForFree",
+      "owner": "CreativeWork",
+      "domain_of": [
+        "CreativeWork"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "isBasedOn",
+      "definition_uri": "https://w3id.org/storemphi/Dataset_AP/isBasedOn",
+      "from_schema": "https://w3id.org/storemphi/Dataset_AP",
+      "slot_uri": "https://w3id.org/storemphi/Dataset_AP/isBasedOn",
+      "owner": "CreativeWork",
+      "domain_of": [
+        "CreativeWork"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "isPartOf",
+      "definition_uri": "https://w3id.org/storemphi/Dataset_AP/isPartOf",
+      "from_schema": "https://w3id.org/storemphi/Dataset_AP",
+      "slot_uri": "https://w3id.org/storemphi/Dataset_AP/isPartOf",
+      "owner": "CreativeWork",
+      "domain_of": [
+        "CreativeWork"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "keywords",
+      "definition_uri": "https://w3id.org/storemphi/Dataset_AP/keywords",
+      "from_schema": "https://w3id.org/storemphi/Dataset_AP",
+      "slot_uri": "https://w3id.org/storemphi/Dataset_AP/keywords",
+      "owner": "CreativeWork",
+      "domain_of": [
+        "CreativeWork"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "license",
+      "definition_uri": "https://w3id.org/storemphi/Dataset_AP/license",
+      "from_schema": "https://w3id.org/storemphi/Dataset_AP",
+      "slot_uri": "https://w3id.org/storemphi/Dataset_AP/license",
+      "owner": "CreativeWork",
+      "domain_of": [
+        "CreativeWork"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "maintainer",
+      "definition_uri": "https://w3id.org/storemphi/Dataset_AP/maintainer",
+      "from_schema": "https://w3id.org/storemphi/Dataset_AP",
+      "slot_uri": "https://w3id.org/storemphi/Dataset_AP/maintainer",
+      "owner": "CreativeWork",
+      "domain_of": [
+        "CreativeWork"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "publisher",
+      "definition_uri": "https://w3id.org/storemphi/Dataset_AP/publisher",
+      "from_schema": "https://w3id.org/storemphi/Dataset_AP",
+      "slot_uri": "https://w3id.org/storemphi/Dataset_AP/publisher",
+      "owner": "CreativeWork",
+      "domain_of": [
+        "CreativeWork"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "version",
+      "definition_uri": "https://w3id.org/storemphi/Dataset_AP/version",
+      "from_schema": "https://w3id.org/storemphi/Dataset_AP",
+      "slot_uri": "https://w3id.org/storemphi/Dataset_AP/version",
+      "owner": "CreativeWork",
+      "domain_of": [
+        "CreativeWork"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "distribution",
+      "definition_uri": "https://w3id.org/storemphi/Dataset_AP/distribution",
+      "description": "A downloadable form of this dataset, at a specific location, in a specific format.  This property can be repeated if different variations are available.  There is no expectation that different downloadable distributions must contain exactly equivalent information  (see also DCAT on this point).  Different distributions might include or exclude different subsets of the entire dataset, for example.",
+      "from_schema": "https://w3id.org/storemphi/Dataset_AP",
+      "mappings": [
+        "http://schema.org/distribution"
+      ],
+      "slot_uri": "http://schema.org/distribution",
       "owner": "Dataset",
       "domain_of": [
         "Dataset"
@@ -442,100 +699,240 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "birth_date",
-      "definition_uri": "https://w3id.org/storemphi/Dataset_AP/birth_date",
-      "description": "Date on which a person is born",
+      "name": "includedInDataCatalog",
+      "definition_uri": "https://w3id.org/storemphi/Dataset_AP/includedInDataCatalog",
+      "description": "A data catalog which contains this dataset. Supersedes includedDataCatalog, `catalog`.  Inverse property [[dataset]]",
       "from_schema": "https://w3id.org/storemphi/Dataset_AP",
       "mappings": [
-        "http://schema.org/birthDate"
+        "http://schema.org/includedInDataCatalog"
       ],
-      "slot_uri": "http://schema.org/birthDate",
+      "exact_mappings": [
+        "http://schema.org/catalog"
+      ],
+      "slot_uri": "http://schema.org/includedInDataCatalog",
       "owner": "Dataset",
       "domain_of": [
         "Dataset"
       ],
-      "range": "date",
+      "inverse": "datasets",
+      "range": "DatasetCollection",
       "@type": "SlotDefinition"
     },
     {
-      "name": "age_in_years",
-      "definition_uri": "https://w3id.org/storemphi/Dataset_AP/age_in_years",
-      "description": "Number of years since birth",
+      "name": "issn",
+      "definition_uri": "https://w3id.org/storemphi/Dataset_AP/issn",
+      "description": "The International Standard Serial Number (ISSN) that identifies this serial publication.  You can repeat this property to identify different formats of, or the linking ISSN (ISSN-L) for, this serial publication.",
       "from_schema": "https://w3id.org/storemphi/Dataset_AP",
-      "slot_uri": "https://w3id.org/storemphi/Dataset_AP/age_in_years",
+      "mappings": [
+        "http://schema.org/issn"
+      ],
+      "slot_uri": "http://schema.org/issn",
       "owner": "Dataset",
       "domain_of": [
         "Dataset"
       ],
-      "range": "integer",
+      "range": "string",
       "@type": "SlotDefinition"
     },
     {
-      "name": "vital_status",
-      "definition_uri": "https://w3id.org/storemphi/Dataset_AP/vital_status",
-      "description": "living or dead status",
+      "name": "measurementMethod",
+      "definition_uri": "https://w3id.org/storemphi/Dataset_AP/measurementMethod",
+      "description": "A subproperty of measurementTechnique that can be used for specifying specific methods, in particular via MeasurementMethodEnum.",
       "from_schema": "https://w3id.org/storemphi/Dataset_AP",
-      "slot_uri": "https://w3id.org/storemphi/Dataset_AP/vital_status",
+      "mappings": [
+        "http://schema.org/measurementMethod"
+      ],
+      "slot_uri": "http://schema.org/measurementMethod",
+      "owner": "DatasetCollection",
+      "domain_of": [
+        "Dataset",
+        "DatasetCollection"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "measurementTechnique",
+      "definition_uri": "https://w3id.org/storemphi/Dataset_AP/measurementTechnique",
+      "description": "A technique, method or technology used in an Observation, StatisticalVariable or Dataset (or DataDownload, DataCatalog),  corresponding to the method used for measuring the corresponding variable(s) (for datasets, described using variableMeasured;  for Observation, a StatisticalVariable).",
+      "from_schema": "https://w3id.org/storemphi/Dataset_AP",
+      "mappings": [
+        "http://schema.org/measurementTechnique"
+      ],
+      "slot_uri": "http://schema.org/measurementTechnique",
+      "owner": "DatasetCollection",
+      "domain_of": [
+        "Dataset",
+        "DatasetCollection"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "variableMeasured",
+      "definition_uri": "https://w3id.org/storemphi/Dataset_AP/variableMeasured",
+      "from_schema": "https://w3id.org/storemphi/Dataset_AP",
+      "mappings": [
+        "http://schema.org/variableMeasured"
+      ],
+      "slot_uri": "http://schema.org/variableMeasured",
       "owner": "Dataset",
       "domain_of": [
         "Dataset"
       ],
-      "range": "PersonStatus",
+      "range": "string",
       "@type": "SlotDefinition"
     },
     {
-      "name": "datasetCollection__entries",
+      "name": "conformsTo",
+      "definition_uri": "https://w3id.org/storemphi/Dataset_AP/conformsTo",
       "from_schema": "https://w3id.org/storemphi/Dataset_AP",
-      "slot_uri": "https://w3id.org/storemphi/Dataset_AP/entries",
+      "mappings": [
+        "http://example.org/UNKNOWN/dct/conformsTo"
+      ],
+      "slot_uri": "http://example.org/UNKNOWN/dct/conformsTo",
+      "owner": "Dataset",
+      "domain_of": [
+        "Dataset"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "datasets",
+      "definition_uri": "https://w3id.org/storemphi/Dataset_AP/datasets",
+      "description": "A dataset contained in this catalog.",
+      "from_schema": "https://w3id.org/storemphi/Dataset_AP",
+      "mappings": [
+        "http://schema.org/dataset"
+      ],
+      "slot_uri": "http://schema.org/dataset",
       "multivalued": true,
-      "alias": "entries",
       "owner": "DatasetCollection",
       "domain_of": [
         "DatasetCollection"
       ],
+      "inverse": "includedInDataCatalog",
       "range": "Dataset",
+      "required": true,
       "inlined": true,
       "@type": "SlotDefinition"
     },
     {
-      "name": "Dataset_primary_email",
-      "definition_uri": "https://w3id.org/storemphi/Dataset_AP/primary_email",
-      "description": "The main email address of a person",
+      "name": "has_input",
+      "definition_uri": "https://w3id.org/storemphi/Dataset_AP/has_input",
       "from_schema": "https://w3id.org/storemphi/Dataset_AP",
-      "mappings": [
-        "http://schema.org/email"
-      ],
-      "is_a": "primary_email",
-      "domain": "Dataset",
-      "slot_uri": "http://schema.org/email",
-      "alias": "primary_email",
-      "owner": "Dataset",
+      "domain": "Assay",
+      "slot_uri": "https://w3id.org/storemphi/Dataset_AP/has_input",
+      "owner": "Assay",
       "domain_of": [
-        "Dataset"
+        "Assay"
       ],
-      "is_usage_slot": true,
-      "usage_slot_name": "primary_email",
+      "range": "EvaluatedThing",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "has_output",
+      "definition_uri": "https://w3id.org/storemphi/Dataset_AP/has_output",
+      "from_schema": "https://w3id.org/storemphi/Dataset_AP",
+      "domain": "Assay",
+      "slot_uri": "https://w3id.org/storemphi/Dataset_AP/has_output",
+      "owner": "Assay",
+      "domain_of": [
+        "Assay"
+      ],
+      "range": "Dataset",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "has_parameter",
+      "definition_uri": "https://w3id.org/storemphi/Dataset_AP/has_parameter",
+      "from_schema": "https://w3id.org/storemphi/Dataset_AP",
+      "domain": "Assay",
+      "slot_uri": "https://w3id.org/storemphi/Dataset_AP/has_parameter",
+      "owner": "has_parameter",
       "range": "string",
-      "pattern": "^\\S+@[\\S+\\.]+\\S+",
       "@type": "SlotDefinition"
     }
   ],
   "classes": [
     {
-      "name": "NamedThing",
-      "definition_uri": "https://w3id.org/storemphi/Dataset_AP/NamedThing",
-      "description": "A generic grouping for any identifiable entity",
+      "name": "Thing",
+      "definition_uri": "https://w3id.org/storemphi/Dataset_AP/Thing",
+      "description": "The most generic type of item.",
       "from_schema": "https://w3id.org/storemphi/Dataset_AP",
       "mappings": [
         "schema:Thing"
       ],
       "slots": [
-        "id",
+        "identifier",
+        "alternateName",
+        "description",
         "name",
-        "description"
+        "sameAs",
+        "url"
       ],
       "slot_usage": {},
       "class_uri": "http://schema.org/Thing",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Intangible",
+      "definition_uri": "https://w3id.org/storemphi/Dataset_AP/Intangible",
+      "description": "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.",
+      "from_schema": "https://w3id.org/storemphi/Dataset_AP",
+      "mappings": [
+        "schema:Intangible"
+      ],
+      "is_a": "Thing",
+      "slots": [
+        "identifier",
+        "alternateName",
+        "description",
+        "name",
+        "sameAs",
+        "url"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://schema.org/Intangible",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "CreativeWork",
+      "definition_uri": "https://w3id.org/storemphi/Dataset_AP/CreativeWork",
+      "description": "The most generic kind of creative work, including books, movies, photographs, software programs, etc.",
+      "from_schema": "https://w3id.org/storemphi/Dataset_AP",
+      "mappings": [
+        "schema:CreativeWork"
+      ],
+      "exact_mappings": [
+        "iao:0000030"
+      ],
+      "is_a": "Thing",
+      "slots": [
+        "identifier",
+        "alternateName",
+        "description",
+        "name",
+        "sameAs",
+        "url",
+        "citation",
+        "creator",
+        "dateCreated",
+        "dateModified",
+        "datePublished",
+        "hasPart",
+        "isAccessibleForFree",
+        "isBasedOn",
+        "isPartOf",
+        "keywords",
+        "license",
+        "maintainer",
+        "publisher",
+        "version"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://schema.org/CreativeWork",
       "@type": "ClassDefinition"
     },
     {
@@ -543,48 +940,213 @@
       "definition_uri": "https://w3id.org/storemphi/Dataset_AP/Dataset",
       "description": "Represents a Dataset",
       "from_schema": "https://w3id.org/storemphi/Dataset_AP",
-      "is_a": "NamedThing",
+      "mappings": [
+        "schema:Dataset"
+      ],
+      "exact_mappings": [
+        "dcat:Dataset"
+      ],
+      "is_a": "CreativeWork",
       "slots": [
-        "id",
-        "name",
+        "identifier",
+        "alternateName",
         "description",
-        "Dataset_primary_email",
-        "birth_date",
-        "age_in_years",
-        "vital_status"
+        "name",
+        "sameAs",
+        "url",
+        "citation",
+        "creator",
+        "dateCreated",
+        "dateModified",
+        "datePublished",
+        "hasPart",
+        "isAccessibleForFree",
+        "isBasedOn",
+        "isPartOf",
+        "keywords",
+        "license",
+        "maintainer",
+        "publisher",
+        "version",
+        "distribution",
+        "includedInDataCatalog",
+        "issn",
+        "measurementMethod",
+        "measurementTechnique",
+        "variableMeasured",
+        "conformsTo"
       ],
       "slot_usage": {},
-      "class_uri": "https://w3id.org/storemphi/Dataset_AP/Dataset",
+      "class_uri": "http://schema.org/Dataset",
       "@type": "ClassDefinition"
     },
     {
       "name": "DatasetCollection",
       "definition_uri": "https://w3id.org/storemphi/Dataset_AP/DatasetCollection",
-      "description": "A holder for Dataset objects",
+      "description": "A collection of datasets.",
       "from_schema": "https://w3id.org/storemphi/Dataset_AP",
+      "aliases": [
+        "DataCatalog"
+      ],
+      "mappings": [
+        "schema:DataCatalog"
+      ],
+      "exact_mappings": [
+        "dcat:Catalog"
+      ],
+      "is_a": "CreativeWork",
       "slots": [
-        "datasetCollection__entries"
+        "identifier",
+        "alternateName",
+        "description",
+        "name",
+        "sameAs",
+        "url",
+        "citation",
+        "creator",
+        "dateCreated",
+        "dateModified",
+        "datePublished",
+        "hasPart",
+        "isAccessibleForFree",
+        "isBasedOn",
+        "isPartOf",
+        "keywords",
+        "license",
+        "maintainer",
+        "publisher",
+        "version",
+        "datasets",
+        "measurementMethod",
+        "measurementTechnique"
       ],
       "slot_usage": {},
-      "attributes": [
-        {
-          "name": "entries",
-          "multivalued": true,
-          "range": "Dataset",
-          "inlined": true,
-          "@type": "SlotDefinition"
-        }
-      ],
-      "class_uri": "https://w3id.org/storemphi/Dataset_AP/DatasetCollection",
+      "class_uri": "http://schema.org/DataCatalog",
       "tree_root": true,
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "MaterialEntity",
+      "definition_uri": "https://w3id.org/storemphi/Dataset_AP/MaterialEntity",
+      "from_schema": "https://w3id.org/storemphi/Dataset_AP",
+      "is_a": "Thing",
+      "slots": [
+        "identifier",
+        "alternateName",
+        "description",
+        "name",
+        "sameAs",
+        "url"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/storemphi/Dataset_AP/MaterialEntity",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "ChemicalEntity",
+      "definition_uri": "https://w3id.org/storemphi/Dataset_AP/ChemicalEntity",
+      "from_schema": "https://w3id.org/storemphi/Dataset_AP",
+      "is_a": "Thing",
+      "slots": [
+        "identifier",
+        "alternateName",
+        "description",
+        "name",
+        "sameAs",
+        "url"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/storemphi/Dataset_AP/ChemicalEntity",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "EvaluatedThing",
+      "definition_uri": "https://w3id.org/storemphi/Dataset_AP/EvaluatedThing",
+      "from_schema": "https://w3id.org/storemphi/Dataset_AP",
+      "is_a": "Thing",
+      "abstract": true,
+      "slots": [
+        "identifier",
+        "alternateName",
+        "description",
+        "name",
+        "sameAs",
+        "url"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/storemphi/Dataset_AP/EvaluatedThing",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "ChemicalReaction",
+      "definition_uri": "https://w3id.org/storemphi/Dataset_AP/ChemicalReaction",
+      "from_schema": "https://w3id.org/storemphi/Dataset_AP",
+      "is_a": "Thing",
+      "slots": [
+        "identifier",
+        "alternateName",
+        "description",
+        "name",
+        "sameAs",
+        "url"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/storemphi/Dataset_AP/ChemicalReaction",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "ReactionStep",
+      "definition_uri": "https://w3id.org/storemphi/Dataset_AP/ReactionStep",
+      "from_schema": "https://w3id.org/storemphi/Dataset_AP",
+      "is_a": "ChemicalReaction",
+      "slots": [
+        "identifier",
+        "alternateName",
+        "description",
+        "name",
+        "sameAs",
+        "url"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/storemphi/Dataset_AP/ReactionStep",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "PlannedProcess",
+      "definition_uri": "https://w3id.org/storemphi/Dataset_AP/PlannedProcess",
+      "from_schema": "https://w3id.org/storemphi/Dataset_AP",
+      "aliases": [
+        "Workflow"
+      ],
+      "mappings": [
+        "obi:0000011"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://purl.obolibrary.org/obo/OBI_/0000011",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Assay",
+      "definition_uri": "https://w3id.org/storemphi/Dataset_AP/Assay",
+      "from_schema": "https://w3id.org/storemphi/Dataset_AP",
+      "mappings": [
+        "obi:0000070"
+      ],
+      "is_a": "PlannedProcess",
+      "slots": [
+        "has_input",
+        "has_output"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://purl.obolibrary.org/obo/OBI_/0000070",
       "@type": "ClassDefinition"
     }
   ],
   "metamodel_version": "1.7.0",
   "source_file": "dataset_ap.yaml",
-  "source_file_date": "2023-12-14T16:02:17",
-  "source_file_size": 2384,
-  "generation_date": "2023-12-14T16:03:47",
+  "source_file_date": "2023-12-14T22:22:06",
+  "source_file_size": 7371,
+  "generation_date": "2023-12-14T22:27:19",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/dataset_ap.context.jsonld",

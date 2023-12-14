@@ -3,6 +3,8 @@ PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX linkml: <https://w3id.org/linkml/>
 PREFIX schema1: <http://schema.org/>
+PREFIX obi: <http://purl.obolibrary.org/obo/OBI_/>
+PREFIX dct: <http://example.org/UNKNOWN/dct/>
 
 
 linkml:String xsd:string
@@ -43,32 +45,135 @@ linkml:Jsonpath xsd:string
 
 linkml:Sparqlpath xsd:string
 
-<Dataset> CLOSED {
-    (  $<Dataset_tes> (  &<NamedThing_tes> ;
-          rdf:type [ schema1:Thing ] ? ;
-          schema1:email @linkml:String ? ;
-          schema1:birthDate @linkml:Date ? ;
-          <age_in_years> @linkml:Integer ? ;
-          <vital_status> @<PersonStatus> ?
+<Assay> CLOSED {
+    (  $<Assay_tes> (  &<PlannedProcess_tes> ;
+          rdf:type [ obi:0000011 ] ? ;
+          <has_input> @<EvaluatedThing> ? ;
+          <has_output> @<Dataset> ?
        ) ;
-       rdf:type [ <Dataset> ]
+       rdf:type [ obi:0000070 ] ?
+    )
+}
+
+<ChemicalEntity> CLOSED {
+    (  $<ChemicalEntity_tes> (  &<Thing_tes> ;
+          rdf:type [ schema1:Thing ] ?
+       ) ;
+       rdf:type [ <ChemicalEntity> ]
+    )
+}
+
+<ChemicalReaction>  (
+    CLOSED {
+       (  $<ChemicalReaction_tes> (  &<Thing_tes> ;
+             rdf:type [ schema1:Thing ] ?
+          ) ;
+          rdf:type [ <ChemicalReaction> ]
+       )
+    } OR @<ReactionStep>
+)
+
+<CreativeWork>  (
+    CLOSED {
+       (  $<CreativeWork_tes> (  &<Thing_tes> ;
+             rdf:type [ schema1:Thing ] ? ;
+             <citation> @linkml:String ? ;
+             schema1:creator @linkml:String ? ;
+             schema1:dateCreated @linkml:String ? ;
+             <dateModified> @linkml:String ? ;
+             <datePublished> @linkml:String ? ;
+             <hasPart> @linkml:String ? ;
+             <isAccessibleForFree> @linkml:String ? ;
+             <isBasedOn> @linkml:String ? ;
+             <isPartOf> @linkml:String ? ;
+             <keywords> @linkml:String ? ;
+             <license> @linkml:String ? ;
+             <maintainer> @linkml:String ? ;
+             <publisher> @linkml:String ? ;
+             <version> @linkml:String ?
+          ) ;
+          rdf:type [ schema1:CreativeWork ]
+       )
+    } OR @<Dataset> OR @<DatasetCollection>
+)
+
+<Dataset> CLOSED {
+    (  $<Dataset_tes> (  &<CreativeWork_tes> ;
+          rdf:type [ schema1:CreativeWork ] ? ;
+          schema1:distribution @linkml:String ? ;
+          schema1:includedInDataCatalog @<DatasetCollection> ? ;
+          schema1:issn @linkml:String ? ;
+          schema1:measurementMethod @linkml:String ? ;
+          schema1:measurementTechnique @linkml:String ? ;
+          schema1:variableMeasured @linkml:String ? ;
+          dct:conformsTo @linkml:String ?
+       ) ;
+       rdf:type [ schema1:Dataset ]
     )
 }
 
 <DatasetCollection> CLOSED {
-    (  $<DatasetCollection_tes> <entries> @<Dataset> * ;
-       rdf:type [ <DatasetCollection> ] ?
+    (  $<DatasetCollection_tes> (  &<CreativeWork_tes> ;
+          rdf:type [ schema1:CreativeWork ] ? ;
+          schema1:dataset @<Dataset> + ;
+          schema1:measurementMethod @linkml:String ? ;
+          schema1:measurementTechnique @linkml:String ?
+       ) ;
+       rdf:type [ schema1:DataCatalog ]
     )
 }
 
-<NamedThing>  (
+<EvaluatedThing> {
+    (  $<EvaluatedThing_tes> (  &<Thing_tes> ;
+          rdf:type [ schema1:Thing ] ?
+       ) ;
+       rdf:type [ <EvaluatedThing> ]
+    )
+}
+
+<Intangible> CLOSED {
+    (  $<Intangible_tes> (  &<Thing_tes> ;
+          rdf:type [ schema1:Thing ] ?
+       ) ;
+       rdf:type [ schema1:Intangible ]
+    )
+}
+
+<MaterialEntity> CLOSED {
+    (  $<MaterialEntity_tes> (  &<Thing_tes> ;
+          rdf:type [ schema1:Thing ] ?
+       ) ;
+       rdf:type [ <MaterialEntity> ]
+    )
+}
+
+<PlannedProcess>  (
     CLOSED {
-       (  $<NamedThing_tes> (  schema1:name @linkml:String ? ;
-             schema1:description @linkml:String ?
+       (  $<PlannedProcess_tes> rdf:type . * ;
+          rdf:type [ obi:0000011 ] ?
+       )
+    } OR @<Assay>
+)
+
+<ReactionStep> CLOSED {
+    (  $<ReactionStep_tes> (  &<ChemicalReaction_tes> ;
+          rdf:type [ <ChemicalReaction> ] ?
+       ) ;
+       rdf:type [ <ReactionStep> ]
+    )
+}
+
+<Thing>  (
+    CLOSED {
+       (  $<Thing_tes> (  schema1:alternateName @linkml:String * ;
+             schema1:description @linkml:String ? ;
+             schema1:name @linkml:String ? ;
+             schema1:sameAs @linkml:String ? ;
+             schema1:url @linkml:Uriorcurie ?
           ) ;
           rdf:type [ schema1:Thing ]
        )
-    } OR @<Dataset>
+    } OR @<ChemicalEntity> OR @<ChemicalReaction> OR @<CreativeWork> OR @<EvaluatedThing> OR @<Intangible> OR @<MaterialEntity>
 )
 
 

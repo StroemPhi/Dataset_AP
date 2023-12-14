@@ -1,11 +1,32 @@
 {
-   "PATO": "http://purl.obolibrary.org/obo/PATO_",
-   "biolink": "https://w3id.org/biolink/",
+   "bioschema": "https://bioschemas.org/properties/",
    "dataset_ap": "https://w3id.org/storemphi/Dataset_AP/",
+   "dcat": "http://www.w3.org/ns/dcat#",
+   "dct": "http://example.org/UNKNOWN/dct/",
    "example": "https://example.org/",
+   "iao": "http://purl.obolibrary.org/obo/IAO_/",
    "linkml": "https://w3id.org/linkml/",
+   "obi": "http://purl.obolibrary.org/obo/OBI_/",
    "schema": "http://schema.org/",
-   "NamedThing": {
+   "Assay": {
+      "@id": "obi:0000070"
+   },
+   "CreativeWork": {
+      "@id": "schema:CreativeWork"
+   },
+   "Dataset": {
+      "@id": "schema:Dataset"
+   },
+   "DatasetCollection": {
+      "@id": "schema:DataCatalog"
+   },
+   "Intangible": {
+      "@id": "schema:Intangible"
+   },
+   "PlannedProcess": {
+      "@id": "obi:0000011"
+   },
+   "Thing": {
       "@id": "schema:Thing"
    }
 }
