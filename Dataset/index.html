@@ -235,6 +235,8 @@
 
       Dataset : includedInDataCatalog
 
+          Dataset --|&gt; DatasetCollection : includedInDataCatalog
+
       Dataset : isAccessibleForFree
 
       Dataset : isBasedOn
@@ -290,13 +292,13 @@
 <tbody>
 <tr>
 <td><a href="../distribution/">distribution</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <em>recommended</em> <br/> <a href="../String/">String</a></td>
 <td>A downloadable form of this dataset, at a specific location, in a specific fo...</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../includedInDataCatalog/">includedInDataCatalog</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <em>recommended</em> <br/> <a href="../DatasetCollection/">DatasetCollection</a></td>
 <td>A data catalog which contains this dataset</td>
 <td>direct</td>
 </tr>
@@ -314,31 +316,31 @@
 </tr>
 <tr>
 <td><a href="../measurementTechnique/">measurementTechnique</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <em>recommended</em> <br/> <a href="../String/">String</a></td>
 <td>A technique, method or technology used in an Observation, StatisticalVariable...</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../variableMeasured/">variableMeasured</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <em>recommended</em> <br/> <a href="../String/">String</a></td>
 <td></td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../conformsTo/">conformsTo</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>1..1 <br/> <a href="../String/">String</a></td>
 <td></td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../citation/">citation</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <em>recommended</em> <br/> <a href="../String/">String</a></td>
 <td></td>
 <td><a href="../CreativeWork/">CreativeWork</a></td>
 </tr>
 <tr>
 <td><a href="../creator/">creator</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <em>recommended</em> <br/> <a href="../String/">String</a></td>
 <td>The creator/author of this CreativeWork</td>
 <td><a href="../CreativeWork/">CreativeWork</a></td>
 </tr>
@@ -356,7 +358,7 @@
 </tr>
 <tr>
 <td><a href="../datePublished/">datePublished</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <em>recommended</em> <br/> <a href="../String/">String</a></td>
 <td></td>
 <td><a href="../CreativeWork/">CreativeWork</a></td>
 </tr>
@@ -374,8 +376,8 @@
 </tr>
 <tr>
 <td><a href="../isBasedOn/">isBasedOn</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td></td>
+<td>0..1 <em>recommended</em> <br/> <a href="../String/">String</a></td>
+<td>Use to link a Dataset to the Study that it was generated from</td>
 <td><a href="../CreativeWork/">CreativeWork</a></td>
 </tr>
 <tr>
@@ -386,13 +388,13 @@
 </tr>
 <tr>
 <td><a href="../keywords/">keywords</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>1..1 <br/> <a href="../String/">String</a></td>
 <td></td>
 <td><a href="../CreativeWork/">CreativeWork</a></td>
 </tr>
 <tr>
 <td><a href="../license/">license</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>1..1 <br/> <a href="../String/">String</a></td>
 <td></td>
 <td><a href="../CreativeWork/">CreativeWork</a></td>
 </tr>
@@ -404,13 +406,13 @@
 </tr>
 <tr>
 <td><a href="../publisher/">publisher</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <em>recommended</em> <br/> <a href="../String/">String</a></td>
 <td></td>
 <td><a href="../CreativeWork/">CreativeWork</a></td>
 </tr>
 <tr>
 <td><a href="../version/">version</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <em>recommended</em> <br/> <a href="../String/">String</a></td>
 <td></td>
 <td><a href="../CreativeWork/">CreativeWork</a></td>
 </tr>
@@ -422,19 +424,19 @@
 </tr>
 <tr>
 <td><a href="../alternateName/">alternateName</a></td>
-<td>0..* <br/> <a href="../String/">String</a></td>
+<td>0..* <em>recommended</em> <br/> <a href="../String/">String</a></td>
 <td>An alias for the item</td>
 <td><a href="../Thing/">Thing</a></td>
 </tr>
 <tr>
 <td><a href="../description/">description</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>1..1 <br/> <a href="../String/">String</a></td>
 <td>A description of the item</td>
 <td><a href="../Thing/">Thing</a></td>
 </tr>
 <tr>
 <td><a href="../name/">name</a></td>
-<td>0..1 <em>recommended</em> <br/> <a href="../String/">String</a></td>
+<td>1..1 <em>recommended</em> <br/> <a href="../String/">String</a></td>
 <td>The name of the item</td>
 <td><a href="../Thing/">Thing</a></td>
 </tr>
@@ -446,7 +448,7 @@
 </tr>
 <tr>
 <td><a href="../url/">url</a></td>
-<td>0..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
+<td>1..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
 <td>URL of the item</td>
 <td><a href="../Thing/">Thing</a></td>
 </tr>
@@ -523,6 +525,130 @@ slots:
 - measurementTechnique
 - variableMeasured
 - conformsTo
+slot_usage:
+  conformsTo:
+    name: conformsTo
+    domain_of:
+    - Dataset
+    required: true
+  description:
+    name: description
+    domain_of:
+    - Thing
+    required: true
+  keywords:
+    name: keywords
+    domain_of:
+    - CreativeWork
+    required: true
+  license:
+    name: license
+    domain_of:
+    - CreativeWork
+    required: true
+  name:
+    name: name
+    domain_of:
+    - Thing
+    required: true
+  url:
+    name: url
+    domain_of:
+    - Thing
+    required: true
+  alternateName:
+    name: alternateName
+    domain_of:
+    - Thing
+    recommended: true
+  citation:
+    name: citation
+    domain_of:
+    - CreativeWork
+    recommended: true
+  creator:
+    name: creator
+    domain_of:
+    - CreativeWork
+    recommended: true
+  datePublished:
+    name: datePublished
+    domain_of:
+    - CreativeWork
+    recommended: true
+  distribution:
+    name: distribution
+    domain_of:
+    - Dataset
+    recommended: true
+  includedInDataCatalog:
+    name: includedInDataCatalog
+    domain_of:
+    - Dataset
+    recommended: true
+  isBasedOn:
+    name: isBasedOn
+    description: Use to link a Dataset to the Study that it was generated from.
+    domain_of:
+    - CreativeWork
+    recommended: true
+  measurementTechnique:
+    name: measurementTechnique
+    domain_of:
+    - Dataset
+    - DatasetCollection
+    recommended: true
+  publisher:
+    name: publisher
+    domain_of:
+    - CreativeWork
+    recommended: true
+  variableMeasured:
+    name: variableMeasured
+    domain_of:
+    - Dataset
+    recommended: true
+  version:
+    name: version
+    domain_of:
+    - CreativeWork
+    recommended: true
+  dateCreated:
+    name: dateCreated
+    comments:
+    - optional slot in https://bioschemas.org/profiles/Dataset/1.0-RELEASE
+    domain_of:
+    - CreativeWork
+  dateModified:
+    name: dateModified
+    comments:
+    - optional slot in https://bioschemas.org/profiles/Dataset/1.0-RELEASE
+    domain_of:
+    - CreativeWork
+  hasPart:
+    name: hasPart
+    comments:
+    - optional slot in https://bioschemas.org/profiles/Dataset/1.0-RELEASE
+    domain_of:
+    - CreativeWork
+  isPartOf:
+    name: isPartOf
+    comments:
+    - optional slot in https://bioschemas.org/profiles/Dataset/1.0-RELEASE
+    domain_of:
+    - CreativeWork
+  isAccessibleForFree:
+    name: isAccessibleForFree
+    comments:
+    - optional slot in https://bioschemas.org/profiles/Dataset/1.0-RELEASE
+    domain_of:
+    - CreativeWork
+  maintainer:
+    name: maintainer
+    comments:
+    - optional slot in https://bioschemas.org/profiles/Dataset/1.0-RELEASE
+    domain_of:
+    - CreativeWork
 class_uri: schema:Dataset
 
 </code></pre>
@@ -535,6 +661,130 @@ from_schema: https://w3id.org/storemphi/Dataset_AP
 exact_mappings:
 - dcat:Dataset
 is_a: CreativeWork
+slot_usage:
+  conformsTo:
+    name: conformsTo
+    domain_of:
+    - Dataset
+    required: true
+  description:
+    name: description
+    domain_of:
+    - Thing
+    required: true
+  keywords:
+    name: keywords
+    domain_of:
+    - CreativeWork
+    required: true
+  license:
+    name: license
+    domain_of:
+    - CreativeWork
+    required: true
+  name:
+    name: name
+    domain_of:
+    - Thing
+    required: true
+  url:
+    name: url
+    domain_of:
+    - Thing
+    required: true
+  alternateName:
+    name: alternateName
+    domain_of:
+    - Thing
+    recommended: true
+  citation:
+    name: citation
+    domain_of:
+    - CreativeWork
+    recommended: true
+  creator:
+    name: creator
+    domain_of:
+    - CreativeWork
+    recommended: true
+  datePublished:
+    name: datePublished
+    domain_of:
+    - CreativeWork
+    recommended: true
+  distribution:
+    name: distribution
+    domain_of:
+    - Dataset
+    recommended: true
+  includedInDataCatalog:
+    name: includedInDataCatalog
+    domain_of:
+    - Dataset
+    recommended: true
+  isBasedOn:
+    name: isBasedOn
+    description: Use to link a Dataset to the Study that it was generated from.
+    domain_of:
+    - CreativeWork
+    recommended: true
+  measurementTechnique:
+    name: measurementTechnique
+    domain_of:
+    - Dataset
+    - DatasetCollection
+    recommended: true
+  publisher:
+    name: publisher
+    domain_of:
+    - CreativeWork
+    recommended: true
+  variableMeasured:
+    name: variableMeasured
+    domain_of:
+    - Dataset
+    recommended: true
+  version:
+    name: version
+    domain_of:
+    - CreativeWork
+    recommended: true
+  dateCreated:
+    name: dateCreated
+    comments:
+    - optional slot in https://bioschemas.org/profiles/Dataset/1.0-RELEASE
+    domain_of:
+    - CreativeWork
+  dateModified:
+    name: dateModified
+    comments:
+    - optional slot in https://bioschemas.org/profiles/Dataset/1.0-RELEASE
+    domain_of:
+    - CreativeWork
+  hasPart:
+    name: hasPart
+    comments:
+    - optional slot in https://bioschemas.org/profiles/Dataset/1.0-RELEASE
+    domain_of:
+    - CreativeWork
+  isPartOf:
+    name: isPartOf
+    comments:
+    - optional slot in https://bioschemas.org/profiles/Dataset/1.0-RELEASE
+    domain_of:
+    - CreativeWork
+  isAccessibleForFree:
+    name: isAccessibleForFree
+    comments:
+    - optional slot in https://bioschemas.org/profiles/Dataset/1.0-RELEASE
+    domain_of:
+    - CreativeWork
+  maintainer:
+    name: maintainer
+    comments:
+    - optional slot in https://bioschemas.org/profiles/Dataset/1.0-RELEASE
+    domain_of:
+    - CreativeWork
 attributes:
   distribution:
     name: distribution
@@ -552,13 +802,12 @@ attributes:
     domain_of:
     - Dataset
     range: string
+    recommended: true
   includedInDataCatalog:
     name: includedInDataCatalog
     description: A data catalog which contains this dataset. Supersedes includedDataCatalog,
       `catalog`.  Inverse property [[dataset]]
     from_schema: https://w3id.org/storemphi/Dataset_AP
-    exact_mappings:
-    - schema:catalog
     rank: 1000
     slot_uri: schema:includedInDataCatalog
     alias: includedInDataCatalog
@@ -566,7 +815,8 @@ attributes:
     domain_of:
     - Dataset
     inverse: datasets
-    range: string
+    range: DatasetCollection
+    recommended: true
   issn:
     name: issn
     description: The International Standard Serial Number (ISSN) that identifies this
@@ -608,6 +858,7 @@ attributes:
     - Dataset
     - DatasetCollection
     range: string
+    recommended: true
   variableMeasured:
     name: variableMeasured
     from_schema: https://w3id.org/storemphi/Dataset_AP
@@ -618,6 +869,7 @@ attributes:
     domain_of:
     - Dataset
     range: string
+    recommended: true
   conformsTo:
     name: conformsTo
     from_schema: https://w3id.org/storemphi/Dataset_AP
@@ -628,6 +880,7 @@ attributes:
     domain_of:
     - Dataset
     range: string
+    required: true
   citation:
     name: citation
     from_schema: https://w3id.org/storemphi/Dataset_AP
@@ -637,12 +890,10 @@ attributes:
     domain_of:
     - CreativeWork
     range: string
+    recommended: true
   creator:
     name: creator
     description: The creator/author of this CreativeWork.
-    todos:
-    - Add domain &amp; range constrains, if this slot is actually needed/used in our context,
-      otherwise drop it.
     from_schema: https://w3id.org/storemphi/Dataset_AP
     rank: 1000
     slot_uri: schema:creator
@@ -651,10 +902,13 @@ attributes:
     domain_of:
     - CreativeWork
     range: string
+    recommended: true
   dateCreated:
     name: dateCreated
     description: The date on which the CreativeWork was created or the item was added
       to a DataFeed.
+    comments:
+    - optional slot in https://bioschemas.org/profiles/Dataset/1.0-RELEASE
     from_schema: https://w3id.org/storemphi/Dataset_AP
     rank: 1000
     slot_uri: schema:dateCreated
@@ -665,6 +919,8 @@ attributes:
     range: string
   dateModified:
     name: dateModified
+    comments:
+    - optional slot in https://bioschemas.org/profiles/Dataset/1.0-RELEASE
     from_schema: https://w3id.org/storemphi/Dataset_AP
     rank: 1000
     alias: dateModified
@@ -681,8 +937,11 @@ attributes:
     domain_of:
     - CreativeWork
     range: string
+    recommended: true
   hasPart:
     name: hasPart
+    comments:
+    - optional slot in https://bioschemas.org/profiles/Dataset/1.0-RELEASE
     from_schema: https://w3id.org/storemphi/Dataset_AP
     rank: 1000
     alias: hasPart
@@ -692,6 +951,8 @@ attributes:
     range: string
   isAccessibleForFree:
     name: isAccessibleForFree
+    comments:
+    - optional slot in https://bioschemas.org/profiles/Dataset/1.0-RELEASE
     from_schema: https://w3id.org/storemphi/Dataset_AP
     rank: 1000
     alias: isAccessibleForFree
@@ -701,15 +962,20 @@ attributes:
     range: string
   isBasedOn:
     name: isBasedOn
+    description: Use to link a Dataset to the Study that it was generated from.
     from_schema: https://w3id.org/storemphi/Dataset_AP
     rank: 1000
+    slot_uri: schema:isBasedOn
     alias: isBasedOn
     owner: Dataset
     domain_of:
     - CreativeWork
     range: string
+    recommended: true
   isPartOf:
     name: isPartOf
+    comments:
+    - optional slot in https://bioschemas.org/profiles/Dataset/1.0-RELEASE
     from_schema: https://w3id.org/storemphi/Dataset_AP
     rank: 1000
     alias: isPartOf
@@ -726,6 +992,7 @@ attributes:
     domain_of:
     - CreativeWork
     range: string
+    required: true
   license:
     name: license
     from_schema: https://w3id.org/storemphi/Dataset_AP
@@ -735,8 +1002,11 @@ attributes:
     domain_of:
     - CreativeWork
     range: string
+    required: true
   maintainer:
     name: maintainer
+    comments:
+    - optional slot in https://bioschemas.org/profiles/Dataset/1.0-RELEASE
     from_schema: https://w3id.org/storemphi/Dataset_AP
     rank: 1000
     alias: maintainer
@@ -753,6 +1023,7 @@ attributes:
     domain_of:
     - CreativeWork
     range: string
+    recommended: true
   version:
     name: version
     from_schema: https://w3id.org/storemphi/Dataset_AP
@@ -762,6 +1033,7 @@ attributes:
     domain_of:
     - CreativeWork
     range: string
+    recommended: true
   identifier:
     name: identifier
     description: A unique identifier for a thing
@@ -781,8 +1053,6 @@ attributes:
     name: alternateName
     description: An alias for the item.
     from_schema: https://w3id.org/storemphi/Dataset_AP
-    exact_mappings:
-    - dct:alternative
     rank: 1000
     slot_uri: schema:alternateName
     multivalued: true
@@ -791,14 +1061,13 @@ attributes:
     domain_of:
     - Thing
     range: string
+    recommended: true
     inlined: true
     inlined_as_list: true
   description:
     name: description
     description: A description of the item.
     from_schema: https://w3id.org/storemphi/Dataset_AP
-    exact_mappings:
-    - dct:description
     rank: 1000
     slot_uri: schema:description
     alias: description
@@ -806,12 +1075,11 @@ attributes:
     domain_of:
     - Thing
     range: string
+    required: true
   name:
     name: name
     description: The name of the item.
     from_schema: https://w3id.org/storemphi/Dataset_AP
-    close_mappings:
-    - dct:title
     rank: 1000
     slot_uri: schema:name
     alias: name
@@ -819,6 +1087,7 @@ attributes:
     domain_of:
     - Thing
     range: string
+    required: true
     recommended: true
   sameAs:
     name: sameAs
@@ -836,10 +1105,6 @@ attributes:
   url:
     name: url
     description: URL of the item.
-    comments:
-    - This slot MUST not be used to provide an IRI for an ontology or an ontology
-      term, use schema:identifier for this. The range (expected type) of schema:url
-      is an URL.
     from_schema: https://w3id.org/storemphi/Dataset_AP
     rank: 1000
     slot_uri: schema:url
@@ -848,6 +1113,7 @@ attributes:
     domain_of:
     - Thing
     range: uriorcurie
+    required: true
 class_uri: schema:Dataset
 
 </code></pre>

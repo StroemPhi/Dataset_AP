@@ -320,7 +320,7 @@
 <tr>
 <td><a href="../isBasedOn/">isBasedOn</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
-<td></td>
+<td>A resource that was used in the creation of this resource</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -538,8 +538,12 @@ attributes:
     range: string
   isBasedOn:
     name: isBasedOn
+    description: A resource that was used in the creation of this resource.  This
+      term can be repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html.  Supersedes
+      isBasedOnUrl.
     from_schema: https://w3id.org/storemphi/Dataset_AP
     rank: 1000
+    slot_uri: schema:isBasedOn
     alias: isBasedOn
     owner: CreativeWork
     domain_of:
