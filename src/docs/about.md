@@ -1,3 +1,3 @@
 # Dataset_AP
 
-An attempt to create a metadata schema for datasets that is mapped to standard ontologies and application profiles, like schema.org and DCAT-AP.
+A LinkML representation of https://bioschemas.org/profiles/Dataset/1.0-RELEASE.

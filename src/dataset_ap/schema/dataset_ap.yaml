@@ -3,7 +3,7 @@ id: https://w3id.org/storemphi/Dataset_AP
 name: Dataset_AP
 title: Dataset_AP
 description: |-
-  An attempt to create a metadata schema for datasets that is mapped to standard ontologies and application profiles, like schema.org and DCAT-AP.
+  A LinkML representation of https://bioschemas.org/profiles/Dataset/1.0-RELEASE.
 license: MIT
 see_also:
   - https://storemphi.github.io/Dataset_AP
@@ -11,10 +11,12 @@ see_also:
 prefixes:
   dataset_ap: https://w3id.org/storemphi/Dataset_AP/
   linkml: https://w3id.org/linkml/
-  biolink: https://w3id.org/biolink/
   schema: http://schema.org/
-  PATO: http://purl.obolibrary.org/obo/PATO_
+  bioschema: https://bioschemas.org/properties/
   example: https://example.org/
+  iao: http://purl.obolibrary.org/obo/IAO_/
+  obi: http://purl.obolibrary.org/obo/OBI_/
+  dcat: http://www.w3.org/ns/dcat#
 default_prefix: dataset_ap
 default_range: string
 
@@ -23,74 +25,219 @@ imports:
 
 classes:
 
-  NamedThing:
-    description: >-
-      A generic grouping for any identifiable entity
-    slots:
-      - id
-      - name
-      - description
+  # Schema.org classes relevant for this profile
+  Thing:
     class_uri: schema:Thing
+    slots:
+      - identifier
+      - alternateName
+      - description
+      - name
+      - sameAs
+      - url
+    description: >-
+      The most generic type of item.
+
+  Intangible:
+    class_uri: schema:Intangible
+    is_a: Thing
+    description: >-
+      A utility class that serves as the umbrella for a number of 'intangible' things
+      such as quantities, structured values, etc.
+
+  CreativeWork:
+    class_uri: schema:CreativeWork
+    is_a: Thing
+    description: >-
+      The most generic kind of creative work, including books, movies, photographs, software programs, etc.
+    exact_mappings:
+      - iao:0000030 # Information Content Entity
+    slots:
+      - citation
+      - creator
+      - dateCreated
+      - dateModified
+      - datePublished
+      - hasPart
+      - isAccessibleForFree
+      - isBasedOn
+      - isPartOf
+      - keywords
+      - license
+      - maintainer
+      - publisher
+      - version
 
   Dataset:
-    is_a: NamedThing
+    class_uri: schema:Dataset
+    is_a: CreativeWork
     description: >-
       Represents a Dataset
+    exact_mappings:
+      - dcat:Dataset
     slots:
-      - primary_email
-      - birth_date
-      - age_in_years
-      - vital_status
-    slot_usage:
-      primary_email:
-        pattern: "^\\S+@[\\S+\\.]+\\S+"
-
+      - distribution
+      - includedInDataCatalog
+      - issn
+      - measurementMethod
+      - measurementTechnique
+      - variableMeasured
+      # from BioSchema profile v1.0
+      - conformsT
   DatasetCollection:
+    class_uri: schema:DataCatalog
+    is_a: CreativeWork
     tree_root: true
+    name: DataCatalog
     description: >-
-      A holder for Dataset objects
+      A collection of datasets.
     attributes:
-      entries:
+      datasets:
+        slot_uri: schema:dataset
+        description: A dataset contained in this catalog.
         range: Dataset
         multivalued: true
         inlined: true
+        required: true
+    slots:
+      - measurementMethod
+      - measurementTechnique
+    exact_mappings:
+      - dcat:Catalog
+
+
+  # NFDI4Chem specific classes
+  MaterialEntity:
+    is_a: Thing
+  ChemicalEntity:
+    is_a: Thing
+  EvaluatedThing:
+    is_a: Thing
+    abstract: true
+  ChemicalReaction:
+    is_a: Thing
+  ReactionStep:
+    is_a: ChemicalReaction
+  PlannedProcess:
+    class_uri: obi:0000011
+      - Workflow # BioSchema
+  Assay:
+    is_a: Workflow
+    slots:
+      - has_input
+      - has_output
 
 slots:
-  id:
+  # Thing slots of interest to this profile
+  identifier:
     identifier: true
     slot_uri: schema:identifier
     range: uriorcurie
     description: A unique identifier for a thing
+    exact_mappings:
+      - dct:identifier
   name:
     slot_uri: schema:name
-    description: A human-readable name for a thing
+    description: The name of the item.
+    recommended: true
+    close_mappings:
+      - dct:title
+  alternateName:
+    slot_uri: schema:alternateName
+    description: An alias for the item.
+    multivalued: true
+    inlined_as_list: true
+    exact_mappings:
+      - dct:alternative
   description:
     slot_uri: schema:description
-    description: A human-readable description for a thing
-  primary_email:
-    slot_uri: schema:email
-    description: The main email address of a person
-  birth_date:
-    slot_uri: schema:birthDate
-    range: date
-    description: Date on which a person is born
-  age_in_years:
-    range: integer
-    description: Number of years since birth
-  vital_status:
-    range: PersonStatus
-    description: living or dead status
+    description: A description of the item.
+    exact_mappings:
+      - dct:description
+  sameAs:
+    slot_uri: schema:sameAs
+    description:  >-
+      URL of a reference Web page that unambiguously indicates the item's identity. 
+      E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+  url:
+    slot_uri: schema:url
+    description: URL of the item.
+    range: uriorcurie
+    comments:
+      - This slot MUST not be used to provide an IRI for an ontology or an ontology term, use schema:identifier for
+        this. The range (expected type) of schema:url is an URL.
+  subjectOf:
+    slot_uri: schema:subjectOf
+    description: A CreativeWork about this Thing.
+    inverse: about
+    domain: Thing
+    range: CreativeWork
+  # CreativeWork slots of relevance
+  about:
+    slot_uri: schema:about
+    description: The subject matter of the content. Inverse property of `subjectOf`
+    domain: CreativeWork
+    range: Thing
+  creator:
+    slot_uri: schema:creator
+    description: The creator/author of this CreativeWork.
+    todos:
+      - Add domain & range constrains, if this slot is actually needed/used in our context, otherwise drop it.
+  dateCreated:
+    slot_uri: schema:dateCreated
+    description: The date on which the CreativeWork was created or the item was added to a DataFeed.
+    range: DateOrDatetime
+
+  # Dataset slots
+  distribution:
+    slot_uri: schema:distribution
+    description:  >-
+      A downloadable form of this dataset, at a specific location, in a specific format. 
+      This property can be repeated if different variations are available. 
+      There is no expectation that different downloadable distributions must contain exactly equivalent information 
+      (see also DCAT on this point). 
+      Different distributions might include or exclude different subsets of the entire dataset, for example.
+  includedInDataCatalog:
+    slot_uri: schema:includedInDataCatalog
+    description: >-
+      A data catalog which contains this dataset. Supersedes includedDataCatalog, `catalog`. 
+      Inverse property [[dataset]]
+    inverse: dataset
+    exact_mappings:
+      - schema:catalog # deprecated predecessor
+  issn:
+    slot_uri: schema:issn
+    description: >-
+      The International Standard Serial Number (ISSN) that identifies this serial publication. 
+      You can repeat this property to identify different formats of, or the linking ISSN (ISSN-L) for, this serial publication.
+  measurementMethod:
+    slot_uri: schema:measurementMethod
+    description: >-
+      A subproperty of measurementTechnique that can be used for specifying specific methods, in particular via MeasurementMethodEnum.
+  measurementTechnique:
+    slot_uri: schema:measurementTechnique
+    description: >-
+      A technique, method or technology used in an Observation, StatisticalVariable or Dataset (or DataDownload, DataCatalog), 
+      corresponding to the method used for measuring the corresponding variable(s) (for datasets, described using variableMeasured; 
+      for Observation, a StatisticalVariable).
+  variableMeasured:
+    slot_uri: schema:variableMeasured
+  # from BioSchema profile v1.0:
+  conformsTo:
+    slot_uri: dct:conformsTo
+
+
+
+  # NFDI4Chem specific slots
+  has_input:
+    domain: Assay
+    range: EvaluatedThing
+  has_output:
+    domain: Assay
+    range: Dataset
+  has_parameter:
+    domain: Assay
+
 
 enums:
-  PersonStatus:
-    permissible_values:
-      ALIVE:
-        description: the person is living
-        meaning: PATO:0001421
-      DEAD:
-        description: the person is deceased
-        meaning: PATO:0001422
-      UNKNOWN:
-        description: the vital status is not known
-        todos:
-          - map this to an ontology
+

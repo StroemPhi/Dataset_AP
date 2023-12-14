@@ -8,7 +8,7 @@
       "__project_slug": "dataset_ap",
       "github_org": "storemphi",
       "__source_path": "src/dataset_ap/schema/dataset_ap.yaml",
-      "project_description": "An attempt to create a metadata schema for datasets that is mapped to standard ontologies and application profiles, like schema.org and DCAT-AP.",
+      "project_description": "A LinkML representation of https://bioschemas.org/profiles/Dataset/1.0-RELEASE.",
       "full_name": "Philip Stroemert",
       "email": "philip.stroemert@tib.eu",
       "__author": "Philip Stroemert <philip.stroemert@tib.eu>",
