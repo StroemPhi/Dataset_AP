@@ -1,0 +1,27 @@
+{
+  "template": "https://github.com/linkml/linkml-project-cookiecutter",
+  "commit": "239e92ef0b1865c075446c89dcc315f941b1d60d",
+  "checkout": null,
+  "context": {
+    "cookiecutter": {
+      "project_name": "Dataset_AP",
+      "__project_slug": "dataset_ap",
+      "github_org": "storemphi",
+      "__source_path": "src/dataset_ap/schema/dataset_ap.yaml",
+      "project_description": "An attempt to create a metadata schema for datasets that is mapped to standard ontologies and application profiles, like schema.org and DCAT-AP.",
+      "full_name": "Philip Stroemert",
+      "email": "philip.stroemert@tib.eu",
+      "__author": "Philip Stroemert <philip.stroemert@tib.eu>",
+      "license": "MIT",
+      "main_schema_class": "Dataset",
+      "create_python_classes": "Yes",
+      "use_schemasheets": "No",
+      "google_sheet_id": "1wVoaiFg47aT9YWNeRfTZ8tYHN8s8PAuDx5i2HUcDpvQ",
+      "google_sheet_tabs": "personinfo enums",
+      "__google_sheet_module": "personinfo_enums",
+      "github_token_for_pypi_deployment": "PYPI_PASSWORD",
+      "_template": "https://github.com/linkml/linkml-project-cookiecutter"
+    }
+  },
+  "directory": null
+}

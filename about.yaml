@@ -1,0 +1,7 @@
+---
+name: dataset_ap
+author: Philip Stroemert <philip.stroemert@tib.eu>
+description: An attempt to create a metadata schema for datasets that is mapped to standard ontologies and application profiles, like schema.org and DCAT-AP.
+source_schema_path: src/dataset_ap/schema/dataset_ap.yaml
+google_sheet_id: 1wVoaiFg47aT9YWNeRfTZ8tYHN8s8PAuDx5i2HUcDpvQ
+google_sheet_tabs: personinfo enums
