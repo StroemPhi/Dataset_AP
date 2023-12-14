@@ -111,11 +111,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://storemphi.github.io/Dataset_AP/NamedThing/</loc>
-         <lastmod>2023-12-14</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://storemphi.github.io/Dataset_AP/Ncname/</loc>
          <lastmod>2023-12-14</lastmod>
          <changefreq>daily</changefreq>
@@ -127,11 +122,6 @@
     </url>
     <url>
          <loc>https://storemphi.github.io/Dataset_AP/Objectidentifier/</loc>
-         <lastmod>2023-12-14</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://storemphi.github.io/Dataset_AP/PersonStatus/</loc>
          <lastmod>2023-12-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -181,17 +171,7 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://storemphi.github.io/Dataset_AP/age_in_years/</loc>
-         <lastmod>2023-12-14</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://storemphi.github.io/Dataset_AP/alternateName/</loc>
-         <lastmod>2023-12-14</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://storemphi.github.io/Dataset_AP/birth_date/</loc>
          <lastmod>2023-12-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -241,11 +221,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://storemphi.github.io/Dataset_AP/entries/</loc>
-         <lastmod>2023-12-14</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://storemphi.github.io/Dataset_AP/hasPart/</loc>
          <lastmod>2023-12-14</lastmod>
          <changefreq>daily</changefreq>
@@ -262,11 +237,6 @@
     </url>
     <url>
          <loc>https://storemphi.github.io/Dataset_AP/has_parameter/</loc>
-         <lastmod>2023-12-14</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://storemphi.github.io/Dataset_AP/id/</loc>
          <lastmod>2023-12-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -331,11 +301,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://storemphi.github.io/Dataset_AP/primary_email/</loc>
-         <lastmod>2023-12-14</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://storemphi.github.io/Dataset_AP/publisher/</loc>
          <lastmod>2023-12-14</lastmod>
          <changefreq>daily</changefreq>
@@ -362,11 +327,6 @@
     </url>
     <url>
          <loc>https://storemphi.github.io/Dataset_AP/version/</loc>
-         <lastmod>2023-12-14</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://storemphi.github.io/Dataset_AP/vital_status/</loc>
          <lastmod>2023-12-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
