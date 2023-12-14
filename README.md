@@ -4,7 +4,7 @@ An attempt to create a metadata schema for datasets that is mapped to standard o
 
 ## Website
 
-[https://storemphi.github.io/Dataset_AP](https://storemphi.github.io/Dataset_AP)
+[https://stroemphi.github.io/Dataset_AP](https://stroemphi.github.io/Dataset_AP)
 
 ## Repository Structure
 

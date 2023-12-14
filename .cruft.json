@@ -6,7 +6,7 @@
     "cookiecutter": {
       "project_name": "Dataset_AP",
       "__project_slug": "dataset_ap",
-      "github_org": "storemphi",
+      "github_org": "stroemphi",
       "__source_path": "src/dataset_ap/schema/dataset_ap.yaml",
       "project_description": "A LinkML representation of https://bioschemas.org/profiles/Dataset/1.0-RELEASE.",
       "full_name": "Philip Stroemert",
@@ -16,9 +16,6 @@
       "main_schema_class": "Dataset",
       "create_python_classes": "Yes",
       "use_schemasheets": "No",
-      "google_sheet_id": "1wVoaiFg47aT9YWNeRfTZ8tYHN8s8PAuDx5i2HUcDpvQ",
-      "google_sheet_tabs": "personinfo enums",
-      "__google_sheet_module": "personinfo_enums",
       "github_token_for_pypi_deployment": "PYPI_PASSWORD",
       "_template": "https://github.com/linkml/linkml-project-cookiecutter"
     }
