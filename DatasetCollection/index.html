@@ -409,7 +409,7 @@
 </tr>
 <tr>
 <td><a href="../name/">name</a></td>
-<td>0..1 <em>recommended</em> <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>The name of the item</td>
 <td><a href="../Thing/">Thing</a></td>
 </tr>
@@ -453,7 +453,7 @@
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
-<li>from schema: https://w3id.org/storemphi/Dataset_AP</li>
+<li>from schema: https://w3id.org/stroemphi/Dataset_AP</li>
 </ul>
 <h2 id="mappings">Mappings</h2>
 <table>
@@ -484,7 +484,7 @@
 <details>
 <pre><code class="language-yaml">name: DatasetCollection
 description: A collection of datasets.
-from_schema: https://w3id.org/storemphi/Dataset_AP
+from_schema: https://w3id.org/stroemphi/Dataset_AP
 aliases:
 - DataCatalog
 exact_mappings:
@@ -503,7 +503,7 @@ tree_root: true
 <details>
 <pre><code class="language-yaml">name: DatasetCollection
 description: A collection of datasets.
-from_schema: https://w3id.org/storemphi/Dataset_AP
+from_schema: https://w3id.org/stroemphi/Dataset_AP
 aliases:
 - DataCatalog
 exact_mappings:
@@ -513,7 +513,7 @@ attributes:
   datasets:
     name: datasets
     description: A dataset contained in this catalog.
-    from_schema: https://w3id.org/storemphi/Dataset_AP
+    from_schema: https://w3id.org/stroemphi/Dataset_AP
     rank: 1000
     slot_uri: schema:dataset
     multivalued: true
@@ -528,7 +528,7 @@ attributes:
     name: measurementMethod
     description: A subproperty of measurementTechnique that can be used for specifying
       specific methods, in particular via MeasurementMethodEnum.
-    from_schema: https://w3id.org/storemphi/Dataset_AP
+    from_schema: https://w3id.org/stroemphi/Dataset_AP
     rank: 1000
     slot_uri: schema:measurementMethod
     alias: measurementMethod
@@ -543,7 +543,7 @@ attributes:
       or Dataset (or DataDownload, DataCatalog),  corresponding to the method used
       for measuring the corresponding variable(s) (for datasets, described using variableMeasured;  for
       Observation, a StatisticalVariable).
-    from_schema: https://w3id.org/storemphi/Dataset_AP
+    from_schema: https://w3id.org/stroemphi/Dataset_AP
     rank: 1000
     slot_uri: schema:measurementTechnique
     alias: measurementTechnique
@@ -554,7 +554,7 @@ attributes:
     range: string
   citation:
     name: citation
-    from_schema: https://w3id.org/storemphi/Dataset_AP
+    from_schema: https://w3id.org/stroemphi/Dataset_AP
     rank: 1000
     alias: citation
     owner: DatasetCollection
@@ -567,7 +567,7 @@ attributes:
     todos:
     - Add domain &amp; range constrains, if this slot is actually needed/used in our context,
       otherwise drop it.
-    from_schema: https://w3id.org/storemphi/Dataset_AP
+    from_schema: https://w3id.org/stroemphi/Dataset_AP
     rank: 1000
     slot_uri: schema:creator
     alias: creator
@@ -579,7 +579,7 @@ attributes:
     name: dateCreated
     description: The date on which the CreativeWork was created or the item was added
       to a DataFeed.
-    from_schema: https://w3id.org/storemphi/Dataset_AP
+    from_schema: https://w3id.org/stroemphi/Dataset_AP
     rank: 1000
     slot_uri: schema:dateCreated
     alias: dateCreated
@@ -589,7 +589,7 @@ attributes:
     range: string
   dateModified:
     name: dateModified
-    from_schema: https://w3id.org/storemphi/Dataset_AP
+    from_schema: https://w3id.org/stroemphi/Dataset_AP
     rank: 1000
     alias: dateModified
     owner: DatasetCollection
@@ -598,7 +598,7 @@ attributes:
     range: string
   datePublished:
     name: datePublished
-    from_schema: https://w3id.org/storemphi/Dataset_AP
+    from_schema: https://w3id.org/stroemphi/Dataset_AP
     rank: 1000
     alias: datePublished
     owner: DatasetCollection
@@ -607,7 +607,7 @@ attributes:
     range: string
   hasPart:
     name: hasPart
-    from_schema: https://w3id.org/storemphi/Dataset_AP
+    from_schema: https://w3id.org/stroemphi/Dataset_AP
     rank: 1000
     alias: hasPart
     owner: DatasetCollection
@@ -616,7 +616,7 @@ attributes:
     range: string
   isAccessibleForFree:
     name: isAccessibleForFree
-    from_schema: https://w3id.org/storemphi/Dataset_AP
+    from_schema: https://w3id.org/stroemphi/Dataset_AP
     rank: 1000
     alias: isAccessibleForFree
     owner: DatasetCollection
@@ -628,7 +628,7 @@ attributes:
     description: A resource that was used in the creation of this resource.  This
       term can be repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html.  Supersedes
       isBasedOnUrl.
-    from_schema: https://w3id.org/storemphi/Dataset_AP
+    from_schema: https://w3id.org/stroemphi/Dataset_AP
     rank: 1000
     slot_uri: schema:isBasedOn
     alias: isBasedOn
@@ -638,7 +638,7 @@ attributes:
     range: string
   isPartOf:
     name: isPartOf
-    from_schema: https://w3id.org/storemphi/Dataset_AP
+    from_schema: https://w3id.org/stroemphi/Dataset_AP
     rank: 1000
     alias: isPartOf
     owner: DatasetCollection
@@ -647,7 +647,7 @@ attributes:
     range: string
   keywords:
     name: keywords
-    from_schema: https://w3id.org/storemphi/Dataset_AP
+    from_schema: https://w3id.org/stroemphi/Dataset_AP
     rank: 1000
     alias: keywords
     owner: DatasetCollection
@@ -656,7 +656,7 @@ attributes:
     range: string
   license:
     name: license
-    from_schema: https://w3id.org/storemphi/Dataset_AP
+    from_schema: https://w3id.org/stroemphi/Dataset_AP
     rank: 1000
     alias: license
     owner: DatasetCollection
@@ -665,7 +665,7 @@ attributes:
     range: string
   maintainer:
     name: maintainer
-    from_schema: https://w3id.org/storemphi/Dataset_AP
+    from_schema: https://w3id.org/stroemphi/Dataset_AP
     rank: 1000
     alias: maintainer
     owner: DatasetCollection
@@ -674,7 +674,7 @@ attributes:
     range: string
   publisher:
     name: publisher
-    from_schema: https://w3id.org/storemphi/Dataset_AP
+    from_schema: https://w3id.org/stroemphi/Dataset_AP
     rank: 1000
     alias: publisher
     owner: DatasetCollection
@@ -683,7 +683,7 @@ attributes:
     range: string
   version:
     name: version
-    from_schema: https://w3id.org/storemphi/Dataset_AP
+    from_schema: https://w3id.org/stroemphi/Dataset_AP
     rank: 1000
     alias: version
     owner: DatasetCollection
@@ -693,7 +693,7 @@ attributes:
   identifier:
     name: identifier
     description: A unique identifier for a thing
-    from_schema: https://w3id.org/storemphi/Dataset_AP
+    from_schema: https://w3id.org/stroemphi/Dataset_AP
     exact_mappings:
     - dct:identifier
     rank: 1000
@@ -708,7 +708,7 @@ attributes:
   alternateName:
     name: alternateName
     description: An alias for the item.
-    from_schema: https://w3id.org/storemphi/Dataset_AP
+    from_schema: https://w3id.org/stroemphi/Dataset_AP
     exact_mappings:
     - dct:alternative
     rank: 1000
@@ -724,7 +724,7 @@ attributes:
   description:
     name: description
     description: A description of the item.
-    from_schema: https://w3id.org/storemphi/Dataset_AP
+    from_schema: https://w3id.org/stroemphi/Dataset_AP
     exact_mappings:
     - dct:description
     rank: 1000
@@ -737,7 +737,7 @@ attributes:
   name:
     name: name
     description: The name of the item.
-    from_schema: https://w3id.org/storemphi/Dataset_AP
+    from_schema: https://w3id.org/stroemphi/Dataset_AP
     close_mappings:
     - dct:title
     rank: 1000
@@ -747,13 +747,12 @@ attributes:
     domain_of:
     - Thing
     range: string
-    recommended: true
   sameAs:
     name: sameAs
     description: URL of a reference Web page that unambiguously indicates the item's
       identity.  E.g. the URL of the item's Wikipedia page, Wikidata entry, or official
       website.
-    from_schema: https://w3id.org/storemphi/Dataset_AP
+    from_schema: https://w3id.org/stroemphi/Dataset_AP
     rank: 1000
     slot_uri: schema:sameAs
     alias: sameAs
@@ -768,7 +767,7 @@ attributes:
     - This slot MUST not be used to provide an IRI for an ontology or an ontology
       term, use schema:identifier for this. The range (expected type) of schema:url
       is an URL.
-    from_schema: https://w3id.org/storemphi/Dataset_AP
+    from_schema: https://w3id.org/stroemphi/Dataset_AP
     rank: 1000
     slot_uri: schema:url
     alias: url

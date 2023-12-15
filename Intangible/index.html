@@ -258,7 +258,7 @@
 </tr>
 <tr>
 <td><a href="../name/">name</a></td>
-<td>0..1 <em>recommended</em> <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>The name of the item</td>
 <td><a href="../Thing/">Thing</a></td>
 </tr>
@@ -279,7 +279,7 @@
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
-<li>from schema: https://w3id.org/storemphi/Dataset_AP</li>
+<li>from schema: https://w3id.org/stroemphi/Dataset_AP</li>
 </ul>
 <h2 id="mappings">Mappings</h2>
 <table>
@@ -307,7 +307,7 @@
 <pre><code class="language-yaml">name: Intangible
 description: A utility class that serves as the umbrella for a number of 'intangible'
   things such as quantities, structured values, etc.
-from_schema: https://w3id.org/storemphi/Dataset_AP
+from_schema: https://w3id.org/stroemphi/Dataset_AP
 is_a: Thing
 class_uri: schema:Intangible
 
@@ -318,13 +318,13 @@ class_uri: schema:Intangible
 <pre><code class="language-yaml">name: Intangible
 description: A utility class that serves as the umbrella for a number of 'intangible'
   things such as quantities, structured values, etc.
-from_schema: https://w3id.org/storemphi/Dataset_AP
+from_schema: https://w3id.org/stroemphi/Dataset_AP
 is_a: Thing
 attributes:
   identifier:
     name: identifier
     description: A unique identifier for a thing
-    from_schema: https://w3id.org/storemphi/Dataset_AP
+    from_schema: https://w3id.org/stroemphi/Dataset_AP
     exact_mappings:
     - dct:identifier
     rank: 1000
@@ -339,7 +339,7 @@ attributes:
   alternateName:
     name: alternateName
     description: An alias for the item.
-    from_schema: https://w3id.org/storemphi/Dataset_AP
+    from_schema: https://w3id.org/stroemphi/Dataset_AP
     exact_mappings:
     - dct:alternative
     rank: 1000
@@ -355,7 +355,7 @@ attributes:
   description:
     name: description
     description: A description of the item.
-    from_schema: https://w3id.org/storemphi/Dataset_AP
+    from_schema: https://w3id.org/stroemphi/Dataset_AP
     exact_mappings:
     - dct:description
     rank: 1000
@@ -368,7 +368,7 @@ attributes:
   name:
     name: name
     description: The name of the item.
-    from_schema: https://w3id.org/storemphi/Dataset_AP
+    from_schema: https://w3id.org/stroemphi/Dataset_AP
     close_mappings:
     - dct:title
     rank: 1000
@@ -378,13 +378,12 @@ attributes:
     domain_of:
     - Thing
     range: string
-    recommended: true
   sameAs:
     name: sameAs
     description: URL of a reference Web page that unambiguously indicates the item's
       identity.  E.g. the URL of the item's Wikipedia page, Wikidata entry, or official
       website.
-    from_schema: https://w3id.org/storemphi/Dataset_AP
+    from_schema: https://w3id.org/stroemphi/Dataset_AP
     rank: 1000
     slot_uri: schema:sameAs
     alias: sameAs
@@ -399,7 +398,7 @@ attributes:
     - This slot MUST not be used to provide an IRI for an ontology or an ontology
       term, use schema:identifier for this. The range (expected type) of schema:url
       is an URL.
-    from_schema: https://w3id.org/storemphi/Dataset_AP
+    from_schema: https://w3id.org/stroemphi/Dataset_AP
     rank: 1000
     slot_uri: schema:url
     alias: url

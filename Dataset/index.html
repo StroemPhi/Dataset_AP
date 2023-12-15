@@ -436,7 +436,7 @@
 </tr>
 <tr>
 <td><a href="../name/">name</a></td>
-<td>1..1 <em>recommended</em> <br/> <a href="../String/">String</a></td>
+<td>1..1 <br/> <a href="../String/">String</a></td>
 <td>The name of the item</td>
 <td><a href="../Thing/">Thing</a></td>
 </tr>
@@ -482,7 +482,7 @@
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
-<li>from schema: https://w3id.org/storemphi/Dataset_AP</li>
+<li>from schema: https://w3id.org/stroemphi/Dataset_AP</li>
 </ul>
 <h2 id="mappings">Mappings</h2>
 <table>
@@ -513,7 +513,7 @@
 <details>
 <pre><code class="language-yaml">name: Dataset
 description: Represents a Dataset
-from_schema: https://w3id.org/storemphi/Dataset_AP
+from_schema: https://w3id.org/stroemphi/Dataset_AP
 exact_mappings:
 - dcat:Dataset
 is_a: CreativeWork
@@ -657,7 +657,7 @@ class_uri: schema:Dataset
 <details>
 <pre><code class="language-yaml">name: Dataset
 description: Represents a Dataset
-from_schema: https://w3id.org/storemphi/Dataset_AP
+from_schema: https://w3id.org/stroemphi/Dataset_AP
 exact_mappings:
 - dcat:Dataset
 is_a: CreativeWork
@@ -794,7 +794,7 @@ attributes:
       must contain exactly equivalent information  (see also DCAT on this point).  Different
       distributions might include or exclude different subsets of the entire dataset,
       for example.
-    from_schema: https://w3id.org/storemphi/Dataset_AP
+    from_schema: https://w3id.org/stroemphi/Dataset_AP
     rank: 1000
     slot_uri: schema:distribution
     alias: distribution
@@ -807,7 +807,7 @@ attributes:
     name: includedInDataCatalog
     description: A data catalog which contains this dataset. Supersedes includedDataCatalog,
       `catalog`.  Inverse property [[dataset]]
-    from_schema: https://w3id.org/storemphi/Dataset_AP
+    from_schema: https://w3id.org/stroemphi/Dataset_AP
     rank: 1000
     slot_uri: schema:includedInDataCatalog
     alias: includedInDataCatalog
@@ -822,7 +822,7 @@ attributes:
     description: The International Standard Serial Number (ISSN) that identifies this
       serial publication.  You can repeat this property to identify different formats
       of, or the linking ISSN (ISSN-L) for, this serial publication.
-    from_schema: https://w3id.org/storemphi/Dataset_AP
+    from_schema: https://w3id.org/stroemphi/Dataset_AP
     rank: 1000
     slot_uri: schema:issn
     alias: issn
@@ -834,7 +834,7 @@ attributes:
     name: measurementMethod
     description: A subproperty of measurementTechnique that can be used for specifying
       specific methods, in particular via MeasurementMethodEnum.
-    from_schema: https://w3id.org/storemphi/Dataset_AP
+    from_schema: https://w3id.org/stroemphi/Dataset_AP
     rank: 1000
     slot_uri: schema:measurementMethod
     alias: measurementMethod
@@ -849,7 +849,7 @@ attributes:
       or Dataset (or DataDownload, DataCatalog),  corresponding to the method used
       for measuring the corresponding variable(s) (for datasets, described using variableMeasured;  for
       Observation, a StatisticalVariable).
-    from_schema: https://w3id.org/storemphi/Dataset_AP
+    from_schema: https://w3id.org/stroemphi/Dataset_AP
     rank: 1000
     slot_uri: schema:measurementTechnique
     alias: measurementTechnique
@@ -861,7 +861,7 @@ attributes:
     recommended: true
   variableMeasured:
     name: variableMeasured
-    from_schema: https://w3id.org/storemphi/Dataset_AP
+    from_schema: https://w3id.org/stroemphi/Dataset_AP
     rank: 1000
     slot_uri: schema:variableMeasured
     alias: variableMeasured
@@ -872,7 +872,7 @@ attributes:
     recommended: true
   conformsTo:
     name: conformsTo
-    from_schema: https://w3id.org/storemphi/Dataset_AP
+    from_schema: https://w3id.org/stroemphi/Dataset_AP
     rank: 1000
     slot_uri: dct:conformsTo
     alias: conformsTo
@@ -883,7 +883,7 @@ attributes:
     required: true
   citation:
     name: citation
-    from_schema: https://w3id.org/storemphi/Dataset_AP
+    from_schema: https://w3id.org/stroemphi/Dataset_AP
     rank: 1000
     alias: citation
     owner: Dataset
@@ -894,7 +894,7 @@ attributes:
   creator:
     name: creator
     description: The creator/author of this CreativeWork.
-    from_schema: https://w3id.org/storemphi/Dataset_AP
+    from_schema: https://w3id.org/stroemphi/Dataset_AP
     rank: 1000
     slot_uri: schema:creator
     alias: creator
@@ -909,7 +909,7 @@ attributes:
       to a DataFeed.
     comments:
     - optional slot in https://bioschemas.org/profiles/Dataset/1.0-RELEASE
-    from_schema: https://w3id.org/storemphi/Dataset_AP
+    from_schema: https://w3id.org/stroemphi/Dataset_AP
     rank: 1000
     slot_uri: schema:dateCreated
     alias: dateCreated
@@ -921,7 +921,7 @@ attributes:
     name: dateModified
     comments:
     - optional slot in https://bioschemas.org/profiles/Dataset/1.0-RELEASE
-    from_schema: https://w3id.org/storemphi/Dataset_AP
+    from_schema: https://w3id.org/stroemphi/Dataset_AP
     rank: 1000
     alias: dateModified
     owner: Dataset
@@ -930,7 +930,7 @@ attributes:
     range: string
   datePublished:
     name: datePublished
-    from_schema: https://w3id.org/storemphi/Dataset_AP
+    from_schema: https://w3id.org/stroemphi/Dataset_AP
     rank: 1000
     alias: datePublished
     owner: Dataset
@@ -942,7 +942,7 @@ attributes:
     name: hasPart
     comments:
     - optional slot in https://bioschemas.org/profiles/Dataset/1.0-RELEASE
-    from_schema: https://w3id.org/storemphi/Dataset_AP
+    from_schema: https://w3id.org/stroemphi/Dataset_AP
     rank: 1000
     alias: hasPart
     owner: Dataset
@@ -953,7 +953,7 @@ attributes:
     name: isAccessibleForFree
     comments:
     - optional slot in https://bioschemas.org/profiles/Dataset/1.0-RELEASE
-    from_schema: https://w3id.org/storemphi/Dataset_AP
+    from_schema: https://w3id.org/stroemphi/Dataset_AP
     rank: 1000
     alias: isAccessibleForFree
     owner: Dataset
@@ -963,7 +963,7 @@ attributes:
   isBasedOn:
     name: isBasedOn
     description: Use to link a Dataset to the Study that it was generated from.
-    from_schema: https://w3id.org/storemphi/Dataset_AP
+    from_schema: https://w3id.org/stroemphi/Dataset_AP
     rank: 1000
     slot_uri: schema:isBasedOn
     alias: isBasedOn
@@ -976,7 +976,7 @@ attributes:
     name: isPartOf
     comments:
     - optional slot in https://bioschemas.org/profiles/Dataset/1.0-RELEASE
-    from_schema: https://w3id.org/storemphi/Dataset_AP
+    from_schema: https://w3id.org/stroemphi/Dataset_AP
     rank: 1000
     alias: isPartOf
     owner: Dataset
@@ -985,7 +985,7 @@ attributes:
     range: string
   keywords:
     name: keywords
-    from_schema: https://w3id.org/storemphi/Dataset_AP
+    from_schema: https://w3id.org/stroemphi/Dataset_AP
     rank: 1000
     alias: keywords
     owner: Dataset
@@ -995,7 +995,7 @@ attributes:
     required: true
   license:
     name: license
-    from_schema: https://w3id.org/storemphi/Dataset_AP
+    from_schema: https://w3id.org/stroemphi/Dataset_AP
     rank: 1000
     alias: license
     owner: Dataset
@@ -1007,7 +1007,7 @@ attributes:
     name: maintainer
     comments:
     - optional slot in https://bioschemas.org/profiles/Dataset/1.0-RELEASE
-    from_schema: https://w3id.org/storemphi/Dataset_AP
+    from_schema: https://w3id.org/stroemphi/Dataset_AP
     rank: 1000
     alias: maintainer
     owner: Dataset
@@ -1016,7 +1016,7 @@ attributes:
     range: string
   publisher:
     name: publisher
-    from_schema: https://w3id.org/storemphi/Dataset_AP
+    from_schema: https://w3id.org/stroemphi/Dataset_AP
     rank: 1000
     alias: publisher
     owner: Dataset
@@ -1026,7 +1026,7 @@ attributes:
     recommended: true
   version:
     name: version
-    from_schema: https://w3id.org/storemphi/Dataset_AP
+    from_schema: https://w3id.org/stroemphi/Dataset_AP
     rank: 1000
     alias: version
     owner: Dataset
@@ -1037,7 +1037,7 @@ attributes:
   identifier:
     name: identifier
     description: A unique identifier for a thing
-    from_schema: https://w3id.org/storemphi/Dataset_AP
+    from_schema: https://w3id.org/stroemphi/Dataset_AP
     exact_mappings:
     - dct:identifier
     rank: 1000
@@ -1052,7 +1052,7 @@ attributes:
   alternateName:
     name: alternateName
     description: An alias for the item.
-    from_schema: https://w3id.org/storemphi/Dataset_AP
+    from_schema: https://w3id.org/stroemphi/Dataset_AP
     rank: 1000
     slot_uri: schema:alternateName
     multivalued: true
@@ -1067,7 +1067,7 @@ attributes:
   description:
     name: description
     description: A description of the item.
-    from_schema: https://w3id.org/storemphi/Dataset_AP
+    from_schema: https://w3id.org/stroemphi/Dataset_AP
     rank: 1000
     slot_uri: schema:description
     alias: description
@@ -1079,7 +1079,7 @@ attributes:
   name:
     name: name
     description: The name of the item.
-    from_schema: https://w3id.org/storemphi/Dataset_AP
+    from_schema: https://w3id.org/stroemphi/Dataset_AP
     rank: 1000
     slot_uri: schema:name
     alias: name
@@ -1088,13 +1088,12 @@ attributes:
     - Thing
     range: string
     required: true
-    recommended: true
   sameAs:
     name: sameAs
     description: URL of a reference Web page that unambiguously indicates the item's
       identity.  E.g. the URL of the item's Wikipedia page, Wikidata entry, or official
       website.
-    from_schema: https://w3id.org/storemphi/Dataset_AP
+    from_schema: https://w3id.org/stroemphi/Dataset_AP
     rank: 1000
     slot_uri: schema:sameAs
     alias: sameAs
@@ -1105,7 +1104,7 @@ attributes:
   url:
     name: url
     description: URL of the item.
-    from_schema: https://w3id.org/storemphi/Dataset_AP
+    from_schema: https://w3id.org/stroemphi/Dataset_AP
     rank: 1000
     slot_uri: schema:url
     alias: url
