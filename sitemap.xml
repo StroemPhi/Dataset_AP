@@ -1,332 +1,332 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://storemphi.github.io/Dataset_AP/</loc>
+         <loc>https://stroemphi.github.io/Dataset_AP/</loc>
          <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://storemphi.github.io/Dataset_AP/Assay/</loc>
+         <loc>https://stroemphi.github.io/Dataset_AP/Assay/</loc>
          <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://storemphi.github.io/Dataset_AP/Boolean/</loc>
+         <loc>https://stroemphi.github.io/Dataset_AP/Boolean/</loc>
          <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://storemphi.github.io/Dataset_AP/ChemicalEntity/</loc>
+         <loc>https://stroemphi.github.io/Dataset_AP/ChemicalEntity/</loc>
          <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://storemphi.github.io/Dataset_AP/ChemicalReaction/</loc>
+         <loc>https://stroemphi.github.io/Dataset_AP/ChemicalReaction/</loc>
          <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://storemphi.github.io/Dataset_AP/CreativeWork/</loc>
+         <loc>https://stroemphi.github.io/Dataset_AP/CreativeWork/</loc>
          <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://storemphi.github.io/Dataset_AP/Curie/</loc>
+         <loc>https://stroemphi.github.io/Dataset_AP/Curie/</loc>
          <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://storemphi.github.io/Dataset_AP/Dataset/</loc>
+         <loc>https://stroemphi.github.io/Dataset_AP/Dataset/</loc>
          <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://storemphi.github.io/Dataset_AP/DatasetCollection/</loc>
+         <loc>https://stroemphi.github.io/Dataset_AP/DatasetCollection/</loc>
          <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://storemphi.github.io/Dataset_AP/Dataset_AP/</loc>
+         <loc>https://stroemphi.github.io/Dataset_AP/Dataset_AP/</loc>
          <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://storemphi.github.io/Dataset_AP/Date/</loc>
+         <loc>https://stroemphi.github.io/Dataset_AP/Date/</loc>
          <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://storemphi.github.io/Dataset_AP/DateOrDatetime/</loc>
+         <loc>https://stroemphi.github.io/Dataset_AP/DateOrDatetime/</loc>
          <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://storemphi.github.io/Dataset_AP/Datetime/</loc>
+         <loc>https://stroemphi.github.io/Dataset_AP/Datetime/</loc>
          <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://storemphi.github.io/Dataset_AP/Decimal/</loc>
+         <loc>https://stroemphi.github.io/Dataset_AP/Decimal/</loc>
          <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://storemphi.github.io/Dataset_AP/Double/</loc>
+         <loc>https://stroemphi.github.io/Dataset_AP/Double/</loc>
          <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://storemphi.github.io/Dataset_AP/EvaluatedThing/</loc>
+         <loc>https://stroemphi.github.io/Dataset_AP/EvaluatedThing/</loc>
          <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://storemphi.github.io/Dataset_AP/Float/</loc>
+         <loc>https://stroemphi.github.io/Dataset_AP/Float/</loc>
          <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://storemphi.github.io/Dataset_AP/Intangible/</loc>
+         <loc>https://stroemphi.github.io/Dataset_AP/Intangible/</loc>
          <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://storemphi.github.io/Dataset_AP/Integer/</loc>
+         <loc>https://stroemphi.github.io/Dataset_AP/Integer/</loc>
          <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://storemphi.github.io/Dataset_AP/Jsonpath/</loc>
+         <loc>https://stroemphi.github.io/Dataset_AP/Jsonpath/</loc>
          <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://storemphi.github.io/Dataset_AP/Jsonpointer/</loc>
+         <loc>https://stroemphi.github.io/Dataset_AP/Jsonpointer/</loc>
          <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://storemphi.github.io/Dataset_AP/MaterialEntity/</loc>
+         <loc>https://stroemphi.github.io/Dataset_AP/MaterialEntity/</loc>
          <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://storemphi.github.io/Dataset_AP/Ncname/</loc>
+         <loc>https://stroemphi.github.io/Dataset_AP/Ncname/</loc>
          <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://storemphi.github.io/Dataset_AP/Nodeidentifier/</loc>
+         <loc>https://stroemphi.github.io/Dataset_AP/Nodeidentifier/</loc>
          <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://storemphi.github.io/Dataset_AP/Objectidentifier/</loc>
+         <loc>https://stroemphi.github.io/Dataset_AP/Objectidentifier/</loc>
          <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://storemphi.github.io/Dataset_AP/PlannedProcess/</loc>
+         <loc>https://stroemphi.github.io/Dataset_AP/PlannedProcess/</loc>
          <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://storemphi.github.io/Dataset_AP/ReactionStep/</loc>
+         <loc>https://stroemphi.github.io/Dataset_AP/ReactionStep/</loc>
          <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://storemphi.github.io/Dataset_AP/Sparqlpath/</loc>
+         <loc>https://stroemphi.github.io/Dataset_AP/Sparqlpath/</loc>
          <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://storemphi.github.io/Dataset_AP/String/</loc>
+         <loc>https://stroemphi.github.io/Dataset_AP/String/</loc>
          <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://storemphi.github.io/Dataset_AP/Thing/</loc>
+         <loc>https://stroemphi.github.io/Dataset_AP/Thing/</loc>
          <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://storemphi.github.io/Dataset_AP/Time/</loc>
+         <loc>https://stroemphi.github.io/Dataset_AP/Time/</loc>
          <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://storemphi.github.io/Dataset_AP/Uri/</loc>
+         <loc>https://stroemphi.github.io/Dataset_AP/Uri/</loc>
          <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://storemphi.github.io/Dataset_AP/Uriorcurie/</loc>
+         <loc>https://stroemphi.github.io/Dataset_AP/Uriorcurie/</loc>
          <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://storemphi.github.io/Dataset_AP/about/</loc>
+         <loc>https://stroemphi.github.io/Dataset_AP/about/</loc>
          <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://storemphi.github.io/Dataset_AP/alternateName/</loc>
+         <loc>https://stroemphi.github.io/Dataset_AP/alternateName/</loc>
          <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://storemphi.github.io/Dataset_AP/citation/</loc>
+         <loc>https://stroemphi.github.io/Dataset_AP/citation/</loc>
          <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://storemphi.github.io/Dataset_AP/conformsTo/</loc>
+         <loc>https://stroemphi.github.io/Dataset_AP/conformsTo/</loc>
          <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://storemphi.github.io/Dataset_AP/creator/</loc>
+         <loc>https://stroemphi.github.io/Dataset_AP/creator/</loc>
          <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://storemphi.github.io/Dataset_AP/datasets/</loc>
+         <loc>https://stroemphi.github.io/Dataset_AP/datasets/</loc>
          <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://storemphi.github.io/Dataset_AP/dateCreated/</loc>
+         <loc>https://stroemphi.github.io/Dataset_AP/dateCreated/</loc>
          <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://storemphi.github.io/Dataset_AP/dateModified/</loc>
+         <loc>https://stroemphi.github.io/Dataset_AP/dateModified/</loc>
          <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://storemphi.github.io/Dataset_AP/datePublished/</loc>
+         <loc>https://stroemphi.github.io/Dataset_AP/datePublished/</loc>
          <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://storemphi.github.io/Dataset_AP/description/</loc>
+         <loc>https://stroemphi.github.io/Dataset_AP/description/</loc>
          <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://storemphi.github.io/Dataset_AP/distribution/</loc>
+         <loc>https://stroemphi.github.io/Dataset_AP/distribution/</loc>
          <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://storemphi.github.io/Dataset_AP/hasPart/</loc>
+         <loc>https://stroemphi.github.io/Dataset_AP/hasPart/</loc>
          <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://storemphi.github.io/Dataset_AP/has_input/</loc>
+         <loc>https://stroemphi.github.io/Dataset_AP/has_input/</loc>
          <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://storemphi.github.io/Dataset_AP/has_output/</loc>
+         <loc>https://stroemphi.github.io/Dataset_AP/has_output/</loc>
          <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://storemphi.github.io/Dataset_AP/has_parameter/</loc>
+         <loc>https://stroemphi.github.io/Dataset_AP/has_parameter/</loc>
          <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://storemphi.github.io/Dataset_AP/identifier/</loc>
+         <loc>https://stroemphi.github.io/Dataset_AP/identifier/</loc>
          <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://storemphi.github.io/Dataset_AP/includedInDataCatalog/</loc>
+         <loc>https://stroemphi.github.io/Dataset_AP/includedInDataCatalog/</loc>
          <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://storemphi.github.io/Dataset_AP/isAccessibleForFree/</loc>
+         <loc>https://stroemphi.github.io/Dataset_AP/isAccessibleForFree/</loc>
          <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://storemphi.github.io/Dataset_AP/isBasedOn/</loc>
+         <loc>https://stroemphi.github.io/Dataset_AP/isBasedOn/</loc>
          <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://storemphi.github.io/Dataset_AP/isPartOf/</loc>
+         <loc>https://stroemphi.github.io/Dataset_AP/isPartOf/</loc>
          <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://storemphi.github.io/Dataset_AP/issn/</loc>
+         <loc>https://stroemphi.github.io/Dataset_AP/issn/</loc>
          <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://storemphi.github.io/Dataset_AP/keywords/</loc>
+         <loc>https://stroemphi.github.io/Dataset_AP/keywords/</loc>
          <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://storemphi.github.io/Dataset_AP/license/</loc>
+         <loc>https://stroemphi.github.io/Dataset_AP/license/</loc>
          <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://storemphi.github.io/Dataset_AP/maintainer/</loc>
+         <loc>https://stroemphi.github.io/Dataset_AP/maintainer/</loc>
          <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://storemphi.github.io/Dataset_AP/measurementMethod/</loc>
+         <loc>https://stroemphi.github.io/Dataset_AP/measurementMethod/</loc>
          <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://storemphi.github.io/Dataset_AP/measurementTechnique/</loc>
+         <loc>https://stroemphi.github.io/Dataset_AP/measurementTechnique/</loc>
          <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://storemphi.github.io/Dataset_AP/name/</loc>
+         <loc>https://stroemphi.github.io/Dataset_AP/name/</loc>
          <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://storemphi.github.io/Dataset_AP/publisher/</loc>
+         <loc>https://stroemphi.github.io/Dataset_AP/publisher/</loc>
          <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://storemphi.github.io/Dataset_AP/sameAs/</loc>
+         <loc>https://stroemphi.github.io/Dataset_AP/sameAs/</loc>
          <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://storemphi.github.io/Dataset_AP/subjectOf/</loc>
+         <loc>https://stroemphi.github.io/Dataset_AP/subjectOf/</loc>
          <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://storemphi.github.io/Dataset_AP/url/</loc>
+         <loc>https://stroemphi.github.io/Dataset_AP/url/</loc>
          <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://storemphi.github.io/Dataset_AP/variableMeasured/</loc>
+         <loc>https://stroemphi.github.io/Dataset_AP/variableMeasured/</loc>
          <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://storemphi.github.io/Dataset_AP/version/</loc>
+         <loc>https://stroemphi.github.io/Dataset_AP/version/</loc>
          <lastmod>2023-12-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
