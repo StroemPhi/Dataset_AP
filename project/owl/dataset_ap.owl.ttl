@@ -1,4 +1,4 @@
-@prefix dataset_ap: <https://w3id.org/storemphi/Dataset_AP/> .
+@prefix dataset_ap: <https://w3id.org/stroemphi/Dataset_AP/> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dct: <purl.org/dc/terms/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
@@ -15,7 +15,7 @@ dataset_ap:ChemicalEntity a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "ChemicalEntity" ;
     rdfs:subClassOf dataset_ap:Thing ;
-    skos:inScheme <https://w3id.org/storemphi/Dataset_AP> .
+    skos:inScheme <https://w3id.org/stroemphi/Dataset_AP> .
 
 dataset_ap:Intangible a owl:Class,
         linkml:ClassDefinition ;
@@ -23,25 +23,25 @@ dataset_ap:Intangible a owl:Class,
     rdfs:subClassOf dataset_ap:Thing ;
     skos:definition "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc." ;
     skos:exactMatch schema1:Intangible ;
-    skos:inScheme <https://w3id.org/storemphi/Dataset_AP> .
+    skos:inScheme <https://w3id.org/stroemphi/Dataset_AP> .
 
 dataset_ap:MaterialEntity a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "MaterialEntity" ;
     rdfs:subClassOf dataset_ap:Thing ;
-    skos:inScheme <https://w3id.org/storemphi/Dataset_AP> .
+    skos:inScheme <https://w3id.org/stroemphi/Dataset_AP> .
 
 dataset_ap:ReactionStep a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "ReactionStep" ;
     rdfs:subClassOf dataset_ap:ChemicalReaction ;
-    skos:inScheme <https://w3id.org/storemphi/Dataset_AP> .
+    skos:inScheme <https://w3id.org/stroemphi/Dataset_AP> .
 
 dataset_ap:has_parameter a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "has_parameter" ;
     rdfs:domain dataset_ap:Assay ;
-    skos:inScheme <https://w3id.org/storemphi/Dataset_AP> .
+    skos:inScheme <https://w3id.org/stroemphi/Dataset_AP> .
 
 dataset_ap:subjectOf a owl:ObjectProperty,
         linkml:SlotDefinition ;
@@ -50,54 +50,54 @@ dataset_ap:subjectOf a owl:ObjectProperty,
     rdfs:range dataset_ap:CreativeWork ;
     owl:inverseOf dataset_ap:about ;
     skos:definition "A CreativeWork about this Thing." ;
-    skos:inScheme <https://w3id.org/storemphi/Dataset_AP> .
+    skos:inScheme <https://w3id.org/stroemphi/Dataset_AP> .
 
 dataset_ap:ChemicalReaction a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "ChemicalReaction" ;
     rdfs:subClassOf dataset_ap:Thing ;
-    skos:inScheme <https://w3id.org/storemphi/Dataset_AP> .
+    skos:inScheme <https://w3id.org/stroemphi/Dataset_AP> .
 
 dataset_ap:DatasetCollection a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "DatasetCollection" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom dataset_ap:Dataset ;
-            owl:onProperty dataset_ap:datasets ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty dataset_ap:measurementMethod ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty dataset_ap:measurementMethod ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty dataset_ap:measurementTechnique ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty dataset_ap:measurementMethod ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty dataset_ap:measurementTechnique ],
-        [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onProperty dataset_ap:datasets ],
         [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty dataset_ap:measurementMethod ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty dataset_ap:measurementTechnique ],
+        [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty dataset_ap:measurementTechnique ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty dataset_ap:measurementMethod ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty dataset_ap:measurementMethod ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty dataset_ap:measurementTechnique ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom dataset_ap:Dataset ;
+            owl:onProperty dataset_ap:datasets ],
         dataset_ap:CreativeWork ;
     skos:altLabel "DataCatalog" ;
     skos:definition "A collection of datasets." ;
     skos:exactMatch schema1:DataCatalog,
         dcat:Catalog ;
-    skos:inScheme <https://w3id.org/storemphi/Dataset_AP> .
+    skos:inScheme <https://w3id.org/stroemphi/Dataset_AP> .
 
 dataset_ap:PlannedProcess a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "PlannedProcess" ;
     skos:altLabel "Workflow" ;
     skos:exactMatch obi:0000011 ;
-    skos:inScheme <https://w3id.org/storemphi/Dataset_AP> .
+    skos:inScheme <https://w3id.org/stroemphi/Dataset_AP> .
 
 dataset_ap:about a owl:ObjectProperty,
         linkml:SlotDefinition ;
@@ -105,28 +105,25 @@ dataset_ap:about a owl:ObjectProperty,
     rdfs:domain dataset_ap:CreativeWork ;
     rdfs:range dataset_ap:Thing ;
     skos:definition "The subject matter of the content. Inverse property of `subjectOf`" ;
-    skos:inScheme <https://w3id.org/storemphi/Dataset_AP> .
+    skos:inScheme <https://w3id.org/stroemphi/Dataset_AP> .
 
 dataset_ap:EvaluatedThing a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "EvaluatedThing" ;
     rdfs:subClassOf dataset_ap:Thing ;
-    skos:inScheme <https://w3id.org/storemphi/Dataset_AP> .
+    skos:inScheme <https://w3id.org/stroemphi/Dataset_AP> .
 
 dataset_ap:Assay a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "Assay" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty dataset_ap:has_output ],
-        [ a owl:Restriction ;
             owl:allValuesFrom dataset_ap:Dataset ;
             owl:onProperty dataset_ap:has_output ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty dataset_ap:has_input ],
-        [ a owl:Restriction ;
             owl:minCardinality 0 ;
+            owl:onProperty dataset_ap:has_output ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onProperty dataset_ap:has_output ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
@@ -134,41 +131,44 @@ dataset_ap:Assay a owl:Class,
         [ a owl:Restriction ;
             owl:allValuesFrom dataset_ap:EvaluatedThing ;
             owl:onProperty dataset_ap:has_input ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty dataset_ap:has_input ],
         dataset_ap:PlannedProcess ;
     skos:exactMatch obi:0000070 ;
-    skos:inScheme <https://w3id.org/storemphi/Dataset_AP> .
+    skos:inScheme <https://w3id.org/stroemphi/Dataset_AP> .
 
 dataset_ap:conformsTo a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "conformsTo" ;
-    skos:inScheme <https://w3id.org/storemphi/Dataset_AP> .
+    skos:inScheme <https://w3id.org/stroemphi/Dataset_AP> .
 
 dataset_ap:datasets a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "datasets" ;
     rdfs:range dataset_ap:Dataset ;
     skos:definition "A dataset contained in this catalog." ;
-    skos:inScheme <https://w3id.org/storemphi/Dataset_AP> .
+    skos:inScheme <https://w3id.org/stroemphi/Dataset_AP> .
 
 dataset_ap:distribution a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "distribution" ;
     skos:definition "A downloadable form of this dataset, at a specific location, in a specific format.  This property can be repeated if different variations are available.  There is no expectation that different downloadable distributions must contain exactly equivalent information  (see also DCAT on this point).  Different distributions might include or exclude different subsets of the entire dataset, for example." ;
-    skos:inScheme <https://w3id.org/storemphi/Dataset_AP> .
+    skos:inScheme <https://w3id.org/stroemphi/Dataset_AP> .
 
 dataset_ap:has_input a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "has_input" ;
     rdfs:domain dataset_ap:Assay ;
     rdfs:range dataset_ap:EvaluatedThing ;
-    skos:inScheme <https://w3id.org/storemphi/Dataset_AP> .
+    skos:inScheme <https://w3id.org/stroemphi/Dataset_AP> .
 
 dataset_ap:has_output a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "has_output" ;
     rdfs:domain dataset_ap:Assay ;
     rdfs:range dataset_ap:Dataset ;
-    skos:inScheme <https://w3id.org/storemphi/Dataset_AP> .
+    skos:inScheme <https://w3id.org/stroemphi/Dataset_AP> .
 
 dataset_ap:identifier a owl:ObjectProperty,
         linkml:SlotDefinition ;
@@ -176,7 +176,7 @@ dataset_ap:identifier a owl:ObjectProperty,
     rdfs:range linkml:Uriorcurie ;
     skos:definition "A unique identifier for a thing" ;
     skos:exactMatch dct:identifier ;
-    skos:inScheme <https://w3id.org/storemphi/Dataset_AP> .
+    skos:inScheme <https://w3id.org/stroemphi/Dataset_AP> .
 
 dataset_ap:includedInDataCatalog a owl:ObjectProperty,
         linkml:SlotDefinition ;
@@ -185,70 +185,145 @@ dataset_ap:includedInDataCatalog a owl:ObjectProperty,
     owl:inverseOf dataset_ap:datasets ;
     skos:definition "A data catalog which contains this dataset. Supersedes includedDataCatalog, `catalog`.  Inverse property [[dataset]]" ;
     skos:exactMatch schema1:catalog ;
-    skos:inScheme <https://w3id.org/storemphi/Dataset_AP> .
+    skos:inScheme <https://w3id.org/stroemphi/Dataset_AP> .
 
 dataset_ap:issn a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "issn" ;
     skos:definition "The International Standard Serial Number (ISSN) that identifies this serial publication.  You can repeat this property to identify different formats of, or the linking ISSN (ISSN-L) for, this serial publication." ;
-    skos:inScheme <https://w3id.org/storemphi/Dataset_AP> .
+    skos:inScheme <https://w3id.org/stroemphi/Dataset_AP> .
 
 dataset_ap:sameAs a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "sameAs" ;
     skos:definition "URL of a reference Web page that unambiguously indicates the item's identity.  E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website." ;
-    skos:inScheme <https://w3id.org/storemphi/Dataset_AP> .
+    skos:inScheme <https://w3id.org/stroemphi/Dataset_AP> .
 
 dataset_ap:variableMeasured a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "variableMeasured" ;
-    skos:inScheme <https://w3id.org/storemphi/Dataset_AP> .
+    skos:inScheme <https://w3id.org/stroemphi/Dataset_AP> .
 
 dataset_ap:CreativeWork a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "CreativeWork" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty dataset_ap:datePublished ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty dataset_ap:datePublished ],
+            owl:onProperty dataset_ap:version ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
+            owl:onProperty dataset_ap:datePublished ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty dataset_ap:datePublished ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onProperty dataset_ap:license ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty dataset_ap:isAccessibleForFree ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty dataset_ap:dateModified ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty dataset_ap:maintainer ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty dataset_ap:isAccessibleForFree ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty dataset_ap:maintainer ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty dataset_ap:version ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty dataset_ap:publisher ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty dataset_ap:dateModified ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty dataset_ap:keywords ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty dataset_ap:keywords ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty dataset_ap:publisher ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty dataset_ap:license ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty dataset_ap:version ],
         [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
-            owl:onProperty dataset_ap:creator ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty dataset_ap:creator ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
             owl:onProperty dataset_ap:citation ],
         [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty dataset_ap:isBasedOn ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty dataset_ap:hasPart ],
+        [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
-            owl:onProperty dataset_ap:maintainer ],
+            owl:onProperty dataset_ap:isPartOf ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty dataset_ap:isPartOf ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty dataset_ap:maintainer ],
+            owl:onProperty dataset_ap:keywords ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty dataset_ap:creator ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty dataset_ap:publisher ],
         [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty dataset_ap:license ],
+        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty dataset_ap:dateModified ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty dataset_ap:hasPart ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty dataset_ap:citation ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty dataset_ap:creator ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty dataset_ap:datePublished ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty dataset_ap:dateCreated ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty dataset_ap:isPartOf ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty dataset_ap:creator ],
+            owl:onProperty dataset_ap:hasPart ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty dataset_ap:citation ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty dataset_ap:dateCreated ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty dataset_ap:dateCreated ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty dataset_ap:maintainer ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty dataset_ap:isBasedOn ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty dataset_ap:isAccessibleForFree ],
@@ -256,467 +331,386 @@ dataset_ap:CreativeWork a owl:Class,
             owl:minCardinality 0 ;
             owl:onProperty dataset_ap:isBasedOn ],
         [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty dataset_ap:keywords ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty dataset_ap:keywords ],
-        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty dataset_ap:hasPart ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty dataset_ap:maintainer ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty dataset_ap:license ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty dataset_ap:datePublished ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty dataset_ap:version ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty dataset_ap:dateModified ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty dataset_ap:version ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty dataset_ap:isAccessibleForFree ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty dataset_ap:license ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty dataset_ap:citation ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty dataset_ap:dateModified ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty dataset_ap:hasPart ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty dataset_ap:isPartOf ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty dataset_ap:keywords ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty dataset_ap:dateCreated ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty dataset_ap:isBasedOn ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty dataset_ap:citation ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty dataset_ap:isBasedOn ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty dataset_ap:isPartOf ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty dataset_ap:publisher ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty dataset_ap:dateCreated ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty dataset_ap:isAccessibleForFree ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty dataset_ap:hasPart ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty dataset_ap:dateCreated ],
+            owl:onProperty dataset_ap:creator ],
         dataset_ap:Thing ;
     skos:definition "The most generic kind of creative work, including books, movies, photographs, software programs, etc." ;
     skos:exactMatch iao:0000030,
         schema1:CreativeWork ;
-    skos:inScheme <https://w3id.org/storemphi/Dataset_AP> .
+    skos:inScheme <https://w3id.org/stroemphi/Dataset_AP> .
 
 dataset_ap:Dataset a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "Dataset" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty dataset_ap:conformsTo ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty dataset_ap:variableMeasured ],
-        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty dataset_ap:version ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty dataset_ap:issn ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty dataset_ap:datePublished ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty dataset_ap:alternateName ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty dataset_ap:measurementTechnique ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty dataset_ap:isAccessibleForFree ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty dataset_ap:datePublished ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty dataset_ap:citation ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty dataset_ap:version ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty dataset_ap:name ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty dataset_ap:variableMeasured ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty dataset_ap:license ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty dataset_ap:distribution ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty dataset_ap:creator ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty dataset_ap:description ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty dataset_ap:keywords ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty dataset_ap:maintainer ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
             owl:onProperty dataset_ap:url ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty dataset_ap:citation ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty dataset_ap:isPartOf ],
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty dataset_ap:alternateName ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty dataset_ap:publisher ],
+            owl:onProperty dataset_ap:keywords ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty dataset_ap:includedInDataCatalog ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty dataset_ap:isBasedOn ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty dataset_ap:measurementMethod ],
         [ a owl:Restriction ;
             owl:allValuesFrom owl:Thing ;
             owl:onProperty dataset_ap:includedInDataCatalog ],
         [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
+            owl:maxCardinality 1 ;
             owl:onProperty dataset_ap:citation ],
         [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty dataset_ap:keywords ],
+            owl:minCardinality 0 ;
+            owl:onProperty dataset_ap:includedInDataCatalog ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty dataset_ap:description ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty dataset_ap:dateModified ],
+            owl:onProperty dataset_ap:variableMeasured ],
         [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
             owl:onProperty dataset_ap:conformsTo ],
         [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
-            owl:onProperty dataset_ap:distribution ],
+            owl:onProperty dataset_ap:maintainer ],
         [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty dataset_ap:license ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty dataset_ap:publisher ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty dataset_ap:hasPart ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
+            owl:minCardinality 1 ;
             owl:onProperty dataset_ap:name ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty dataset_ap:creator ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty dataset_ap:keywords ],
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty dataset_ap:issn ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty dataset_ap:isAccessibleForFree ],
+            owl:onProperty dataset_ap:dateModified ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty dataset_ap:measurementMethod ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty dataset_ap:distribution ],
+            owl:onProperty dataset_ap:isAccessibleForFree ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty dataset_ap:measurementTechnique ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:minCardinality 0 ;
             owl:onProperty dataset_ap:hasPart ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty dataset_ap:publisher ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty dataset_ap:variableMeasured ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty dataset_ap:datePublished ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty dataset_ap:license ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty dataset_ap:isPartOf ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty dataset_ap:isAccessibleForFree ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty dataset_ap:dateCreated ],
         [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty dataset_ap:description ],
+            owl:minCardinality 0 ;
+            owl:onProperty dataset_ap:creator ],
         [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
-            owl:onProperty dataset_ap:isPartOf ],
+            owl:onProperty dataset_ap:measurementMethod ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty dataset_ap:name ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty dataset_ap:conformsTo ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty dataset_ap:variableMeasured ],
         [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
-            owl:onProperty dataset_ap:datePublished ],
+            owl:onProperty dataset_ap:license ],
         [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
-            owl:onProperty dataset_ap:measurementMethod ],
+            owl:onProperty dataset_ap:creator ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty dataset_ap:citation ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty dataset_ap:dateModified ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty dataset_ap:maintainer ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty dataset_ap:keywords ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty dataset_ap:isAccessibleForFree ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty dataset_ap:maintainer ],
         [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty dataset_ap:hasPart ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty dataset_ap:dateCreated ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty dataset_ap:dateModified ],
-        [ a owl:Restriction ;
             owl:minCardinality 1 ;
+            owl:onProperty dataset_ap:description ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
             owl:onProperty dataset_ap:name ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty dataset_ap:includedInDataCatalog ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty dataset_ap:issn ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty dataset_ap:creator ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty dataset_ap:includedInDataCatalog ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty dataset_ap:measurementMethod ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty dataset_ap:issn ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty dataset_ap:publisher ],
         [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
             owl:onProperty dataset_ap:isBasedOn ],
         [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty dataset_ap:description ],
+        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty dataset_ap:maintainer ],
+            owl:onProperty dataset_ap:creator ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty dataset_ap:measurementTechnique ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty dataset_ap:version ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty dataset_ap:version ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty dataset_ap:distribution ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onProperty dataset_ap:url ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty dataset_ap:dateModified ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty dataset_ap:alternateName ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
             owl:onProperty dataset_ap:isPartOf ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty dataset_ap:description ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty dataset_ap:isAccessibleForFree ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty dataset_ap:conformsTo ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty dataset_ap:license ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty dataset_ap:measurementTechnique ],
         [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
+            owl:onProperty dataset_ap:hasPart ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty dataset_ap:dateModified ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty dataset_ap:isBasedOn ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty dataset_ap:issn ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty dataset_ap:alternateName ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty dataset_ap:url ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty dataset_ap:dateCreated ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty dataset_ap:license ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty dataset_ap:distribution ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty dataset_ap:datePublished ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty dataset_ap:publisher ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty dataset_ap:citation ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty dataset_ap:isPartOf ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty dataset_ap:datePublished ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty dataset_ap:version ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty dataset_ap:hasPart ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty dataset_ap:distribution ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty dataset_ap:measurementTechnique ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty dataset_ap:publisher ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty dataset_ap:conformsTo ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty dataset_ap:keywords ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onProperty dataset_ap:dateCreated ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty dataset_ap:isBasedOn ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty dataset_ap:url ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty dataset_ap:isBasedOn ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty dataset_ap:version ],
+            owl:onProperty dataset_ap:issn ],
         dataset_ap:CreativeWork ;
     skos:definition "Represents a Dataset" ;
     skos:exactMatch schema1:Dataset,
         dcat:Dataset ;
-    skos:inScheme <https://w3id.org/storemphi/Dataset_AP> .
+    skos:inScheme <https://w3id.org/stroemphi/Dataset_AP> .
 
 dataset_ap:alternateName a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "alternateName" ;
     skos:definition "An alias for the item." ;
     skos:exactMatch dct:alternative ;
-    skos:inScheme <https://w3id.org/storemphi/Dataset_AP> .
+    skos:inScheme <https://w3id.org/stroemphi/Dataset_AP> .
 
 dataset_ap:citation a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "citation" ;
-    skos:inScheme <https://w3id.org/storemphi/Dataset_AP> .
+    skos:inScheme <https://w3id.org/stroemphi/Dataset_AP> .
 
 dataset_ap:creator a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "creator" ;
     skos:definition "The creator/author of this CreativeWork." ;
-    skos:inScheme <https://w3id.org/storemphi/Dataset_AP> .
+    skos:inScheme <https://w3id.org/stroemphi/Dataset_AP> .
 
 dataset_ap:dateCreated a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "dateCreated" ;
     skos:definition "The date on which the CreativeWork was created or the item was added to a DataFeed." ;
-    skos:inScheme <https://w3id.org/storemphi/Dataset_AP> .
+    skos:inScheme <https://w3id.org/stroemphi/Dataset_AP> .
 
 dataset_ap:dateModified a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "dateModified" ;
-    skos:inScheme <https://w3id.org/storemphi/Dataset_AP> .
+    skos:inScheme <https://w3id.org/stroemphi/Dataset_AP> .
 
 dataset_ap:datePublished a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "datePublished" ;
-    skos:inScheme <https://w3id.org/storemphi/Dataset_AP> .
+    skos:inScheme <https://w3id.org/stroemphi/Dataset_AP> .
 
 dataset_ap:description a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "description" ;
     skos:definition "A description of the item." ;
     skos:exactMatch dct:description ;
-    skos:inScheme <https://w3id.org/storemphi/Dataset_AP> .
+    skos:inScheme <https://w3id.org/stroemphi/Dataset_AP> .
 
 dataset_ap:hasPart a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "hasPart" ;
-    skos:inScheme <https://w3id.org/storemphi/Dataset_AP> .
+    skos:inScheme <https://w3id.org/stroemphi/Dataset_AP> .
 
 dataset_ap:isAccessibleForFree a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "isAccessibleForFree" ;
-    skos:inScheme <https://w3id.org/storemphi/Dataset_AP> .
+    skos:inScheme <https://w3id.org/stroemphi/Dataset_AP> .
 
 dataset_ap:isBasedOn a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "isBasedOn" ;
     skos:definition "A resource that was used in the creation of this resource.  This term can be repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html.  Supersedes isBasedOnUrl." ;
-    skos:inScheme <https://w3id.org/storemphi/Dataset_AP> .
+    skos:inScheme <https://w3id.org/stroemphi/Dataset_AP> .
 
 dataset_ap:isPartOf a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "isPartOf" ;
-    skos:inScheme <https://w3id.org/storemphi/Dataset_AP> .
+    skos:inScheme <https://w3id.org/stroemphi/Dataset_AP> .
 
 dataset_ap:keywords a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "keywords" ;
-    skos:inScheme <https://w3id.org/storemphi/Dataset_AP> .
+    skos:inScheme <https://w3id.org/stroemphi/Dataset_AP> .
 
 dataset_ap:license a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "license" ;
-    skos:inScheme <https://w3id.org/storemphi/Dataset_AP> .
+    skos:inScheme <https://w3id.org/stroemphi/Dataset_AP> .
 
 dataset_ap:maintainer a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "maintainer" ;
-    skos:inScheme <https://w3id.org/storemphi/Dataset_AP> .
+    skos:inScheme <https://w3id.org/stroemphi/Dataset_AP> .
 
 dataset_ap:measurementMethod a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "measurementMethod" ;
     skos:definition "A subproperty of measurementTechnique that can be used for specifying specific methods, in particular via MeasurementMethodEnum." ;
-    skos:inScheme <https://w3id.org/storemphi/Dataset_AP> .
+    skos:inScheme <https://w3id.org/stroemphi/Dataset_AP> .
 
 dataset_ap:measurementTechnique a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "measurementTechnique" ;
     skos:definition "A technique, method or technology used in an Observation, StatisticalVariable or Dataset (or DataDownload, DataCatalog),  corresponding to the method used for measuring the corresponding variable(s) (for datasets, described using variableMeasured;  for Observation, a StatisticalVariable)." ;
-    skos:inScheme <https://w3id.org/storemphi/Dataset_AP> .
+    skos:inScheme <https://w3id.org/stroemphi/Dataset_AP> .
 
 dataset_ap:name a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "name" ;
     skos:closeMatch dct:title ;
     skos:definition "The name of the item." ;
-    skos:inScheme <https://w3id.org/storemphi/Dataset_AP> .
+    skos:inScheme <https://w3id.org/stroemphi/Dataset_AP> .
 
 dataset_ap:publisher a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "publisher" ;
-    skos:inScheme <https://w3id.org/storemphi/Dataset_AP> .
+    skos:inScheme <https://w3id.org/stroemphi/Dataset_AP> .
 
 dataset_ap:url a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "url" ;
     rdfs:range linkml:Uriorcurie ;
     skos:definition "URL of the item." ;
-    skos:inScheme <https://w3id.org/storemphi/Dataset_AP> ;
+    skos:inScheme <https://w3id.org/stroemphi/Dataset_AP> ;
     skos:note "This slot MUST not be used to provide an IRI for an ontology or an ontology term, use schema:identifier for this. The range (expected type) of schema:url is an URL." .
 
 dataset_ap:version a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "version" ;
-    skos:inScheme <https://w3id.org/storemphi/Dataset_AP> .
+    skos:inScheme <https://w3id.org/stroemphi/Dataset_AP> .
 
 dataset_ap:Thing a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "Thing" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty dataset_ap:name ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty dataset_ap:description ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty dataset_ap:identifier ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty dataset_ap:name ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty dataset_ap:description ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
             owl:onProperty dataset_ap:sameAs ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty dataset_ap:name ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty dataset_ap:description ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty dataset_ap:description ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty dataset_ap:url ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty dataset_ap:url ],
         [ a owl:Restriction ;
             owl:allValuesFrom linkml:Uriorcurie ;
             owl:onProperty dataset_ap:url ],
         [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
-            owl:onProperty dataset_ap:name ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty dataset_ap:alternateName ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty dataset_ap:alternateName ],
+            owl:onProperty dataset_ap:description ],
         [ a owl:Restriction ;
             owl:allValuesFrom linkml:Uriorcurie ;
             owl:onProperty dataset_ap:identifier ],
@@ -724,28 +718,34 @@ dataset_ap:Thing a owl:Class,
             owl:minCardinality 1 ;
             owl:onProperty dataset_ap:identifier ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty dataset_ap:url ],
-        [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty dataset_ap:description ],
+            owl:onProperty dataset_ap:alternateName ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty dataset_ap:alternateName ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
             owl:onProperty dataset_ap:sameAs ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty dataset_ap:url ],
+            owl:onProperty dataset_ap:sameAs ],
         [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
-            owl:onProperty dataset_ap:sameAs ] ;
+            owl:onProperty dataset_ap:name ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty dataset_ap:identifier ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty dataset_ap:name ] ;
     skos:definition "The most generic type of item." ;
     skos:exactMatch schema1:Thing ;
-    skos:inScheme <https://w3id.org/storemphi/Dataset_AP> .
+    skos:inScheme <https://w3id.org/stroemphi/Dataset_AP> .
 
-<https://w3id.org/storemphi/Dataset_AP> a owl:Ontology ;
+<https://w3id.org/stroemphi/Dataset_AP> a owl:Ontology ;
     rdfs:label "Dataset_AP" ;
     dcterms:license "MIT" ;
     dcterms:title "Dataset_AP" ;
-    rdfs:seeAlso <https://storemphi.github.io/Dataset_AP> ;
+    rdfs:seeAlso <https://stroemphi.github.io/Dataset_AP> ;
     skos:definition "A LinkML representation of https://bioschemas.org/profiles/Dataset/1.0-RELEASE." .
 

@@ -1,6 +1,6 @@
 {
    "bioschema": "https://bioschemas.org/properties/",
-   "dataset_ap": "https://w3id.org/storemphi/Dataset_AP/",
+   "dataset_ap": "https://w3id.org/stroemphi/Dataset_AP/",
    "dcat": "http://www.w3.org/ns/dcat#",
    "dct": "purl.org/dc/terms/",
    "example": "https://example.org/",

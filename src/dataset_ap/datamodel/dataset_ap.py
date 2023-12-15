@@ -1,8 +1,8 @@
 # Auto generated from dataset_ap.yaml by pythongen.py version: 0.0.1
-# Generation date: 2023-12-14T23:14:13
+# Generation date: 2023-12-15T08:07:56
 # Schema: Dataset_AP
 #
-# id: https://w3id.org/storemphi/Dataset_AP
+# id: https://w3id.org/stroemphi/Dataset_AP
 # description: A LinkML representation of https://bioschemas.org/profiles/Dataset/1.0-RELEASE.
 # license: MIT
 
@@ -32,7 +32,7 @@ dataclasses._init_fn = dataclasses_init_fn_with_kwargs
 
 # Namespaces
 BIOSCHEMA = CurieNamespace('bioschema', 'https://bioschemas.org/properties/')
-DATASET_AP = CurieNamespace('dataset_ap', 'https://w3id.org/storemphi/Dataset_AP/')
+DATASET_AP = CurieNamespace('dataset_ap', 'https://w3id.org/stroemphi/Dataset_AP/')
 DCAT = CurieNamespace('dcat', 'http://www.w3.org/ns/dcat#')
 DCT = CurieNamespace('dct', 'purl.org/dc/terms/')
 EXAMPLE = CurieNamespace('example', 'https://example.org/')
