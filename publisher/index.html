@@ -317,7 +317,8 @@
 
 
 <h1 id="slot-publisher">Slot: publisher</h1>
-<p>URI: <a href="https://w3id.org/stroemphi/Dataset_AP/publisher">dataset_ap:publisher</a></p>
+<p>_ The publisher of the creative work._</p>
+<p>URI: <a href="http://schema.org/publisher">schema:publisher</a></p>
 <!-- no inheritance hierarchy -->
 
 <h2 id="applicable-classes">Applicable Classes</h2>
@@ -331,19 +332,9 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../CreativeWork/">CreativeWork</a></td>
-<td>The most generic kind of creative work, including books, movies, photographs,...</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../Dataset/">Dataset</a></td>
-<td>Represents a Dataset</td>
+<td><a href="../BioschemasDataset/">BioschemasDataset</a></td>
+<td></td>
 <td>yes</td>
-</tr>
-<tr>
-<td><a href="../DatasetCollection/">DatasetCollection</a></td>
-<td>A collection of datasets</td>
-<td>no</td>
 </tr>
 </tbody>
 </table>
@@ -354,17 +345,19 @@
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
-<li>from schema: https://w3id.org/stroemphi/Dataset_AP</li>
+<li>from schema: https://discovery.biothings.io/view/bioschemas/Dataset</li>
 </ul>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 
 <pre><code class="language-yaml">name: publisher
-from_schema: https://w3id.org/stroemphi/Dataset_AP
+description: ' The publisher of the creative work.'
+from_schema: https://discovery.biothings.io/view/bioschemas/Dataset
 rank: 1000
+slot_uri: schema:publisher
 alias: publisher
 domain_of:
-- CreativeWork
+- BioschemasDataset
 range: string
 
 </code></pre>

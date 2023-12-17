@@ -317,7 +317,7 @@
 
 
 <h1 id="slot-alternatename">Slot: alternateName</h1>
-<p><em>An alias for the item.</em></p>
+<p>_ An alias for the item._</p>
 <p>URI: <a href="http://schema.org/alternateName">schema:alternateName</a></p>
 <!-- no inheritance hierarchy -->
 
@@ -332,88 +332,33 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../Thing/">Thing</a></td>
-<td>The most generic type of item</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../Intangible/">Intangible</a></td>
-<td>A utility class that serves as the umbrella for a number of 'intangible' thin...</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../CreativeWork/">CreativeWork</a></td>
-<td>The most generic kind of creative work, including books, movies, photographs,...</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../Dataset/">Dataset</a></td>
-<td>Represents a Dataset</td>
+<td><a href="../BioschemasDataset/">BioschemasDataset</a></td>
+<td></td>
 <td>yes</td>
-</tr>
-<tr>
-<td><a href="../DatasetCollection/">DatasetCollection</a></td>
-<td>A collection of datasets</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../MaterialEntity/">MaterialEntity</a></td>
-<td></td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../ChemicalEntity/">ChemicalEntity</a></td>
-<td></td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../EvaluatedThing/">EvaluatedThing</a></td>
-<td></td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../ChemicalReaction/">ChemicalReaction</a></td>
-<td></td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../ReactionStep/">ReactionStep</a></td>
-<td></td>
-<td>no</td>
 </tr>
 </tbody>
 </table>
 <h2 id="properties">Properties</h2>
 <ul>
-<li>
-<p>Range: <a href="../String/">String</a></p>
-</li>
-<li>
-<p>Multivalued: True</p>
-</li>
+<li>Range: <a href="../String/">String</a></li>
 </ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
-<li>from schema: https://w3id.org/stroemphi/Dataset_AP</li>
+<li>from schema: https://discovery.biothings.io/view/bioschemas/Dataset</li>
 </ul>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 
 <pre><code class="language-yaml">name: alternateName
-description: An alias for the item.
-from_schema: https://w3id.org/stroemphi/Dataset_AP
-exact_mappings:
-- dct:alternative
+description: ' An alias for the item.'
+from_schema: https://discovery.biothings.io/view/bioschemas/Dataset
 rank: 1000
 slot_uri: schema:alternateName
-multivalued: true
 alias: alternateName
 domain_of:
-- Thing
+- BioschemasDataset
 range: string
-inlined: true
-inlined_as_list: true
 
 </code></pre>
 

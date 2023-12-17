@@ -317,7 +317,8 @@
 
 
 <h1 id="slot-maintainer">Slot: maintainer</h1>
-<p>URI: <a href="https://w3id.org/stroemphi/Dataset_AP/maintainer">dataset_ap:maintainer</a></p>
+<p>_ A maintainer of a <a href="https://schema.org/Dataset">Dataset</a>, software package (<a href="https://schema.org/SoftwareApplication">SoftwareApplication</a>), or other <a href="https://schema.org/Project">Project</a>. A maintainer is a <a href="https://schema.org/Person">Person</a> or <a href="https://schema.org/Organization">Organization</a> that manages contributions to, and/or publication of, some (typically complex) artifact. It is common for distributions of software and data to be based on "upstream" sources. When <a href="https://schema.org/maintainer">maintainer</a> is applied to a specific version of something e.g. a particular version or packaging of a <a href="https://schema.org/Dataset">Dataset</a>, it is always possible that the upstream source has a different maintainer. The <a href="https://schema.org/isBasedOn">isBasedOn</a> property can be used to indicate such relationships between datasets to make the different maintenance roles clear. Similarly in the case of software, a package may have dedicated maintainers working on integration into software distributions such as Ubuntu, as well as upstream maintainers of the underlying work._</p>
+<p>URI: <a href="http://schema.org/maintainer">schema:maintainer</a></p>
 <!-- no inheritance hierarchy -->
 
 <h2 id="applicable-classes">Applicable Classes</h2>
@@ -331,19 +332,9 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../CreativeWork/">CreativeWork</a></td>
-<td>The most generic kind of creative work, including books, movies, photographs,...</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../Dataset/">Dataset</a></td>
-<td>Represents a Dataset</td>
+<td><a href="../BioschemasDataset/">BioschemasDataset</a></td>
+<td></td>
 <td>yes</td>
-</tr>
-<tr>
-<td><a href="../DatasetCollection/">DatasetCollection</a></td>
-<td>A collection of datasets</td>
-<td>no</td>
 </tr>
 </tbody>
 </table>
@@ -354,17 +345,30 @@
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
-<li>from schema: https://w3id.org/stroemphi/Dataset_AP</li>
+<li>from schema: https://discovery.biothings.io/view/bioschemas/Dataset</li>
 </ul>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 
 <pre><code class="language-yaml">name: maintainer
-from_schema: https://w3id.org/stroemphi/Dataset_AP
+description: ' A maintainer of a [Dataset](https://schema.org/Dataset), software package
+  ([SoftwareApplication](https://schema.org/SoftwareApplication)), or other [Project](https://schema.org/Project).
+  A maintainer is a [Person](https://schema.org/Person) or [Organization](https://schema.org/Organization)
+  that manages contributions to, and/or publication of, some (typically complex) artifact.
+  It is common for distributions of software and data to be based on &quot;upstream&quot; sources.
+  When [maintainer](https://schema.org/maintainer) is applied to a specific version
+  of something e.g. a particular version or packaging of a [Dataset](https://schema.org/Dataset),
+  it is always possible that the upstream source has a different maintainer. The [isBasedOn](https://schema.org/isBasedOn)
+  property can be used to indicate such relationships between datasets to make the
+  different maintenance roles clear. Similarly in the case of software, a package
+  may have dedicated maintainers working on integration into software distributions
+  such as Ubuntu, as well as upstream maintainers of the underlying work.'
+from_schema: https://discovery.biothings.io/view/bioschemas/Dataset
 rank: 1000
+slot_uri: schema:maintainer
 alias: maintainer
 domain_of:
-- CreativeWork
+- BioschemasDataset
 range: string
 
 </code></pre>

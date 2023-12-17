@@ -317,7 +317,9 @@
 
 
 <h1 id="slot-haspart">Slot: hasPart</h1>
-<p>URI: <a href="https://w3id.org/stroemphi/Dataset_AP/hasPart">dataset_ap:hasPart</a></p>
+<p>_ Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense). _</p>
+<p><em>Inverse property: <a href="https://schema.org/isPartOf">isPartOf</a></em></p>
+<p>URI: <a href="http://schema.org/hasPart">schema:hasPart</a></p>
 <!-- no inheritance hierarchy -->
 
 <h2 id="applicable-classes">Applicable Classes</h2>
@@ -331,19 +333,9 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../CreativeWork/">CreativeWork</a></td>
-<td>The most generic kind of creative work, including books, movies, photographs,...</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../Dataset/">Dataset</a></td>
-<td>Represents a Dataset</td>
+<td><a href="../BioschemasDataset/">BioschemasDataset</a></td>
+<td></td>
 <td>yes</td>
-</tr>
-<tr>
-<td><a href="../DatasetCollection/">DatasetCollection</a></td>
-<td>A collection of datasets</td>
-<td>no</td>
 </tr>
 </tbody>
 </table>
@@ -354,17 +346,20 @@
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
-<li>from schema: https://w3id.org/stroemphi/Dataset_AP</li>
+<li>from schema: https://discovery.biothings.io/view/bioschemas/Dataset</li>
 </ul>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 
 <pre><code class="language-yaml">name: hasPart
-from_schema: https://w3id.org/stroemphi/Dataset_AP
+description: &quot; Indicates an item or CreativeWork that is part of this item, or CreativeWork\
+  \ (in some sense). \nInverse property: [isPartOf](https://schema.org/isPartOf)&quot;
+from_schema: https://discovery.biothings.io/view/bioschemas/Dataset
 rank: 1000
+slot_uri: schema:hasPart
 alias: hasPart
 domain_of:
-- CreativeWork
+- BioschemasDataset
 range: string
 
 </code></pre>

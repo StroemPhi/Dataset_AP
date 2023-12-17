@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#dataset_ap" class="md-skip">
+        <a href="#bioschemasorgs-dataset-profile-linkml-representation" class="md-skip">
           Skip to content
         </a>
       
@@ -379,10 +379,10 @@
   </a>
 
 
-<h1 id="dataset_ap">Dataset_AP</h1>
-<p>A LinkML representation of https://bioschemas.org/profiles/Dataset/1.0-RELEASE.</p>
-<p>URI: https://w3id.org/stroemphi/Dataset_AP</p>
-<p>Name: Dataset_AP</p>
+<h1 id="bioschemasorgs-dataset-profile-linkml-representation">Bioschemas.org's Dataset Profile LinkML representation</h1>
+<p>A guide for how to describe datasets in the life-sciences using Schema.org-like annotation. Version 1.0-RELEASE. <h3>Summary of Changes</h3> <br>Key changes since 0.3-RELEASE:<ul><li>Updated properties to Schema.org v12.0; various properties added at recommended or optional level, expected types updated. See 0.4-DRAFT for full details</li><li>license now a minimum property</li><li>keywords: Cardinality #501 – Cardinality is MANY</li><li>distribution: Cardinality #574 – Cardinality changed to MANY</li><li>datePublished: Increased marginlity #576 – Now recommended</li><li>publisher: Increased marginlity, Cardinality #576 – Now recommended with MANY cardinality</li></ul></p>
+<p>URI: https://discovery.biothings.io/view/bioschemas/Dataset</p>
+<p>Name: dataset_ap</p>
 <h2 id="classes">Classes</h2>
 <table>
 <thead>
@@ -393,51 +393,59 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="PlannedProcess/">PlannedProcess</a></td>
+<td><a href="CategoryCode/">CategoryCode</a></td>
 <td>None</td>
 </tr>
 <tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="Assay/">Assay</a></td>
+<td><a href="CreativeWork/">CreativeWork</a></td>
 <td>None</td>
 </tr>
 <tr>
-<td><a href="Thing/">Thing</a></td>
-<td>The most generic type of item.</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="ChemicalEntity/">ChemicalEntity</a></td>
+<td><a href="DataCatalog/">DataCatalog</a></td>
 <td>None</td>
 </tr>
 <tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="ChemicalReaction/">ChemicalReaction</a></td>
+<td><a href="DataDownload/">DataDownload</a></td>
 <td>None</td>
 </tr>
 <tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="ReactionStep/">ReactionStep</a></td>
+<td><a href="Dataset/">Dataset</a></td>
 <td>None</td>
 </tr>
 <tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CreativeWork/">CreativeWork</a></td>
-<td>The most generic kind of creative work, including books, movies, photographs, software programs, etc.</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="Dataset/">Dataset</a></td>
-<td>Represents a Dataset</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="DatasetCollection/">DatasetCollection</a></td>
-<td>A collection of datasets.</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="EvaluatedThing/">EvaluatedThing</a></td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="BioschemasDataset/">BioschemasDataset</a></td>
 <td>None</td>
 </tr>
 <tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="Intangible/">Intangible</a></td>
-<td>A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.</td>
+<td><a href="DateTime/">DateTime</a></td>
+<td>None</td>
 </tr>
 <tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="MaterialEntity/">MaterialEntity</a></td>
+<td><a href="DefinedTerm/">DefinedTerm</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="DefinedTermSet/">DefinedTermSet</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="Organization/">Organization</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="Person/">Person</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="Product/">Product</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="PropertyValue/">PropertyValue</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="Trip/">Trip</a></td>
 <td>None</td>
 </tr>
 </tbody>
@@ -452,136 +460,136 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="about/">about</a></td>
-<td>The subject matter of the content</td>
-</tr>
-<tr>
 <td><a href="alternateName/">alternateName</a></td>
 <td>An alias for the item</td>
 </tr>
 <tr>
 <td><a href="citation/">citation</a></td>
-<td></td>
+<td>A citation for a publication that describes the dataset</td>
 </tr>
 <tr>
-<td><a href="conformsTo/">conformsTo</a></td>
+<td><a href="codeValue/">codeValue</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="creator/">creator</a></td>
-<td>The creator/author of this CreativeWork</td>
-</tr>
-<tr>
-<td><a href="datasets/">datasets</a></td>
-<td>A dataset contained in this catalog</td>
+<td>The name of the dataset creator (person or organization)</td>
 </tr>
 <tr>
 <td><a href="dateCreated/">dateCreated</a></td>
-<td>The date on which the CreativeWork was created or the item was added to a Dat...</td>
+<td>The date on which the CreativeWork was created or the item was added to a Da...</td>
 </tr>
 <tr>
 <td><a href="dateModified/">dateModified</a></td>
-<td></td>
+<td>The date on which the CreativeWork was most recently modified or when the it...</td>
 </tr>
 <tr>
 <td><a href="datePublished/">datePublished</a></td>
-<td></td>
+<td>Date of first broadcast/publication</td>
 </tr>
 <tr>
 <td><a href="description/">description</a></td>
-<td>A description of the item</td>
+<td>A short summary describing a dataset</td>
 </tr>
 <tr>
 <td><a href="distribution/">distribution</a></td>
-<td>A downloadable form of this dataset, at a specific location, in a specific fo...</td>
-</tr>
-<tr>
-<td><a href="has_input/">has_input</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="has_output/">has_output</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="has_parameter/">has_parameter</a></td>
-<td></td>
+<td>A downloadable form of this dataset, at a specific location, in a specific f...</td>
 </tr>
 <tr>
 <td><a href="hasPart/">hasPart</a></td>
-<td></td>
+<td>Indicates an item or CreativeWork that is part of this item, or CreativeWork...</td>
 </tr>
 <tr>
 <td><a href="identifier/">identifier</a></td>
-<td>A unique identifier for a thing</td>
+<td>CURIEs that can be resolved using [Identifiers</td>
 </tr>
 <tr>
 <td><a href="includedInDataCatalog/">includedInDataCatalog</a></td>
 <td>A data catalog which contains this dataset</td>
 </tr>
 <tr>
-<td><a href="isAccessibleForFree/">isAccessibleForFree</a></td>
+<td><a href="inDefinedTermSet/">inDefinedTermSet</a></td>
 <td></td>
+</tr>
+<tr>
+<td><a href="isAccessibleForFree/">isAccessibleForFree</a></td>
+<td>A flag to signal that the item, event, or place is accessible for free</td>
 </tr>
 <tr>
 <td><a href="isBasedOn/">isBasedOn</a></td>
-<td>A resource that was used in the creation of this resource</td>
+<td>Use to link a Dataset to the Study that it was generated from</td>
 </tr>
 <tr>
 <td><a href="isPartOf/">isPartOf</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="issn/">issn</a></td>
-<td>The International Standard Serial Number (ISSN) that identifies this serial p...</td>
+<td>Indicates an item or CreativeWork that this item, or CreativeWork (in some s...</td>
 </tr>
 <tr>
 <td><a href="keywords/">keywords</a></td>
+<td>Keywords should be drawn from a controlled vocabulary, e</td>
+</tr>
+<tr>
+<td><a href="legalName/">legalName</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="license/">license</a></td>
+<td>A license under which the dataset is distributed</td>
+</tr>
+<tr>
+<td><a href="mainEntityOfPage/">mainEntityOfPage</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="maintainer/">maintainer</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="measurementMethod/">measurementMethod</a></td>
-<td>A subproperty of measurementTechnique that can be used for specifying specifi...</td>
+<td>A maintainer of a [Dataset](https://schema</td>
 </tr>
 <tr>
 <td><a href="measurementTechnique/">measurementTechnique</a></td>
-<td>A technique, method or technology used in an Observation, StatisticalVariable...</td>
+<td>A technique or technology used in a [Dataset](https://schema</td>
 </tr>
 <tr>
 <td><a href="name/">name</a></td>
-<td>The name of the item</td>
+<td>A descriptive name of the dataset</td>
 </tr>
 <tr>
 <td><a href="publisher/">publisher</a></td>
-<td></td>
+<td>The publisher of the creative work</td>
 </tr>
 <tr>
 <td><a href="sameAs/">sameAs</a></td>
 <td>URL of a reference Web page that unambiguously indicates the item's identity</td>
 </tr>
 <tr>
-<td><a href="subjectOf/">subjectOf</a></td>
-<td>A CreativeWork about this Thing</td>
+<td><a href="termCode/">termCode</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="unitCode/">unitCode</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="unitText/">unitText</a></td>
+<td></td>
 </tr>
 <tr>
 <td><a href="url/">url</a></td>
-<td>URL of the item</td>
+<td>The location of a page describing the dataset</td>
+</tr>
+<tr>
+<td><a href="value/">value</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="valuereference/">valuereference</a></td>
+<td></td>
 </tr>
 <tr>
 <td><a href="variableMeasured/">variableMeasured</a></td>
-<td></td>
+<td>What does the dataset measure? (e</td>
 </tr>
 <tr>
 <td><a href="version/">version</a></td>
-<td></td>
+<td>The version number for this dataset</td>
 </tr>
 </tbody>
 </table>

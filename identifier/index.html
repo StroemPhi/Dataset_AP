@@ -317,7 +317,7 @@
 
 
 <h1 id="slot-identifier">Slot: identifier</h1>
-<p><em>A unique identifier for a thing</em></p>
+<p><em>CURIEs that can be resolved using <a href="https://identifiers.org/">Identifiers.org</a> should be used. The identifier property represents any kind of identifier for any kind of <a href="https://schema.org/Thing">Thing</a>, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See <a href="http://schema.org/docs/datamodel.html#identifierBg">background notes</a> for more details.</em></p>
 <p>URI: <a href="http://schema.org/identifier">schema:identifier</a></p>
 <!-- no inheritance hierarchy -->
 
@@ -332,52 +332,27 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../Thing/">Thing</a></td>
-<td>The most generic type of item</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../Intangible/">Intangible</a></td>
-<td>A utility class that serves as the umbrella for a number of 'intangible' thin...</td>
-<td>no</td>
+<td><a href="../BioschemasDataset/">BioschemasDataset</a></td>
+<td></td>
+<td>yes</td>
 </tr>
 <tr>
 <td><a href="../CreativeWork/">CreativeWork</a></td>
-<td>The most generic kind of creative work, including books, movies, photographs,...</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../Dataset/">Dataset</a></td>
-<td>Represents a Dataset</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../DatasetCollection/">DatasetCollection</a></td>
-<td>A collection of datasets</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../MaterialEntity/">MaterialEntity</a></td>
 <td></td>
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../ChemicalEntity/">ChemicalEntity</a></td>
+<td><a href="../PropertyValue/">PropertyValue</a></td>
 <td></td>
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../EvaluatedThing/">EvaluatedThing</a></td>
+<td><a href="../DefinedTerm/">DefinedTerm</a></td>
 <td></td>
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../ChemicalReaction/">ChemicalReaction</a></td>
-<td></td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../ReactionStep/">ReactionStep</a></td>
+<td><a href="../DefinedTermSet/">DefinedTermSet</a></td>
 <td></td>
 <td>no</td>
 </tr>
@@ -385,34 +360,34 @@
 </table>
 <h2 id="properties">Properties</h2>
 <ul>
-<li>
-<p>Range: <a href="../Uriorcurie/">Uriorcurie</a></p>
-</li>
-<li>
-<p>Required: True</p>
-</li>
+<li>Range: <a href="../String/">String</a></li>
 </ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
-<li>from schema: https://w3id.org/stroemphi/Dataset_AP</li>
+<li>from schema: https://discovery.biothings.io/view/bioschemas/Dataset</li>
 </ul>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 
 <pre><code class="language-yaml">name: identifier
-description: A unique identifier for a thing
-from_schema: https://w3id.org/stroemphi/Dataset_AP
-exact_mappings:
-- dct:identifier
+description: CURIEs that can be resolved using [Identifiers.org](https://identifiers.org/)
+  should be used. The identifier property represents any kind of identifier for any
+  kind of [Thing](https://schema.org/Thing), such as ISBNs, GTIN codes, UUIDs etc.
+  Schema.org provides dedicated properties for representing many of these, either
+  as textual strings or as URL (URI) links. See [background notes](http://schema.org/docs/datamodel.html#identifierBg)
+  for more details.
+from_schema: https://discovery.biothings.io/view/bioschemas/Dataset
 rank: 1000
 slot_uri: schema:identifier
-identifier: true
 alias: identifier
 domain_of:
-- Thing
-range: uriorcurie
-required: true
+- BioschemasDataset
+- CreativeWork
+- PropertyValue
+- DefinedTerm
+- DefinedTermSet
+range: string
 
 </code></pre>
 

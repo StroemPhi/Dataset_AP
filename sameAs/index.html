@@ -317,7 +317,7 @@
 
 
 <h1 id="slot-sameas">Slot: sameAs</h1>
-<p><em>URL of a reference Web page that unambiguously indicates the item's identity.  E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.</em></p>
+<p>_ URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website._</p>
 <p>URI: <a href="http://schema.org/sameAs">schema:sameAs</a></p>
 <!-- no inheritance hierarchy -->
 
@@ -332,52 +332,12 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../Thing/">Thing</a></td>
-<td>The most generic type of item</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../Intangible/">Intangible</a></td>
-<td>A utility class that serves as the umbrella for a number of 'intangible' thin...</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../CreativeWork/">CreativeWork</a></td>
-<td>The most generic kind of creative work, including books, movies, photographs,...</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../Dataset/">Dataset</a></td>
-<td>Represents a Dataset</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../DatasetCollection/">DatasetCollection</a></td>
-<td>A collection of datasets</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../MaterialEntity/">MaterialEntity</a></td>
+<td><a href="../BioschemasDataset/">BioschemasDataset</a></td>
 <td></td>
-<td>no</td>
+<td>yes</td>
 </tr>
 <tr>
-<td><a href="../ChemicalEntity/">ChemicalEntity</a></td>
-<td></td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../EvaluatedThing/">EvaluatedThing</a></td>
-<td></td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../ChemicalReaction/">ChemicalReaction</a></td>
-<td></td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../ReactionStep/">ReactionStep</a></td>
+<td><a href="../Organization/">Organization</a></td>
 <td></td>
 <td>no</td>
 </tr>
@@ -390,20 +350,22 @@
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
-<li>from schema: https://w3id.org/stroemphi/Dataset_AP</li>
+<li>from schema: https://discovery.biothings.io/view/bioschemas/Dataset</li>
 </ul>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 
 <pre><code class="language-yaml">name: sameAs
-description: URL of a reference Web page that unambiguously indicates the item's identity.  E.g.
-  the URL of the item's Wikipedia page, Wikidata entry, or official website.
-from_schema: https://w3id.org/stroemphi/Dataset_AP
+description: ' URL of a reference Web page that unambiguously indicates the item''s
+  identity. E.g. the URL of the item''s Wikipedia page, Wikidata entry, or official
+  website.'
+from_schema: https://discovery.biothings.io/view/bioschemas/Dataset
 rank: 1000
 slot_uri: schema:sameAs
 alias: sameAs
 domain_of:
-- Thing
+- BioschemasDataset
+- Organization
 range: string
 
 </code></pre>

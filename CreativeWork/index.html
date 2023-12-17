@@ -142,11 +142,6 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#inheritance">
-    Inheritance
-  </a>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link" href="#slots">
     Slots
   </a>
@@ -200,70 +195,18 @@
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
 <h1 id="class-creativework">Class: CreativeWork</h1>
-<p><em>The most generic kind of creative work, including books, movies, photographs, software programs, etc.</em></p>
 <p>URI: <a href="http://schema.org/CreativeWork">schema:CreativeWork</a></p>
 <div class="mermaid"> classDiagram
     class CreativeWork
-      Thing &lt;|-- CreativeWork
-
-
-      CreativeWork &lt;|-- Dataset
-      CreativeWork &lt;|-- DatasetCollection
-
-
-      CreativeWork : alternateName
-
-      CreativeWork : citation
-
-      CreativeWork : creator
-
-      CreativeWork : dateCreated
-
-      CreativeWork : dateModified
-
-      CreativeWork : datePublished
-
-      CreativeWork : description
-
-      CreativeWork : hasPart
-
       CreativeWork : identifier
-
-      CreativeWork : isAccessibleForFree
-
-      CreativeWork : isBasedOn
-
-      CreativeWork : isPartOf
-
-      CreativeWork : keywords
-
-      CreativeWork : license
-
-      CreativeWork : maintainer
 
       CreativeWork : name
 
-      CreativeWork : publisher
-
-      CreativeWork : sameAs
-
       CreativeWork : url
-
-      CreativeWork : version
 
 
 </div>
-<h2 id="inheritance">Inheritance</h2>
-<ul>
-<li><a href="../Thing/">Thing</a><ul>
-<li><strong>CreativeWork</strong><ul>
-<li><a href="../Dataset/">Dataset</a></li>
-<li><a href="../DatasetCollection/">DatasetCollection</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
+<!-- no inheritance hierarchy -->
 <h2 id="slots">Slots</h2>
 <table>
 <thead>
@@ -276,131 +219,29 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../citation/">citation</a></td>
+<td><a href="../name/">name</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
-<td></td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../creator/">creator</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>The creator/author of this CreativeWork</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../dateCreated/">dateCreated</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>The date on which the CreativeWork was created or the item was added to a Dat...</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../dateModified/">dateModified</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td></td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../datePublished/">datePublished</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td></td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../hasPart/">hasPart</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td></td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../isAccessibleForFree/">isAccessibleForFree</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td></td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../isBasedOn/">isBasedOn</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>A resource that was used in the creation of this resource</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../isPartOf/">isPartOf</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td></td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../keywords/">keywords</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td></td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../license/">license</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td></td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../maintainer/">maintainer</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td></td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../publisher/">publisher</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td></td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../version/">version</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td></td>
+<td>A descriptive name of the dataset</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../identifier/">identifier</a></td>
-<td>1..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
-<td>A unique identifier for a thing</td>
-<td><a href="../Thing/">Thing</a></td>
-</tr>
-<tr>
-<td><a href="../alternateName/">alternateName</a></td>
-<td>0..* <br/> <a href="../String/">String</a></td>
-<td>An alias for the item</td>
-<td><a href="../Thing/">Thing</a></td>
-</tr>
-<tr>
-<td><a href="../description/">description</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
-<td>A description of the item</td>
-<td><a href="../Thing/">Thing</a></td>
-</tr>
-<tr>
-<td><a href="../name/">name</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>The name of the item</td>
-<td><a href="../Thing/">Thing</a></td>
-</tr>
-<tr>
-<td><a href="../sameAs/">sameAs</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>URL of a reference Web page that unambiguously indicates the item's identity</td>
-<td><a href="../Thing/">Thing</a></td>
+<td>CURIEs that can be resolved using [Identifiers</td>
+<td>direct</td>
 </tr>
 <tr>
 <td><a href="../url/">url</a></td>
-<td>0..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
-<td>URL of the item</td>
-<td><a href="../Thing/">Thing</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>The location of a page describing the dataset</td>
+<td>direct</td>
 </tr>
 </tbody>
 </table>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
-<li>from schema: https://w3id.org/stroemphi/Dataset_AP</li>
+<li>from schema: https://discovery.biothings.io/view/bioschemas/Dataset</li>
 </ul>
 <h2 id="mappings">Mappings</h2>
 <table>
@@ -419,10 +260,6 @@
 <td>native</td>
 <td>dataset_ap:CreativeWork</td>
 </tr>
-<tr>
-<td>exact</td>
-<td>iao:0000030</td>
-</tr>
 </tbody>
 </table>
 <h2 id="linkml-source">LinkML Source</h2>
@@ -430,27 +267,11 @@
 <h3 id="direct">Direct</h3>
 <details>
 <pre><code class="language-yaml">name: CreativeWork
-description: The most generic kind of creative work, including books, movies, photographs,
-  software programs, etc.
-from_schema: https://w3id.org/stroemphi/Dataset_AP
-exact_mappings:
-- iao:0000030
-is_a: Thing
+from_schema: https://discovery.biothings.io/view/bioschemas/Dataset
 slots:
-- citation
-- creator
-- dateCreated
-- dateModified
-- datePublished
-- hasPart
-- isAccessibleForFree
-- isBasedOn
-- isPartOf
-- keywords
-- license
-- maintainer
-- publisher
-- version
+- name
+- identifier
+- url
 class_uri: schema:CreativeWork
 
 </code></pre>
@@ -458,236 +279,67 @@ class_uri: schema:CreativeWork
 <h3 id="induced">Induced</h3>
 <details>
 <pre><code class="language-yaml">name: CreativeWork
-description: The most generic kind of creative work, including books, movies, photographs,
-  software programs, etc.
-from_schema: https://w3id.org/stroemphi/Dataset_AP
-exact_mappings:
-- iao:0000030
-is_a: Thing
+from_schema: https://discovery.biothings.io/view/bioschemas/Dataset
 attributes:
-  citation:
-    name: citation
-    from_schema: https://w3id.org/stroemphi/Dataset_AP
-    rank: 1000
-    alias: citation
-    owner: CreativeWork
-    domain_of:
-    - CreativeWork
-    range: string
-  creator:
-    name: creator
-    description: The creator/author of this CreativeWork.
-    todos:
-    - Add domain &amp; range constrains, if this slot is actually needed/used in our context,
-      otherwise drop it.
-    from_schema: https://w3id.org/stroemphi/Dataset_AP
-    rank: 1000
-    slot_uri: schema:creator
-    alias: creator
-    owner: CreativeWork
-    domain_of:
-    - CreativeWork
-    range: string
-  dateCreated:
-    name: dateCreated
-    description: The date on which the CreativeWork was created or the item was added
-      to a DataFeed.
-    from_schema: https://w3id.org/stroemphi/Dataset_AP
-    rank: 1000
-    slot_uri: schema:dateCreated
-    alias: dateCreated
-    owner: CreativeWork
-    domain_of:
-    - CreativeWork
-    range: string
-  dateModified:
-    name: dateModified
-    from_schema: https://w3id.org/stroemphi/Dataset_AP
-    rank: 1000
-    alias: dateModified
-    owner: CreativeWork
-    domain_of:
-    - CreativeWork
-    range: string
-  datePublished:
-    name: datePublished
-    from_schema: https://w3id.org/stroemphi/Dataset_AP
-    rank: 1000
-    alias: datePublished
-    owner: CreativeWork
-    domain_of:
-    - CreativeWork
-    range: string
-  hasPart:
-    name: hasPart
-    from_schema: https://w3id.org/stroemphi/Dataset_AP
-    rank: 1000
-    alias: hasPart
-    owner: CreativeWork
-    domain_of:
-    - CreativeWork
-    range: string
-  isAccessibleForFree:
-    name: isAccessibleForFree
-    from_schema: https://w3id.org/stroemphi/Dataset_AP
-    rank: 1000
-    alias: isAccessibleForFree
-    owner: CreativeWork
-    domain_of:
-    - CreativeWork
-    range: string
-  isBasedOn:
-    name: isBasedOn
-    description: A resource that was used in the creation of this resource.  This
-      term can be repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html.  Supersedes
-      isBasedOnUrl.
-    from_schema: https://w3id.org/stroemphi/Dataset_AP
-    rank: 1000
-    slot_uri: schema:isBasedOn
-    alias: isBasedOn
-    owner: CreativeWork
-    domain_of:
-    - CreativeWork
-    range: string
-  isPartOf:
-    name: isPartOf
-    from_schema: https://w3id.org/stroemphi/Dataset_AP
-    rank: 1000
-    alias: isPartOf
-    owner: CreativeWork
-    domain_of:
-    - CreativeWork
-    range: string
-  keywords:
-    name: keywords
-    from_schema: https://w3id.org/stroemphi/Dataset_AP
-    rank: 1000
-    alias: keywords
-    owner: CreativeWork
-    domain_of:
-    - CreativeWork
-    range: string
-  license:
-    name: license
-    from_schema: https://w3id.org/stroemphi/Dataset_AP
-    rank: 1000
-    alias: license
-    owner: CreativeWork
-    domain_of:
-    - CreativeWork
-    range: string
-  maintainer:
-    name: maintainer
-    from_schema: https://w3id.org/stroemphi/Dataset_AP
-    rank: 1000
-    alias: maintainer
-    owner: CreativeWork
-    domain_of:
-    - CreativeWork
-    range: string
-  publisher:
-    name: publisher
-    from_schema: https://w3id.org/stroemphi/Dataset_AP
-    rank: 1000
-    alias: publisher
-    owner: CreativeWork
-    domain_of:
-    - CreativeWork
-    range: string
-  version:
-    name: version
-    from_schema: https://w3id.org/stroemphi/Dataset_AP
-    rank: 1000
-    alias: version
-    owner: CreativeWork
-    domain_of:
-    - CreativeWork
-    range: string
-  identifier:
-    name: identifier
-    description: A unique identifier for a thing
-    from_schema: https://w3id.org/stroemphi/Dataset_AP
-    exact_mappings:
-    - dct:identifier
-    rank: 1000
-    slot_uri: schema:identifier
-    identifier: true
-    alias: identifier
-    owner: CreativeWork
-    domain_of:
-    - Thing
-    range: uriorcurie
-    required: true
-  alternateName:
-    name: alternateName
-    description: An alias for the item.
-    from_schema: https://w3id.org/stroemphi/Dataset_AP
-    exact_mappings:
-    - dct:alternative
-    rank: 1000
-    slot_uri: schema:alternateName
-    multivalued: true
-    alias: alternateName
-    owner: CreativeWork
-    domain_of:
-    - Thing
-    range: string
-    inlined: true
-    inlined_as_list: true
-  description:
-    name: description
-    description: A description of the item.
-    from_schema: https://w3id.org/stroemphi/Dataset_AP
-    exact_mappings:
-    - dct:description
-    rank: 1000
-    slot_uri: schema:description
-    alias: description
-    owner: CreativeWork
-    domain_of:
-    - Thing
-    range: string
   name:
     name: name
-    description: The name of the item.
-    from_schema: https://w3id.org/stroemphi/Dataset_AP
-    close_mappings:
-    - dct:title
+    description: A descriptive name of the dataset. The name of the item.
+    from_schema: https://discovery.biothings.io/view/bioschemas/Dataset
     rank: 1000
     slot_uri: schema:name
     alias: name
     owner: CreativeWork
     domain_of:
-    - Thing
+    - BioschemasDataset
+    - CreativeWork
+    - Organization
+    - Person
+    - DateTime
+    - DataDownload
+    - Trip
+    - PropertyValue
+    - CategoryCode
+    - DataCatalog
+    - Product
+    - DefinedTerm
+    - DefinedTermSet
     range: string
-  sameAs:
-    name: sameAs
-    description: URL of a reference Web page that unambiguously indicates the item's
-      identity.  E.g. the URL of the item's Wikipedia page, Wikidata entry, or official
-      website.
-    from_schema: https://w3id.org/stroemphi/Dataset_AP
+  identifier:
+    name: identifier
+    description: CURIEs that can be resolved using [Identifiers.org](https://identifiers.org/)
+      should be used. The identifier property represents any kind of identifier for
+      any kind of [Thing](https://schema.org/Thing), such as ISBNs, GTIN codes, UUIDs
+      etc. Schema.org provides dedicated properties for representing many of these,
+      either as textual strings or as URL (URI) links. See [background notes](http://schema.org/docs/datamodel.html#identifierBg)
+      for more details.
+    from_schema: https://discovery.biothings.io/view/bioschemas/Dataset
     rank: 1000
-    slot_uri: schema:sameAs
-    alias: sameAs
+    slot_uri: schema:identifier
+    alias: identifier
     owner: CreativeWork
     domain_of:
-    - Thing
+    - BioschemasDataset
+    - CreativeWork
+    - PropertyValue
+    - DefinedTerm
+    - DefinedTermSet
     range: string
   url:
     name: url
-    description: URL of the item.
-    comments:
-    - This slot MUST not be used to provide an IRI for an ontology or an ontology
-      term, use schema:identifier for this. The range (expected type) of schema:url
-      is an URL.
-    from_schema: https://w3id.org/stroemphi/Dataset_AP
+    description: The location of a page describing the dataset. URL of the item.
+    from_schema: https://discovery.biothings.io/view/bioschemas/Dataset
     rank: 1000
     slot_uri: schema:url
     alias: url
     owner: CreativeWork
     domain_of:
-    - Thing
-    range: uriorcurie
+    - BioschemasDataset
+    - CreativeWork
+    - Person
+    - CategoryCode
+    - DefinedTerm
+    - DefinedTermSet
+    range: string
 class_uri: schema:CreativeWork
 
 </code></pre>

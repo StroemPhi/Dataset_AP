@@ -317,7 +317,8 @@
 
 
 <h1 id="slot-includedindatacatalog">Slot: includedInDataCatalog</h1>
-<p><em>A data catalog which contains this dataset. Supersedes includedDataCatalog, <code>catalog</code>.  Inverse property [[dataset]]</em></p>
+<p>_ A data catalog which contains this dataset. Supersedes <a href="https://schema.org/includedDataCatalog">includedDataCatalog</a>, <a href="https://schema.org/catalog">catalog</a>._</p>
+<p><em>Inverse property: <a href="https://schema.org/dataset">dataset</a></em></p>
 <p>URI: <a href="http://schema.org/includedInDataCatalog">schema:includedInDataCatalog</a></p>
 <!-- no inheritance hierarchy -->
 
@@ -332,37 +333,36 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../Dataset/">Dataset</a></td>
-<td>Represents a Dataset</td>
+<td><a href="../BioschemasDataset/">BioschemasDataset</a></td>
+<td></td>
 <td>yes</td>
 </tr>
 </tbody>
 </table>
 <h2 id="properties">Properties</h2>
 <ul>
-<li>Range: <a href="../DatasetCollection/">DatasetCollection</a></li>
+<li>Range: <a href="../String/">String</a></li>
 </ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
-<li>from schema: https://w3id.org/stroemphi/Dataset_AP</li>
+<li>from schema: https://discovery.biothings.io/view/bioschemas/Dataset</li>
 </ul>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 
 <pre><code class="language-yaml">name: includedInDataCatalog
-description: A data catalog which contains this dataset. Supersedes includedDataCatalog,
-  `catalog`.  Inverse property [[dataset]]
-from_schema: https://w3id.org/stroemphi/Dataset_AP
-exact_mappings:
-- schema:catalog
+description: ' A data catalog which contains this dataset. Supersedes [includedDataCatalog](https://schema.org/includedDataCatalog),
+  [catalog](https://schema.org/catalog).
+
+  Inverse property: [dataset](https://schema.org/dataset)'
+from_schema: https://discovery.biothings.io/view/bioschemas/Dataset
 rank: 1000
 slot_uri: schema:includedInDataCatalog
 alias: includedInDataCatalog
 domain_of:
-- Dataset
-inverse: datasets
-range: DatasetCollection
+- BioschemasDataset
+range: string
 
 </code></pre>
 

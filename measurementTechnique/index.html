@@ -317,7 +317,13 @@
 
 
 <h1 id="slot-measurementtechnique">Slot: measurementTechnique</h1>
-<p><em>A technique, method or technology used in an Observation, StatisticalVariable or Dataset (or DataDownload, DataCatalog),  corresponding to the method used for measuring the corresponding variable(s) (for datasets, described using variableMeasured;  for Observation, a StatisticalVariable).</em></p>
+<p>_ A technique or technology used in a <a href="https://schema.org/Dataset">Dataset</a> (or <a href="https://schema.org/DataDownload">DataDownload</a>, <a href="https://schema.org/DataCatalog">DataCatalog</a>), corresponding to the method used for measuring the corresponding variable(s) (described using <a href="https://schema.org/variableMeasured">variableMeasured</a>). This is oriented towards scientific and scholarly dataset publication but may have broader applicability; it is not intended as a full representation of measurement, but rather as a high level summary for dataset discovery._</p>
+<p>__</p>
+<p><em>For example, if <a href="https://schema.org/variableMeasured">variableMeasured</a> is: molecule concentration, <a href="https://schema.org/measurementTechnique">measurementTechnique</a> could be: "mass spectrometry" or "nmr spectroscopy" or "colorimetry" or "immunofluorescence".</em></p>
+<p>__</p>
+<p><em>If the <a href="https://schema.org/variableMeasured">variableMeasured</a> is "depression rating", the <a href="https://schema.org/measurementTechnique">measurementTechnique</a> could be "Zung Scale" or "HAM-D" or "Beck Depression Inventory".</em></p>
+<p>__</p>
+<p><em>If there are several <a href="https://schema.org/variableMeasured">variableMeasured</a> properties recorded for some given data object, use a <a href="https://schema.org/PropertyValue">PropertyValue</a> for each <a href="https://schema.org/variableMeasured">variableMeasured</a> and attach the corresponding <a href="https://schema.org/measurementTechnique">measurementTechnique</a>.</em></p>
 <p>URI: <a href="http://schema.org/measurementTechnique">schema:measurementTechnique</a></p>
 <!-- no inheritance hierarchy -->
 
@@ -332,14 +338,9 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../Dataset/">Dataset</a></td>
-<td>Represents a Dataset</td>
+<td><a href="../BioschemasDataset/">BioschemasDataset</a></td>
+<td></td>
 <td>yes</td>
-</tr>
-<tr>
-<td><a href="../DatasetCollection/">DatasetCollection</a></td>
-<td>A collection of datasets</td>
-<td>no</td>
 </tr>
 </tbody>
 </table>
@@ -350,23 +351,41 @@
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
-<li>from schema: https://w3id.org/stroemphi/Dataset_AP</li>
+<li>from schema: https://discovery.biothings.io/view/bioschemas/Dataset</li>
 </ul>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 
 <pre><code class="language-yaml">name: measurementTechnique
-description: A technique, method or technology used in an Observation, StatisticalVariable
-  or Dataset (or DataDownload, DataCatalog),  corresponding to the method used for
-  measuring the corresponding variable(s) (for datasets, described using variableMeasured;  for
-  Observation, a StatisticalVariable).
-from_schema: https://w3id.org/stroemphi/Dataset_AP
+description: ' A technique or technology used in a [Dataset](https://schema.org/Dataset)
+  (or [DataDownload](https://schema.org/DataDownload), [DataCatalog](https://schema.org/DataCatalog)),
+  corresponding to the method used for measuring the corresponding variable(s) (described
+  using [variableMeasured](https://schema.org/variableMeasured)). This is oriented
+  towards scientific and scholarly dataset publication but may have broader applicability;
+  it is not intended as a full representation of measurement, but rather as a high
+  level summary for dataset discovery.
+
+
+  For example, if [variableMeasured](https://schema.org/variableMeasured) is: molecule
+  concentration, [measurementTechnique](https://schema.org/measurementTechnique) could
+  be: &quot;mass spectrometry&quot; or &quot;nmr spectroscopy&quot; or &quot;colorimetry&quot; or &quot;immunofluorescence&quot;.
+
+
+  If the [variableMeasured](https://schema.org/variableMeasured) is &quot;depression rating&quot;,
+  the [measurementTechnique](https://schema.org/measurementTechnique) could be &quot;Zung
+  Scale&quot; or &quot;HAM-D&quot; or &quot;Beck Depression Inventory&quot;.
+
+
+  If there are several [variableMeasured](https://schema.org/variableMeasured) properties
+  recorded for some given data object, use a [PropertyValue](https://schema.org/PropertyValue)
+  for each [variableMeasured](https://schema.org/variableMeasured) and attach the
+  corresponding [measurementTechnique](https://schema.org/measurementTechnique).'
+from_schema: https://discovery.biothings.io/view/bioschemas/Dataset
 rank: 1000
 slot_uri: schema:measurementTechnique
 alias: measurementTechnique
 domain_of:
-- Dataset
-- DatasetCollection
+- BioschemasDataset
 range: string
 
 </code></pre>

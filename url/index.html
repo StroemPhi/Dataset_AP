@@ -270,13 +270,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#comments" class="md-nav__link">
-    Comments
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#identifier-and-mapping-information" class="md-nav__link">
     Identifier and Mapping Information
   </a>
@@ -324,7 +317,7 @@
 
 
 <h1 id="slot-url">Slot: url</h1>
-<p><em>URL of the item.</em></p>
+<p><em>The location of a page describing the dataset. URL of the item.</em></p>
 <p>URI: <a href="http://schema.org/url">schema:url</a></p>
 <!-- no inheritance hierarchy -->
 
@@ -339,52 +332,32 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../Thing/">Thing</a></td>
-<td>The most generic type of item</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../Intangible/">Intangible</a></td>
-<td>A utility class that serves as the umbrella for a number of 'intangible' thin...</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../CreativeWork/">CreativeWork</a></td>
-<td>The most generic kind of creative work, including books, movies, photographs,...</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../Dataset/">Dataset</a></td>
-<td>Represents a Dataset</td>
+<td><a href="../BioschemasDataset/">BioschemasDataset</a></td>
+<td></td>
 <td>yes</td>
 </tr>
 <tr>
-<td><a href="../DatasetCollection/">DatasetCollection</a></td>
-<td>A collection of datasets</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../MaterialEntity/">MaterialEntity</a></td>
+<td><a href="../CreativeWork/">CreativeWork</a></td>
 <td></td>
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../ChemicalEntity/">ChemicalEntity</a></td>
+<td><a href="../Person/">Person</a></td>
 <td></td>
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../EvaluatedThing/">EvaluatedThing</a></td>
+<td><a href="../CategoryCode/">CategoryCode</a></td>
 <td></td>
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../ChemicalReaction/">ChemicalReaction</a></td>
+<td><a href="../DefinedTerm/">DefinedTerm</a></td>
 <td></td>
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../ReactionStep/">ReactionStep</a></td>
+<td><a href="../DefinedTermSet/">DefinedTermSet</a></td>
 <td></td>
 <td>no</td>
 </tr>
@@ -392,32 +365,30 @@
 </table>
 <h2 id="properties">Properties</h2>
 <ul>
-<li>Range: <a href="../Uriorcurie/">Uriorcurie</a></li>
-</ul>
-<h2 id="comments">Comments</h2>
-<ul>
-<li>This slot MUST not be used to provide an IRI for an ontology or an ontology term, use schema:identifier for this. The range (expected type) of schema:url is an URL.</li>
+<li>Range: <a href="../String/">String</a></li>
 </ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
-<li>from schema: https://w3id.org/stroemphi/Dataset_AP</li>
+<li>from schema: https://discovery.biothings.io/view/bioschemas/Dataset</li>
 </ul>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 
 <pre><code class="language-yaml">name: url
-description: URL of the item.
-comments:
-- This slot MUST not be used to provide an IRI for an ontology or an ontology term,
-  use schema:identifier for this. The range (expected type) of schema:url is an URL.
-from_schema: https://w3id.org/stroemphi/Dataset_AP
+description: The location of a page describing the dataset. URL of the item.
+from_schema: https://discovery.biothings.io/view/bioschemas/Dataset
 rank: 1000
 slot_uri: schema:url
 alias: url
 domain_of:
-- Thing
-range: uriorcurie
+- BioschemasDataset
+- CreativeWork
+- Person
+- CategoryCode
+- DefinedTerm
+- DefinedTermSet
+range: string
 
 </code></pre>
 
