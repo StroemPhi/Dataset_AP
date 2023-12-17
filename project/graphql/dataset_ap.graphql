@@ -1,162 +1,112 @@
-type Assay
+type BioschemasDataset
   {
-    hasInput: EvaluatedThing
-    hasOutput: Dataset
+    alternateName: String
+    citation: String
+    creator: String
+    dateCreated: String
+    dateModified: String
+    datePublished: String
+    description: String!
+    distribution: String
+    hasPart: String
+    identifier: String!
+    includedInDataCatalog: String
+    isAccessibleForFree: String
+    isBasedOn: String
+    isPartOf: String
+    keywords: String!
+    license: String!
+    maintainer: String
+    measurementTechnique: String
+    name: String!
+    publisher: String
+    sameAs: String
+    url: String!
+    variableMeasured: String
+    version: String
   }
 
-type ChemicalEntity
+type CategoryCode
   {
-    identifier: Uriorcurie!
-    alternateName: [String]
-    description: String
     name: String
-    sameAs: String
-    url: Uriorcurie
-  }
-
-type ChemicalReaction
-  {
-    identifier: Uriorcurie!
-    alternateName: [String]
-    description: String
-    name: String
-    sameAs: String
-    url: Uriorcurie
+    codeValue: String
+    url: String
   }
 
 type CreativeWork
   {
-    identifier: Uriorcurie!
-    alternateName: [String]
-    description: String
     name: String
-    sameAs: String
-    url: Uriorcurie
-    citation: String
-    creator: String
-    dateCreated: String
-    dateModified: String
-    datePublished: String
-    hasPart: String
-    isAccessibleForFree: String
-    isBasedOn: String
-    isPartOf: String
-    keywords: String
-    license: String
-    maintainer: String
-    publisher: String
-    version: String
+    identifier: String
+    url: String
+  }
+
+type DataCatalog
+  {
+    name: String
+  }
+
+type DataDownload
+  {
+    name: String
   }
 
 type Dataset
   {
-    identifier: Uriorcurie!
-    sameAs: String
-    distribution: String
-    includedInDataCatalog: DatasetCollection
-    issn: String
-    measurementMethod: String
-    measurementTechnique: String
-    variableMeasured: String
-    conformsTo: String!
-    description: String!
-    keywords: String!
-    license: String!
-    name: String!
-    url: Uriorcurie!
-    alternateName: [String]
-    citation: String
-    creator: String
-    datePublished: String
-    isBasedOn: String
-    publisher: String
-    version: String
-    dateCreated: String
-    dateModified: String
-    hasPart: String
-    isPartOf: String
-    isAccessibleForFree: String
-    maintainer: String
   }
 
-type DatasetCollection
+type DateTime
   {
-    identifier: Uriorcurie!
-    alternateName: [String]
-    description: String
     name: String
-    sameAs: String
-    url: Uriorcurie
-    citation: String
-    creator: String
-    dateCreated: String
-    dateModified: String
-    datePublished: String
-    hasPart: String
-    isAccessibleForFree: String
-    isBasedOn: String
-    isPartOf: String
-    keywords: String
-    license: String
-    maintainer: String
-    publisher: String
-    version: String
-    datasets: [Dataset]!
-    measurementMethod: String
-    measurementTechnique: String
   }
 
-interface EvaluatedThing
+type DefinedTerm
   {
-    identifier: Uriorcurie!
-    alternateName: [String]
-    description: String
+    url: String
     name: String
-    sameAs: String
-    url: Uriorcurie
+    termCode: String
+    identifier: String
+    inDefinedTermSet: String
   }
 
-type Intangible
+type DefinedTermSet
   {
-    identifier: Uriorcurie!
-    alternateName: [String]
-    description: String
     name: String
-    sameAs: String
-    url: Uriorcurie
+    identifier: String
+    url: String
   }
 
-type MaterialEntity
+type Organization
   {
-    identifier: Uriorcurie!
-    alternateName: [String]
-    description: String
     name: String
-    sameAs: String
-    url: Uriorcurie
-  }
-
-type PlannedProcess
-  {
-  }
-
-type ReactionStep
-  {
-    identifier: Uriorcurie!
-    alternateName: [String]
+    legalName: String
     description: String
-    name: String
     sameAs: String
-    url: Uriorcurie
   }
 
-type Thing
+type Person
   {
-    identifier: Uriorcurie!
-    alternateName: [String]
-    description: String
     name: String
-    sameAs: String
-    url: Uriorcurie
+    url: String
+    mainEntityOfPage: String
+  }
+
+type Product
+  {
+    name: String
+  }
+
+type PropertyValue
+  {
+    name: String
+    value: String
+    identifier: String
+    valuereference: String
+    unitCode: String
+    unitText: String
+  }
+
+type Trip
+  {
+    name: String
   }
 

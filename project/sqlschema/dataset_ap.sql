@@ -1,205 +1,109 @@
 
 
-CREATE TABLE "ChemicalEntity" (
+CREATE TABLE "BioschemasDataset" (
+	"alternateName" TEXT, 
+	citation TEXT, 
+	creator TEXT, 
+	"dateCreated" TEXT, 
+	"dateModified" TEXT, 
+	"datePublished" TEXT, 
+	description TEXT NOT NULL, 
+	distribution TEXT, 
+	"hasPart" TEXT, 
 	identifier TEXT NOT NULL, 
-	description TEXT, 
-	name TEXT, 
+	"includedInDataCatalog" TEXT, 
+	"isAccessibleForFree" TEXT, 
+	"isBasedOn" TEXT, 
+	"isPartOf" TEXT, 
+	keywords TEXT NOT NULL, 
+	license TEXT NOT NULL, 
+	maintainer TEXT, 
+	"measurementTechnique" TEXT, 
+	name TEXT NOT NULL, 
+	publisher TEXT, 
 	"sameAs" TEXT, 
-	url TEXT, 
-	PRIMARY KEY (identifier)
+	url TEXT NOT NULL, 
+	"variableMeasured" TEXT, 
+	version TEXT, 
+	PRIMARY KEY ("alternateName", citation, creator, "dateCreated", "dateModified", "datePublished", description, distribution, "hasPart", identifier, "includedInDataCatalog", "isAccessibleForFree", "isBasedOn", "isPartOf", keywords, license, maintainer, "measurementTechnique", name, publisher, "sameAs", url, "variableMeasured", version)
 );
 
-CREATE TABLE "ChemicalReaction" (
-	identifier TEXT NOT NULL, 
-	description TEXT, 
+CREATE TABLE "CategoryCode" (
 	name TEXT, 
-	"sameAs" TEXT, 
+	"codeValue" TEXT, 
 	url TEXT, 
-	PRIMARY KEY (identifier)
+	PRIMARY KEY (name, "codeValue", url)
 );
 
 CREATE TABLE "CreativeWork" (
-	identifier TEXT NOT NULL, 
-	description TEXT, 
 	name TEXT, 
-	"sameAs" TEXT, 
+	identifier TEXT, 
 	url TEXT, 
-	citation TEXT, 
-	creator TEXT, 
-	"dateCreated" TEXT, 
-	"dateModified" TEXT, 
-	"datePublished" TEXT, 
-	"hasPart" TEXT, 
-	"isAccessibleForFree" TEXT, 
-	"isBasedOn" TEXT, 
-	"isPartOf" TEXT, 
-	keywords TEXT, 
-	license TEXT, 
-	maintainer TEXT, 
-	publisher TEXT, 
-	version TEXT, 
-	PRIMARY KEY (identifier)
+	PRIMARY KEY (name, identifier, url)
 );
 
-CREATE TABLE "DatasetCollection" (
-	identifier TEXT NOT NULL, 
-	description TEXT, 
+CREATE TABLE "DataCatalog" (
 	name TEXT, 
-	"sameAs" TEXT, 
-	url TEXT, 
-	citation TEXT, 
-	creator TEXT, 
-	"dateCreated" TEXT, 
-	"dateModified" TEXT, 
-	"datePublished" TEXT, 
-	"hasPart" TEXT, 
-	"isAccessibleForFree" TEXT, 
-	"isBasedOn" TEXT, 
-	"isPartOf" TEXT, 
-	keywords TEXT, 
-	license TEXT, 
-	maintainer TEXT, 
-	publisher TEXT, 
-	version TEXT, 
-	datasets TEXT NOT NULL, 
-	"measurementMethod" TEXT, 
-	"measurementTechnique" TEXT, 
-	PRIMARY KEY (identifier)
+	PRIMARY KEY (name)
 );
 
-CREATE TABLE "Intangible" (
-	identifier TEXT NOT NULL, 
-	description TEXT, 
+CREATE TABLE "DataDownload" (
 	name TEXT, 
-	"sameAs" TEXT, 
-	url TEXT, 
-	PRIMARY KEY (identifier)
+	PRIMARY KEY (name)
 );
 
-CREATE TABLE "MaterialEntity" (
-	identifier TEXT NOT NULL, 
-	description TEXT, 
+CREATE TABLE "DateTime" (
 	name TEXT, 
-	"sameAs" TEXT, 
-	url TEXT, 
-	PRIMARY KEY (identifier)
+	PRIMARY KEY (name)
 );
 
-CREATE TABLE "ReactionStep" (
-	identifier TEXT NOT NULL, 
-	description TEXT, 
+CREATE TABLE "DefinedTerm" (
+	url TEXT, 
 	name TEXT, 
-	"sameAs" TEXT, 
-	url TEXT, 
-	PRIMARY KEY (identifier)
+	"termCode" TEXT, 
+	identifier TEXT, 
+	"inDefinedTermSet" TEXT, 
+	PRIMARY KEY (url, name, "termCode", identifier, "inDefinedTermSet")
 );
 
-CREATE TABLE "Thing" (
-	identifier TEXT NOT NULL, 
-	description TEXT, 
+CREATE TABLE "DefinedTermSet" (
 	name TEXT, 
-	"sameAs" TEXT, 
+	identifier TEXT, 
 	url TEXT, 
-	PRIMARY KEY (identifier)
+	PRIMARY KEY (name, identifier, url)
 );
 
-CREATE TABLE "Dataset" (
-	identifier TEXT NOT NULL, 
+CREATE TABLE "Organization" (
+	name TEXT, 
+	"legalName" TEXT, 
+	description TEXT, 
 	"sameAs" TEXT, 
-	distribution TEXT, 
-	"includedInDataCatalog" TEXT, 
-	issn TEXT, 
-	"measurementMethod" TEXT, 
-	"measurementTechnique" TEXT, 
-	"variableMeasured" TEXT, 
-	"conformsTo" TEXT NOT NULL, 
-	description TEXT NOT NULL, 
-	keywords TEXT NOT NULL, 
-	license TEXT NOT NULL, 
-	name TEXT NOT NULL, 
-	url TEXT NOT NULL, 
-	citation TEXT, 
-	creator TEXT, 
-	"datePublished" TEXT, 
-	"isBasedOn" TEXT, 
-	publisher TEXT, 
-	version TEXT, 
-	"dateCreated" TEXT, 
-	"dateModified" TEXT, 
-	"hasPart" TEXT, 
-	"isPartOf" TEXT, 
-	"isAccessibleForFree" TEXT, 
-	maintainer TEXT, 
-	PRIMARY KEY (identifier), 
-	FOREIGN KEY("includedInDataCatalog") REFERENCES "DatasetCollection" (identifier)
+	PRIMARY KEY (name, "legalName", description, "sameAs")
 );
 
-CREATE TABLE "ChemicalEntity_alternateName" (
-	backref_id TEXT, 
-	"alternateName" TEXT, 
-	PRIMARY KEY (backref_id, "alternateName"), 
-	FOREIGN KEY(backref_id) REFERENCES "ChemicalEntity" (identifier)
+CREATE TABLE "Person" (
+	name TEXT, 
+	url TEXT, 
+	"mainEntityOfPage" TEXT, 
+	PRIMARY KEY (name, url, "mainEntityOfPage")
 );
 
-CREATE TABLE "ChemicalReaction_alternateName" (
-	backref_id TEXT, 
-	"alternateName" TEXT, 
-	PRIMARY KEY (backref_id, "alternateName"), 
-	FOREIGN KEY(backref_id) REFERENCES "ChemicalReaction" (identifier)
+CREATE TABLE "Product" (
+	name TEXT, 
+	PRIMARY KEY (name)
 );
 
-CREATE TABLE "CreativeWork_alternateName" (
-	backref_id TEXT, 
-	"alternateName" TEXT, 
-	PRIMARY KEY (backref_id, "alternateName"), 
-	FOREIGN KEY(backref_id) REFERENCES "CreativeWork" (identifier)
+CREATE TABLE "PropertyValue" (
+	name TEXT, 
+	value TEXT, 
+	identifier TEXT, 
+	valuereference TEXT, 
+	"unitCode" TEXT, 
+	"unitText" TEXT, 
+	PRIMARY KEY (name, value, identifier, valuereference, "unitCode", "unitText")
 );
 
-CREATE TABLE "DatasetCollection_alternateName" (
-	backref_id TEXT, 
-	"alternateName" TEXT, 
-	PRIMARY KEY (backref_id, "alternateName"), 
-	FOREIGN KEY(backref_id) REFERENCES "DatasetCollection" (identifier)
-);
-
-CREATE TABLE "Intangible_alternateName" (
-	backref_id TEXT, 
-	"alternateName" TEXT, 
-	PRIMARY KEY (backref_id, "alternateName"), 
-	FOREIGN KEY(backref_id) REFERENCES "Intangible" (identifier)
-);
-
-CREATE TABLE "MaterialEntity_alternateName" (
-	backref_id TEXT, 
-	"alternateName" TEXT, 
-	PRIMARY KEY (backref_id, "alternateName"), 
-	FOREIGN KEY(backref_id) REFERENCES "MaterialEntity" (identifier)
-);
-
-CREATE TABLE "ReactionStep_alternateName" (
-	backref_id TEXT, 
-	"alternateName" TEXT, 
-	PRIMARY KEY (backref_id, "alternateName"), 
-	FOREIGN KEY(backref_id) REFERENCES "ReactionStep" (identifier)
-);
-
-CREATE TABLE "Thing_alternateName" (
-	backref_id TEXT, 
-	"alternateName" TEXT, 
-	PRIMARY KEY (backref_id, "alternateName"), 
-	FOREIGN KEY(backref_id) REFERENCES "Thing" (identifier)
-);
-
-CREATE TABLE "Assay" (
-	has_input TEXT, 
-	has_output TEXT, 
-	PRIMARY KEY (has_input, has_output), 
-	FOREIGN KEY(has_output) REFERENCES "Dataset" (identifier)
-);
-
-CREATE TABLE "Dataset_alternateName" (
-	backref_id TEXT, 
-	"alternateName" TEXT, 
-	PRIMARY KEY (backref_id, "alternateName"), 
-	FOREIGN KEY(backref_id) REFERENCES "Dataset" (identifier)
+CREATE TABLE "Trip" (
+	name TEXT, 
+	PRIMARY KEY (name)
 );

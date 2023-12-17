@@ -1,143 +1,95 @@
-message Assay
+message BioschemasDataset
  {
-  evaluatedThing hasInput = 0
-  dataset hasOutput = 0
- }
-message ChemicalEntity
- {
-  uriorcurie identifier = 0
- repeated  string alternateName = 0
+  string alternateName = 0
+  string citation = 0
+  string creator = 0
+  string dateCreated = 0
+  string dateModified = 0
+  string datePublished = 0
   string description = 0
+  string distribution = 0
+  string hasPart = 0
+  string identifier = 0
+  string includedInDataCatalog = 0
+  string isAccessibleForFree = 0
+  string isBasedOn = 0
+  string isPartOf = 0
+  string keywords = 0
+  string license = 0
+  string maintainer = 0
+  string measurementTechnique = 0
   string name = 0
+  string publisher = 0
   string sameAs = 0
-  uriorcurie url = 0
+  string url = 0
+  string variableMeasured = 0
+  string version = 0
  }
-message ChemicalReaction
+message CategoryCode
  {
-  uriorcurie identifier = 0
- repeated  string alternateName = 0
-  string description = 0
   string name = 0
-  string sameAs = 0
-  uriorcurie url = 0
+  string codeValue = 0
+  string url = 0
  }
-// The most generic kind of creative work, including books, movies, photographs, software programs, etc.
 message CreativeWork
  {
-  uriorcurie identifier = 0
- repeated  string alternateName = 0
-  string description = 0
   string name = 0
-  string sameAs = 0
-  uriorcurie url = 0
-  string citation = 0
-  string creator = 0
-  string dateCreated = 0
-  string dateModified = 0
-  string datePublished = 0
-  string hasPart = 0
-  string isAccessibleForFree = 0
-  string isBasedOn = 0
-  string isPartOf = 0
-  string keywords = 0
-  string license = 0
-  string maintainer = 0
-  string publisher = 0
-  string version = 0
+  string identifier = 0
+  string url = 0
  }
-// Represents a Dataset
-message Dataset
+message DataCatalog
  {
-  uriorcurie identifier = 0
-  string sameAs = 0
-  string distribution = 10
-  datasetCollection includedInDataCatalog = 11
-  string issn = 0
-  string measurementMethod = 0
-  string measurementTechnique = 13
-  string variableMeasured = 15
-  string conformsTo = 0
-  string description = 1
-  string keywords = 2
-  string license = 3
-  string name = 4
-  uriorcurie url = 5
- repeated  string alternateName = 6
-  string citation = 7
-  string creator = 8
-  string datePublished = 9
-  string isBasedOn = 12
-  string publisher = 14
-  string version = 16
-  string dateCreated = 17
-  string dateModified = 18
-  string hasPart = 0
-  string isPartOf = 0
-  string isAccessibleForFree = 0
-  string maintainer = 0
- }
-// A collection of datasets.
-message DatasetCollection
- {
-  uriorcurie identifier = 0
- repeated  string alternateName = 0
-  string description = 0
   string name = 0
-  string sameAs = 0
-  uriorcurie url = 0
-  string citation = 0
-  string creator = 0
-  string dateCreated = 0
-  string dateModified = 0
-  string datePublished = 0
-  string hasPart = 0
-  string isAccessibleForFree = 0
-  string isBasedOn = 0
-  string isPartOf = 0
-  string keywords = 0
-  string license = 0
-  string maintainer = 0
-  string publisher = 0
-  string version = 0
- repeated  dataset datasets = 0
-  string measurementMethod = 0
-  string measurementTechnique = 0
  }
-// A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.
-message Intangible
+message DataDownload
  {
-  uriorcurie identifier = 0
- repeated  string alternateName = 0
-  string description = 0
   string name = 0
-  string sameAs = 0
-  uriorcurie url = 0
  }
-message MaterialEntity
+message DateTime
  {
-  uriorcurie identifier = 0
- repeated  string alternateName = 0
-  string description = 0
   string name = 0
-  string sameAs = 0
-  uriorcurie url = 0
  }
-message ReactionStep
+message DefinedTerm
  {
-  uriorcurie identifier = 0
- repeated  string alternateName = 0
-  string description = 0
+  string url = 0
   string name = 0
-  string sameAs = 0
-  uriorcurie url = 0
+  string termCode = 0
+  string identifier = 0
+  string inDefinedTermSet = 0
  }
-// The most generic type of item.
-message Thing
+message DefinedTermSet
  {
-  uriorcurie identifier = 0
- repeated  string alternateName = 0
-  string description = 0
   string name = 0
+  string identifier = 0
+  string url = 0
+ }
+message Organization
+ {
+  string name = 0
+  string legalName = 0
+  string description = 0
   string sameAs = 0
-  uriorcurie url = 0
+ }
+message Person
+ {
+  string name = 0
+  string url = 0
+  string mainEntityOfPage = 0
+ }
+message Product
+ {
+  string name = 0
+ }
+message PropertyValue
+ {
+  string name = 0
+  string value = 0
+  string identifier = 0
+  string valuereference = 0
+  string unitCode = 0
+  string unitText = 0
+ }
+message Trip
+ {
+  string name = 0
  }

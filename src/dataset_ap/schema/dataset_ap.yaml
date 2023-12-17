@@ -1,321 +1,342 @@
----
-id: https://w3id.org/stroemphi/Dataset_AP
-name: Dataset_AP
-title: Dataset_AP
-description: |-
-  A LinkML representation of https://bioschemas.org/profiles/Dataset/1.0-RELEASE.
-license: MIT
+name: dataset_ap
+description: 'A guide for how to describe datasets in the life-sciences using Schema.org-like
+  annotation. Version 1.0-RELEASE. <h3>Summary of Changes</h3> <br>Key changes since
+  0.3-RELEASE:<ul><li>Updated properties to Schema.org v12.0; various properties added
+  at recommended or optional level, expected types updated. See 0.4-DRAFT for full
+  details</li><li>license now a minimum property</li><li>keywords: Cardinality #501
+  – Cardinality is MANY</li><li>distribution: Cardinality #574 – Cardinality changed
+  to MANY</li><li>datePublished: Increased marginlity #576 – Now recommended</li><li>publisher:
+  Increased marginlity, Cardinality #576 – Now recommended with MANY cardinality</li></ul>'
+title: Bioschemas.org's Dataset Profile LinkML representation
+comments:
+- This LinkML representation of the Bioschemas Dataset profile was automatically generated
+  by parsing https://bioschemas.org/profiles/Dataset/1.0-RELEASE
 see_also:
-  - https://stroemphi.github.io/Dataset_AP
-
+- https://bioschemas.org/profiles/Dataset/1.0-RELEASE
+id: https://discovery.biothings.io/view/bioschemas/Dataset
+version: https://bioschemas.org/profiles/Dataset/1.0-RELEASE
+imports:
+- linkml:types
+license: https://creativecommons.org/licenses/by-sa/4.0/
 prefixes:
-  dataset_ap: https://w3id.org/stroemphi/Dataset_AP/
-  linkml: https://w3id.org/linkml/
   schema: http://schema.org/
-  bioschema: https://bioschemas.org/properties/
-  dct: purl.org/dc/terms/
-  example: https://example.org/
-  iao: http://purl.obolibrary.org/obo/IAO_/
-  obi: http://purl.obolibrary.org/obo/OBI_/
-  dcat: http://www.w3.org/ns/dcat#
+  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  bioschemas: https://discovery.biothings.io/view/bioschemas/
+  owl: http://www.w3.org/2002/07/owl/
+  linkml: https://w3id.org/linkml/
+  dataset_ap: https://discovery.biothings.io/view/bioschemas/Dataset/
 default_prefix: dataset_ap
 default_range: string
+slots:
+  alternateName:
+    description: ' An alias for the item.'
+    slot_uri: schema:alternateName
+  citation:
+    description: A citation for a publication that describes the dataset. A citation
+      or reference to another creative work, such as another publication, web page,
+      scholarly article, etc.
+    slot_uri: schema:citation
+  creator:
+    description: The name of the dataset creator (person or organization). The creator/author
+      of this CreativeWork. This is the same as the Author property for CreativeWork.
+    slot_uri: schema:creator
+  dateCreated:
+    description: ' The date on which the CreativeWork was created or the item was
+      added to a DataFeed.'
+    slot_uri: schema:dateCreated
+  dateModified:
+    description: ' The date on which the CreativeWork was most recently modified or
+      when the item''s entry was modified within a DataFeed.'
+    slot_uri: schema:dateModified
+  datePublished:
+    description: ' Date of first broadcast/publication.'
+    slot_uri: schema:datePublished
+  description:
+    description: A short summary describing a dataset. A description of the item.
+    slot_uri: schema:description
+  distribution:
+    description: ' A downloadable form of this dataset, at a specific location, in
+      a specific format.'
+    slot_uri: schema:distribution
+  hasPart:
+    description: " Indicates an item or CreativeWork that is part of this item, or\
+      \ CreativeWork (in some sense). \nInverse property: [isPartOf](https://schema.org/isPartOf)"
+    slot_uri: schema:hasPart
+  identifier:
+    description: CURIEs that can be resolved using [Identifiers.org](https://identifiers.org/)
+      should be used. The identifier property represents any kind of identifier for
+      any kind of [Thing](https://schema.org/Thing), such as ISBNs, GTIN codes, UUIDs
+      etc. Schema.org provides dedicated properties for representing many of these,
+      either as textual strings or as URL (URI) links. See [background notes](http://schema.org/docs/datamodel.html#identifierBg)
+      for more details.
+    slot_uri: schema:identifier
+  includedInDataCatalog:
+    description: ' A data catalog which contains this dataset. Supersedes [includedDataCatalog](https://schema.org/includedDataCatalog),
+      [catalog](https://schema.org/catalog).
 
-imports:
-  - linkml:types
+      Inverse property: [dataset](https://schema.org/dataset)'
+    slot_uri: schema:includedInDataCatalog
+  isAccessibleForFree:
+    description: ' A flag to signal that the item, event, or place is accessible for
+      free. Supersedes [free](https://schema.org/free).'
+    slot_uri: schema:isAccessibleForFree
+  isBasedOn:
+    description: "Use to link a Dataset to the Study that it was generated from. A\
+      \ resource that was used in the creation of this resource. This term can be\
+      \ repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html.\
+      \ \nSupersedes isBasedOnUrl."
+    slot_uri: schema:isBasedOn
+  isPartOf:
+    description: ' Indicates an item or CreativeWork that this item, or CreativeWork
+      (in some sense), is part of. Inverse property: [hasPart](https://schema.org/hasPart)'
+    slot_uri: schema:isPartOf
+  keywords:
+    description: Keywords should be drawn from a controlled vocabulary, e.g. [EDAM](https://edamontology.org/),
+      and supplied as a DefinedTerm list. Keywords or tags used to describe this content.
+      Multiple entries in a keywords list are typically delimited by commas.
+    slot_uri: schema:keywords
+  license:
+    description: A license under which the dataset is distributed. A license document
+      that applies to this content, typically indicated by URL.
+    slot_uri: schema:license
+  maintainer:
+    description: ' A maintainer of a [Dataset](https://schema.org/Dataset), software
+      package ([SoftwareApplication](https://schema.org/SoftwareApplication)), or
+      other [Project](https://schema.org/Project). A maintainer is a [Person](https://schema.org/Person)
+      or [Organization](https://schema.org/Organization) that manages contributions
+      to, and/or publication of, some (typically complex) artifact. It is common for
+      distributions of software and data to be based on "upstream" sources. When [maintainer](https://schema.org/maintainer)
+      is applied to a specific version of something e.g. a particular version or packaging
+      of a [Dataset](https://schema.org/Dataset), it is always possible that the upstream
+      source has a different maintainer. The [isBasedOn](https://schema.org/isBasedOn)
+      property can be used to indicate such relationships between datasets to make
+      the different maintenance roles clear. Similarly in the case of software, a
+      package may have dedicated maintainers working on integration into software
+      distributions such as Ubuntu, as well as upstream maintainers of the underlying
+      work.'
+    slot_uri: schema:maintainer
+  measurementTechnique:
+    description: ' A technique or technology used in a [Dataset](https://schema.org/Dataset)
+      (or [DataDownload](https://schema.org/DataDownload), [DataCatalog](https://schema.org/DataCatalog)),
+      corresponding to the method used for measuring the corresponding variable(s)
+      (described using [variableMeasured](https://schema.org/variableMeasured)). This
+      is oriented towards scientific and scholarly dataset publication but may have
+      broader applicability; it is not intended as a full representation of measurement,
+      but rather as a high level summary for dataset discovery.
 
+
+      For example, if [variableMeasured](https://schema.org/variableMeasured) is:
+      molecule concentration, [measurementTechnique](https://schema.org/measurementTechnique)
+      could be: "mass spectrometry" or "nmr spectroscopy" or "colorimetry" or "immunofluorescence".
+
+
+      If the [variableMeasured](https://schema.org/variableMeasured) is "depression
+      rating", the [measurementTechnique](https://schema.org/measurementTechnique)
+      could be "Zung Scale" or "HAM-D" or "Beck Depression Inventory".
+
+
+      If there are several [variableMeasured](https://schema.org/variableMeasured)
+      properties recorded for some given data object, use a [PropertyValue](https://schema.org/PropertyValue)
+      for each [variableMeasured](https://schema.org/variableMeasured) and attach
+      the corresponding [measurementTechnique](https://schema.org/measurementTechnique).'
+    slot_uri: schema:measurementTechnique
+  name:
+    description: A descriptive name of the dataset. The name of the item.
+    slot_uri: schema:name
+  publisher:
+    description: ' The publisher of the creative work.'
+    slot_uri: schema:publisher
+  sameAs:
+    description: ' URL of a reference Web page that unambiguously indicates the item''s
+      identity. E.g. the URL of the item''s Wikipedia page, Wikidata entry, or official
+      website.'
+    slot_uri: schema:sameAs
+  url:
+    description: The location of a page describing the dataset. URL of the item.
+    slot_uri: schema:url
+  variableMeasured:
+    description: What does the dataset measure? (e.g., temperature, pressure). The
+      variableMeasured property can indicate (repeated as necessary) the variables
+      that are measured in some dataset, either described as text or as pairs of identifier
+      and description using PropertyValue.
+    slot_uri: schema:variableMeasured
+  version:
+    description: The version number for this dataset. The version of the CreativeWork
+      embodied by a specified resource.
+    slot_uri: schema:version
+  legalName:
+    slot_uri: schema:legalName
+  mainEntityOfPage:
+    slot_uri: schema:mainEntityOfPage
+  value:
+    slot_uri: schema:value
+  valuereference:
+    slot_uri: schema:valuereference
+  unitCode:
+    slot_uri: schema:unitCode
+  unitText:
+    slot_uri: schema:unitText
+  codeValue:
+    slot_uri: schema:codeValue
+  termCode:
+    slot_uri: schema:termCode
+  inDefinedTermSet:
+    slot_uri: schema:inDefinedTermSet
 classes:
-
-  # Schema.org classes relevant for this profile
-  Thing:
-    class_uri: schema:Thing
-    slots:
-      - identifier
-      - alternateName
-      - description
-      - name
-      - sameAs
-      - url
-    description: >-
-      The most generic type of item.
-
-  Intangible:
-    class_uri: schema:Intangible
-    is_a: Thing
-    description: >-
-      A utility class that serves as the umbrella for a number of 'intangible' things
-      such as quantities, structured values, etc.
-
-  CreativeWork:
-    class_uri: schema:CreativeWork
-    is_a: Thing
-    description: >-
-      The most generic kind of creative work, including books, movies, photographs, software programs, etc.
-    exact_mappings:
-      - iao:0000030 # Information Content Entity
-    slots:
-      - citation
-      - creator
-      - dateCreated
-      - dateModified
-      - datePublished
-      - hasPart
-      - isAccessibleForFree
-      - isBasedOn
-      - isPartOf
-      - keywords
-      - license
-      - maintainer
-      - publisher
-      - version
-
   Dataset:
     class_uri: schema:Dataset
-    is_a: CreativeWork
-    description: >-
-      Represents a Dataset
-    exact_mappings:
-      - dcat:Dataset
+  BioschemasDataset:
+    is_a: Dataset
     slots:
-      - distribution
-      - includedInDataCatalog
-      - issn
-      - measurementMethod
-      - measurementTechnique
-      - variableMeasured
-      # from BioSchema profile v1.0
-      - conformsTo
+    - alternateName
+    - citation
+    - creator
+    - dateCreated
+    - dateModified
+    - datePublished
+    - description
+    - distribution
+    - hasPart
+    - identifier
+    - includedInDataCatalog
+    - isAccessibleForFree
+    - isBasedOn
+    - isPartOf
+    - keywords
+    - license
+    - maintainer
+    - measurementTechnique
+    - name
+    - publisher
+    - sameAs
+    - url
+    - variableMeasured
+    - version
     slot_usage:
-      conformsTo:
-        required: true
-      description:
-        required: true
-      keywords:
-        required: true
-      license:
-        required: true
-      name:
-        required: true
-      url:
-        required: true
       alternateName:
-        recommended: true
+        recommended: 'true'
       citation:
-        recommended: true
+        recommended: 'true'
       creator:
-        recommended: true
-      datePublished:
-        recommended: true
-      distribution:
-        recommended: true
-      includedInDataCatalog:
-        recommended: true
-      isBasedOn:
-        recommended: true
-        description: Use to link a Dataset to the Study that it was generated from.
-      measurementTechnique:
-        recommended: true
-      publisher:
-        recommended: true
-      variableMeasured:
-        recommended: true
-      version:
-        recommended: true
-      # optional
+        recommended: 'true'
       dateCreated:
         comments:
-          - optional slot in https://bioschemas.org/profiles/Dataset/1.0-RELEASE
+        - optional slot in Bioschemas profile
       dateModified:
         comments:
-          - optional slot in https://bioschemas.org/profiles/Dataset/1.0-RELEASE
+        - optional slot in Bioschemas profile
+      datePublished:
+        recommended: 'true'
+      description:
+        required: 'true'
+      distribution:
+        recommended: 'true'
       hasPart:
         comments:
-          - optional slot in https://bioschemas.org/profiles/Dataset/1.0-RELEASE
-      isPartOf:
-        comments:
-          - optional slot in https://bioschemas.org/profiles/Dataset/1.0-RELEASE
+        - optional slot in Bioschemas profile
+      identifier:
+        required: 'true'
+      includedInDataCatalog:
+        recommended: 'true'
       isAccessibleForFree:
         comments:
-          - optional slot in https://bioschemas.org/profiles/Dataset/1.0-RELEASE
+        - optional slot in Bioschemas profile
+      isBasedOn:
+        recommended: 'true'
+      isPartOf:
+        comments:
+        - optional slot in Bioschemas profile
+      keywords:
+        required: 'true'
+      license:
+        required: 'true'
       maintainer:
         comments:
-          - optional slot in https://bioschemas.org/profiles/Dataset/1.0-RELEASE
-
-  DatasetCollection:
-    class_uri: schema:DataCatalog
-    is_a: CreativeWork
+        - optional slot in Bioschemas profile
+      measurementTechnique:
+        recommended: 'true'
+      name:
+        required: 'true'
+      publisher:
+        comments:
+        - optional slot in Bioschemas profile
+      sameAs:
+        comments:
+        - optional slot in Bioschemas profile
+      url:
+        required: 'true'
+      variableMeasured:
+        recommended: 'true'
+      version:
+        recommended: 'true'
+    class_uri: bioschemas:Dataset
     tree_root: true
-    aliases:
-      - DataCatalog
-    description: >-
-      A collection of datasets.
+  CreativeWork:
     slots:
-      - datasets
-      - measurementMethod
-      - measurementTechnique
-    exact_mappings:
-      - dcat:Catalog
-
-
-  # NFDI4Chem specific classes
-  MaterialEntity:
-    is_a: Thing
-  ChemicalEntity:
-    is_a: Thing
-  EvaluatedThing:
-    is_a: Thing
-    abstract: true
-  ChemicalReaction:
-    is_a: Thing
-  ReactionStep:
-    is_a: ChemicalReaction
-  PlannedProcess:
-    class_uri: obi:0000011
-    aliases:
-      - Workflow # BioSchema
-  Assay:
-    is_a: PlannedProcess
-    class_uri: obi:0000070
+    - name
+    - identifier
+    - url
+    class_uri: schema:CreativeWork
+  Organization:
     slots:
-      - has_input
-      - has_output
-
-slots:
-  # Thing slots of interest to this profile
-  identifier:
-    identifier: true
-    slot_uri: schema:identifier
-    range: uriorcurie
-    description: A unique identifier for a thing
-    exact_mappings:
-      - dct:identifier
-  name:
-    slot_uri: schema:name
-    description: The name of the item.
-    close_mappings:
-      - dct:title
-  alternateName:
-    slot_uri: schema:alternateName
-    description: An alias for the item.
-    multivalued: true
-    inlined_as_list: true
-    exact_mappings:
-      - dct:alternative
-  description:
-    slot_uri: schema:description
-    description: A description of the item.
-    exact_mappings:
-      - dct:description
-  sameAs:
-    slot_uri: schema:sameAs
-    description:  >-
-      URL of a reference Web page that unambiguously indicates the item's identity. 
-      E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-  url:
-    slot_uri: schema:url
-    description: URL of the item.
-    range: uriorcurie
-    comments:
-      - This slot MUST not be used to provide an IRI for an ontology or an ontology term, use schema:identifier for
-        this. The range (expected type) of schema:url is an URL.
-  subjectOf:
-    slot_uri: schema:subjectOf
-    description: A CreativeWork about this Thing.
-    inverse: about
-    domain: Thing
-    range: CreativeWork
-  # CreativeWork slots of relevance
-  about:
-    slot_uri: schema:about
-    description: The subject matter of the content. Inverse property of `subjectOf`
-    domain: CreativeWork
-    range: Thing
-  citation:
-  creator:
-    slot_uri: schema:creator
-    description: The creator/author of this CreativeWork.
-    todos:
-      - Add domain & range constrains, if this slot is actually needed/used in our context, otherwise drop it.
-  dateCreated:
-    slot_uri: schema:dateCreated
-    description: The date on which the CreativeWork was created or the item was added to a DataFeed.
-  dateModified:
-  datePublished:
-  hasPart:
-  isAccessibleForFree:
-  isBasedOn:
-    slot_uri: schema:isBasedOn
-    description: >- 
-      A resource that was used in the creation of this resource. 
-      This term can be repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html. 
-      Supersedes isBasedOnUrl.
-
-  isPartOf:
-  keywords:
-  license:
-  maintainer:
-  publisher:
-  version:
-
-  # Dataset slots
-  distribution:
-    slot_uri: schema:distribution
-    description:  >-
-      A downloadable form of this dataset, at a specific location, in a specific format. 
-      This property can be repeated if different variations are available. 
-      There is no expectation that different downloadable distributions must contain exactly equivalent information 
-      (see also DCAT on this point). 
-      Different distributions might include or exclude different subsets of the entire dataset, for example.
-  includedInDataCatalog:
-    slot_uri: schema:includedInDataCatalog
-    description: >-
-      A data catalog which contains this dataset. Supersedes includedDataCatalog, `catalog`. 
-      Inverse property [[dataset]]
-    inverse: datasets
-    range: DatasetCollection
-    exact_mappings:
-      - schema:catalog        # deprecated predecessor
-  issn:
-    slot_uri: schema:issn
-    description: >-
-      The International Standard Serial Number (ISSN) that identifies this serial publication. 
-      You can repeat this property to identify different formats of, or the linking ISSN (ISSN-L) for, this serial publication.
-  measurementMethod:
-    slot_uri: schema:measurementMethod
-    description: >-
-      A subproperty of measurementTechnique that can be used for specifying specific methods, in particular via MeasurementMethodEnum.
-  measurementTechnique:
-    slot_uri: schema:measurementTechnique
-    description: >-
-      A technique, method or technology used in an Observation, StatisticalVariable or Dataset (or DataDownload, DataCatalog), 
-      corresponding to the method used for measuring the corresponding variable(s) (for datasets, described using variableMeasured; 
-      for Observation, a StatisticalVariable).
-  variableMeasured:
-    slot_uri: schema:variableMeasured
-  conformsTo:                 # from BioSchema profile v1.0
-    slot_uri: dct:conformsTo
-    required: true
-
-  # DatasetCollection slots
-  datasets:
-    slot_uri: schema:dataset
-    description: A dataset contained in this catalog.
-    range: Dataset
-    multivalued: true
-    inlined: true
-    required: true
-
-
-  # NFDI4Chem specific slots
-  has_input:
-    domain: Assay
-    range: EvaluatedThing
-  has_output:
-    domain: Assay
-    range: Dataset
-  has_parameter:
-    domain: Assay
-
-
-enums:
-
+    - name
+    - legalName
+    - description
+    - sameAs
+    class_uri: schema:Organization
+  Person:
+    slots:
+    - name
+    - url
+    - mainEntityOfPage
+    class_uri: schema:Person
+  DateTime:
+    slots:
+    - name
+    class_uri: schema:DateTime
+  DataDownload:
+    slots:
+    - name
+    class_uri: schema:DataDownload
+  Trip:
+    slots:
+    - name
+    class_uri: schema:Trip
+  PropertyValue:
+    slots:
+    - name
+    - value
+    - identifier
+    - valuereference
+    - unitCode
+    - unitText
+    class_uri: schema:PropertyValue
+  CategoryCode:
+    slots:
+    - name
+    - codeValue
+    - url
+    class_uri: schema:CategoryCode
+  DataCatalog:
+    slots:
+    - name
+    class_uri: schema:DataCatalog
+  Product:
+    slots:
+    - name
+    class_uri: schema:Product
+  DefinedTerm:
+    slots:
+    - url
+    - name
+    - termCode
+    - identifier
+    - inDefinedTermSet
+    class_uri: schema:DefinedTerm
+  DefinedTermSet:
+    slots:
+    - name
+    - identifier
+    - url
+    class_uri: schema:DefinedTermSet

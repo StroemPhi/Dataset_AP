@@ -1,764 +1,451 @@
 {
     "$defs": {
-        "Assay": {
-            "additionalProperties": false,
-            "description": "",
-            "properties": {
-                "has_input": {
-                    "type": "string"
-                },
-                "has_output": {
-                    "type": "string"
-                }
-            },
-            "title": "Assay",
-            "type": "object"
-        },
-        "ChemicalEntity": {
+        "BioschemasDataset": {
             "additionalProperties": false,
             "description": "",
             "properties": {
                 "alternateName": {
-                    "description": "An alias for the item.",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
+                    "description": " An alias for the item.",
+                    "type": "string"
+                },
+                "citation": {
+                    "description": "A citation for a publication that describes the dataset. A citation or reference to another creative work, such as another publication, web page, scholarly article, etc.",
+                    "type": "string"
+                },
+                "creator": {
+                    "description": "The name of the dataset creator (person or organization). The creator/author of this CreativeWork. This is the same as the Author property for CreativeWork.",
+                    "type": "string"
+                },
+                "dateCreated": {
+                    "description": " The date on which the CreativeWork was created or the item was added to a DataFeed.",
+                    "type": "string"
+                },
+                "dateModified": {
+                    "description": " The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed.",
+                    "type": "string"
+                },
+                "datePublished": {
+                    "description": " Date of first broadcast/publication.",
+                    "type": "string"
                 },
                 "description": {
-                    "description": "A description of the item.",
+                    "description": "A short summary describing a dataset. A description of the item.",
+                    "type": "string"
+                },
+                "distribution": {
+                    "description": " A downloadable form of this dataset, at a specific location, in a specific format.",
+                    "type": "string"
+                },
+                "hasPart": {
+                    "description": " Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense). \nInverse property: [isPartOf](https://schema.org/isPartOf)",
                     "type": "string"
                 },
                 "identifier": {
-                    "description": "A unique identifier for a thing",
+                    "description": "CURIEs that can be resolved using [Identifiers.org](https://identifiers.org/) should be used. The identifier property represents any kind of identifier for any kind of [Thing](https://schema.org/Thing), such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](http://schema.org/docs/datamodel.html#identifierBg) for more details.",
+                    "type": "string"
+                },
+                "includedInDataCatalog": {
+                    "description": " A data catalog which contains this dataset. Supersedes [includedDataCatalog](https://schema.org/includedDataCatalog), [catalog](https://schema.org/catalog).\nInverse property: [dataset](https://schema.org/dataset)",
+                    "type": "string"
+                },
+                "isAccessibleForFree": {
+                    "description": " A flag to signal that the item, event, or place is accessible for free. Supersedes [free](https://schema.org/free).",
+                    "type": "string"
+                },
+                "isBasedOn": {
+                    "description": "Use to link a Dataset to the Study that it was generated from. A resource that was used in the creation of this resource. This term can be repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html. \nSupersedes isBasedOnUrl.",
+                    "type": "string"
+                },
+                "isPartOf": {
+                    "description": " Indicates an item or CreativeWork that this item, or CreativeWork (in some sense), is part of. Inverse property: [hasPart](https://schema.org/hasPart)",
+                    "type": "string"
+                },
+                "keywords": {
+                    "description": "Keywords should be drawn from a controlled vocabulary, e.g. [EDAM](https://edamontology.org/), and supplied as a DefinedTerm list. Keywords or tags used to describe this content. Multiple entries in a keywords list are typically delimited by commas.",
+                    "type": "string"
+                },
+                "license": {
+                    "description": "A license under which the dataset is distributed. A license document that applies to this content, typically indicated by URL.",
+                    "type": "string"
+                },
+                "maintainer": {
+                    "description": " A maintainer of a [Dataset](https://schema.org/Dataset), software package ([SoftwareApplication](https://schema.org/SoftwareApplication)), or other [Project](https://schema.org/Project). A maintainer is a [Person](https://schema.org/Person) or [Organization](https://schema.org/Organization) that manages contributions to, and/or publication of, some (typically complex) artifact. It is common for distributions of software and data to be based on \"upstream\" sources. When [maintainer](https://schema.org/maintainer) is applied to a specific version of something e.g. a particular version or packaging of a [Dataset](https://schema.org/Dataset), it is always possible that the upstream source has a different maintainer. The [isBasedOn](https://schema.org/isBasedOn) property can be used to indicate such relationships between datasets to make the different maintenance roles clear. Similarly in the case of software, a package may have dedicated maintainers working on integration into software distributions such as Ubuntu, as well as upstream maintainers of the underlying work.",
+                    "type": "string"
+                },
+                "measurementTechnique": {
+                    "description": " A technique or technology used in a [Dataset](https://schema.org/Dataset) (or [DataDownload](https://schema.org/DataDownload), [DataCatalog](https://schema.org/DataCatalog)), corresponding to the method used for measuring the corresponding variable(s) (described using [variableMeasured](https://schema.org/variableMeasured)). This is oriented towards scientific and scholarly dataset publication but may have broader applicability; it is not intended as a full representation of measurement, but rather as a high level summary for dataset discovery.\n\nFor example, if [variableMeasured](https://schema.org/variableMeasured) is: molecule concentration, [measurementTechnique](https://schema.org/measurementTechnique) could be: \"mass spectrometry\" or \"nmr spectroscopy\" or \"colorimetry\" or \"immunofluorescence\".\n\nIf the [variableMeasured](https://schema.org/variableMeasured) is \"depression rating\", the [measurementTechnique](https://schema.org/measurementTechnique) could be \"Zung Scale\" or \"HAM-D\" or \"Beck Depression Inventory\".\n\nIf there are several [variableMeasured](https://schema.org/variableMeasured) properties recorded for some given data object, use a [PropertyValue](https://schema.org/PropertyValue) for each [variableMeasured](https://schema.org/variableMeasured) and attach the corresponding [measurementTechnique](https://schema.org/measurementTechnique).",
                     "type": "string"
                 },
                 "name": {
-                    "description": "The name of the item.",
+                    "description": "A descriptive name of the dataset. The name of the item.",
+                    "type": "string"
+                },
+                "publisher": {
+                    "description": " The publisher of the creative work.",
                     "type": "string"
                 },
                 "sameAs": {
-                    "description": "URL of a reference Web page that unambiguously indicates the item's identity.  E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.",
+                    "description": " URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.",
                     "type": "string"
                 },
                 "url": {
-                    "description": "URL of the item.",
+                    "description": "The location of a page describing the dataset. URL of the item.",
+                    "type": "string"
+                },
+                "variableMeasured": {
+                    "description": "What does the dataset measure? (e.g., temperature, pressure). The variableMeasured property can indicate (repeated as necessary) the variables that are measured in some dataset, either described as text or as pairs of identifier and description using PropertyValue.",
+                    "type": "string"
+                },
+                "version": {
+                    "description": "The version number for this dataset. The version of the CreativeWork embodied by a specified resource.",
                     "type": "string"
                 }
             },
             "required": [
-                "identifier"
+                "description",
+                "identifier",
+                "keywords",
+                "license",
+                "name",
+                "url"
             ],
-            "title": "ChemicalEntity",
+            "title": "BioschemasDataset",
             "type": "object"
         },
-        "ChemicalReaction": {
+        "CategoryCode": {
             "additionalProperties": false,
             "description": "",
             "properties": {
-                "alternateName": {
-                    "description": "An alias for the item.",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
-                "description": {
-                    "description": "A description of the item.",
-                    "type": "string"
-                },
-                "identifier": {
-                    "description": "A unique identifier for a thing",
+                "codeValue": {
                     "type": "string"
                 },
                 "name": {
-                    "description": "The name of the item.",
-                    "type": "string"
-                },
-                "sameAs": {
-                    "description": "URL of a reference Web page that unambiguously indicates the item's identity.  E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.",
+                    "description": "A descriptive name of the dataset. The name of the item.",
                     "type": "string"
                 },
                 "url": {
-                    "description": "URL of the item.",
+                    "description": "The location of a page describing the dataset. URL of the item.",
                     "type": "string"
                 }
             },
-            "required": [
-                "identifier"
-            ],
-            "title": "ChemicalReaction",
+            "title": "CategoryCode",
             "type": "object"
         },
         "CreativeWork": {
             "additionalProperties": false,
-            "description": "The most generic kind of creative work, including books, movies, photographs, software programs, etc.",
+            "description": "",
             "properties": {
-                "alternateName": {
-                    "description": "An alias for the item.",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
-                "citation": {
-                    "type": "string"
-                },
-                "creator": {
-                    "description": "The creator/author of this CreativeWork.",
-                    "type": "string"
-                },
-                "dateCreated": {
-                    "description": "The date on which the CreativeWork was created or the item was added to a DataFeed.",
-                    "type": "string"
-                },
-                "dateModified": {
-                    "type": "string"
-                },
-                "datePublished": {
-                    "type": "string"
-                },
-                "description": {
-                    "description": "A description of the item.",
-                    "type": "string"
-                },
-                "hasPart": {
-                    "type": "string"
-                },
                 "identifier": {
-                    "description": "A unique identifier for a thing",
-                    "type": "string"
-                },
-                "isAccessibleForFree": {
-                    "type": "string"
-                },
-                "isBasedOn": {
-                    "description": "A resource that was used in the creation of this resource.  This term can be repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html.  Supersedes isBasedOnUrl.",
-                    "type": "string"
-                },
-                "isPartOf": {
-                    "type": "string"
-                },
-                "keywords": {
-                    "type": "string"
-                },
-                "license": {
-                    "type": "string"
-                },
-                "maintainer": {
+                    "description": "CURIEs that can be resolved using [Identifiers.org](https://identifiers.org/) should be used. The identifier property represents any kind of identifier for any kind of [Thing](https://schema.org/Thing), such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](http://schema.org/docs/datamodel.html#identifierBg) for more details.",
                     "type": "string"
                 },
                 "name": {
-                    "description": "The name of the item.",
-                    "type": "string"
-                },
-                "publisher": {
-                    "type": "string"
-                },
-                "sameAs": {
-                    "description": "URL of a reference Web page that unambiguously indicates the item's identity.  E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.",
+                    "description": "A descriptive name of the dataset. The name of the item.",
                     "type": "string"
                 },
                 "url": {
-                    "description": "URL of the item.",
-                    "type": "string"
-                },
-                "version": {
+                    "description": "The location of a page describing the dataset. URL of the item.",
                     "type": "string"
                 }
             },
-            "required": [
-                "identifier"
-            ],
             "title": "CreativeWork",
+            "type": "object"
+        },
+        "DataCatalog": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "name": {
+                    "description": "A descriptive name of the dataset. The name of the item.",
+                    "type": "string"
+                }
+            },
+            "title": "DataCatalog",
+            "type": "object"
+        },
+        "DataDownload": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "name": {
+                    "description": "A descriptive name of the dataset. The name of the item.",
+                    "type": "string"
+                }
+            },
+            "title": "DataDownload",
             "type": "object"
         },
         "Dataset": {
             "additionalProperties": false,
-            "description": "Represents a Dataset",
-            "properties": {
-                "alternateName": {
-                    "description": "An alias for the item.",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
-                "citation": {
-                    "type": "string"
-                },
-                "conformsTo": {
-                    "type": "string"
-                },
-                "creator": {
-                    "description": "The creator/author of this CreativeWork.",
-                    "type": "string"
-                },
-                "dateCreated": {
-                    "description": "The date on which the CreativeWork was created or the item was added to a DataFeed.",
-                    "type": "string"
-                },
-                "dateModified": {
-                    "type": "string"
-                },
-                "datePublished": {
-                    "type": "string"
-                },
-                "description": {
-                    "description": "A description of the item.",
-                    "type": "string"
-                },
-                "distribution": {
-                    "description": "A downloadable form of this dataset, at a specific location, in a specific format.  This property can be repeated if different variations are available.  There is no expectation that different downloadable distributions must contain exactly equivalent information  (see also DCAT on this point).  Different distributions might include or exclude different subsets of the entire dataset, for example.",
-                    "type": "string"
-                },
-                "hasPart": {
-                    "type": "string"
-                },
-                "identifier": {
-                    "description": "A unique identifier for a thing",
-                    "type": "string"
-                },
-                "includedInDataCatalog": {
-                    "description": "A data catalog which contains this dataset. Supersedes includedDataCatalog, `catalog`.  Inverse property [[dataset]]",
-                    "type": "string"
-                },
-                "isAccessibleForFree": {
-                    "type": "string"
-                },
-                "isBasedOn": {
-                    "description": "Use to link a Dataset to the Study that it was generated from.",
-                    "type": "string"
-                },
-                "isPartOf": {
-                    "type": "string"
-                },
-                "issn": {
-                    "description": "The International Standard Serial Number (ISSN) that identifies this serial publication.  You can repeat this property to identify different formats of, or the linking ISSN (ISSN-L) for, this serial publication.",
-                    "type": "string"
-                },
-                "keywords": {
-                    "type": "string"
-                },
-                "license": {
-                    "type": "string"
-                },
-                "maintainer": {
-                    "type": "string"
-                },
-                "measurementMethod": {
-                    "description": "A subproperty of measurementTechnique that can be used for specifying specific methods, in particular via MeasurementMethodEnum.",
-                    "type": "string"
-                },
-                "measurementTechnique": {
-                    "description": "A technique, method or technology used in an Observation, StatisticalVariable or Dataset (or DataDownload, DataCatalog),  corresponding to the method used for measuring the corresponding variable(s) (for datasets, described using variableMeasured;  for Observation, a StatisticalVariable).",
-                    "type": "string"
-                },
-                "name": {
-                    "description": "The name of the item.",
-                    "type": "string"
-                },
-                "publisher": {
-                    "type": "string"
-                },
-                "sameAs": {
-                    "description": "URL of a reference Web page that unambiguously indicates the item's identity.  E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.",
-                    "type": "string"
-                },
-                "url": {
-                    "description": "URL of the item.",
-                    "type": "string"
-                },
-                "variableMeasured": {
-                    "type": "string"
-                },
-                "version": {
-                    "type": "string"
-                }
-            },
-            "required": [
-                "conformsTo",
-                "keywords",
-                "license",
-                "identifier",
-                "description",
-                "name",
-                "url"
-            ],
+            "description": "",
             "title": "Dataset",
             "type": "object"
         },
-        "DatasetCollection": {
-            "additionalProperties": false,
-            "description": "A collection of datasets.",
-            "properties": {
-                "alternateName": {
-                    "description": "An alias for the item.",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
-                "citation": {
-                    "type": "string"
-                },
-                "creator": {
-                    "description": "The creator/author of this CreativeWork.",
-                    "type": "string"
-                },
-                "datasets": {
-                    "additionalProperties": {
-                        "$ref": "#/$defs/Dataset__identifier_optional"
-                    },
-                    "description": "A dataset contained in this catalog.",
-                    "type": "object"
-                },
-                "dateCreated": {
-                    "description": "The date on which the CreativeWork was created or the item was added to a DataFeed.",
-                    "type": "string"
-                },
-                "dateModified": {
-                    "type": "string"
-                },
-                "datePublished": {
-                    "type": "string"
-                },
-                "description": {
-                    "description": "A description of the item.",
-                    "type": "string"
-                },
-                "hasPart": {
-                    "type": "string"
-                },
-                "identifier": {
-                    "description": "A unique identifier for a thing",
-                    "type": "string"
-                },
-                "isAccessibleForFree": {
-                    "type": "string"
-                },
-                "isBasedOn": {
-                    "description": "A resource that was used in the creation of this resource.  This term can be repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html.  Supersedes isBasedOnUrl.",
-                    "type": "string"
-                },
-                "isPartOf": {
-                    "type": "string"
-                },
-                "keywords": {
-                    "type": "string"
-                },
-                "license": {
-                    "type": "string"
-                },
-                "maintainer": {
-                    "type": "string"
-                },
-                "measurementMethod": {
-                    "description": "A subproperty of measurementTechnique that can be used for specifying specific methods, in particular via MeasurementMethodEnum.",
-                    "type": "string"
-                },
-                "measurementTechnique": {
-                    "description": "A technique, method or technology used in an Observation, StatisticalVariable or Dataset (or DataDownload, DataCatalog),  corresponding to the method used for measuring the corresponding variable(s) (for datasets, described using variableMeasured;  for Observation, a StatisticalVariable).",
-                    "type": "string"
-                },
-                "name": {
-                    "description": "The name of the item.",
-                    "type": "string"
-                },
-                "publisher": {
-                    "type": "string"
-                },
-                "sameAs": {
-                    "description": "URL of a reference Web page that unambiguously indicates the item's identity.  E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.",
-                    "type": "string"
-                },
-                "url": {
-                    "description": "URL of the item.",
-                    "type": "string"
-                },
-                "version": {
-                    "type": "string"
-                }
-            },
-            "required": [
-                "datasets",
-                "identifier"
-            ],
-            "title": "DatasetCollection",
-            "type": "object"
-        },
-        "Dataset__identifier_optional": {
-            "additionalProperties": false,
-            "description": "Represents a Dataset",
-            "properties": {
-                "alternateName": {
-                    "description": "An alias for the item.",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
-                "citation": {
-                    "type": "string"
-                },
-                "conformsTo": {
-                    "type": "string"
-                },
-                "creator": {
-                    "description": "The creator/author of this CreativeWork.",
-                    "type": "string"
-                },
-                "dateCreated": {
-                    "description": "The date on which the CreativeWork was created or the item was added to a DataFeed.",
-                    "type": "string"
-                },
-                "dateModified": {
-                    "type": "string"
-                },
-                "datePublished": {
-                    "type": "string"
-                },
-                "description": {
-                    "description": "A description of the item.",
-                    "type": "string"
-                },
-                "distribution": {
-                    "description": "A downloadable form of this dataset, at a specific location, in a specific format.  This property can be repeated if different variations are available.  There is no expectation that different downloadable distributions must contain exactly equivalent information  (see also DCAT on this point).  Different distributions might include or exclude different subsets of the entire dataset, for example.",
-                    "type": "string"
-                },
-                "hasPart": {
-                    "type": "string"
-                },
-                "identifier": {
-                    "description": "A unique identifier for a thing",
-                    "type": "string"
-                },
-                "includedInDataCatalog": {
-                    "description": "A data catalog which contains this dataset. Supersedes includedDataCatalog, `catalog`.  Inverse property [[dataset]]",
-                    "type": "string"
-                },
-                "isAccessibleForFree": {
-                    "type": "string"
-                },
-                "isBasedOn": {
-                    "description": "Use to link a Dataset to the Study that it was generated from.",
-                    "type": "string"
-                },
-                "isPartOf": {
-                    "type": "string"
-                },
-                "issn": {
-                    "description": "The International Standard Serial Number (ISSN) that identifies this serial publication.  You can repeat this property to identify different formats of, or the linking ISSN (ISSN-L) for, this serial publication.",
-                    "type": "string"
-                },
-                "keywords": {
-                    "type": "string"
-                },
-                "license": {
-                    "type": "string"
-                },
-                "maintainer": {
-                    "type": "string"
-                },
-                "measurementMethod": {
-                    "description": "A subproperty of measurementTechnique that can be used for specifying specific methods, in particular via MeasurementMethodEnum.",
-                    "type": "string"
-                },
-                "measurementTechnique": {
-                    "description": "A technique, method or technology used in an Observation, StatisticalVariable or Dataset (or DataDownload, DataCatalog),  corresponding to the method used for measuring the corresponding variable(s) (for datasets, described using variableMeasured;  for Observation, a StatisticalVariable).",
-                    "type": "string"
-                },
-                "name": {
-                    "description": "The name of the item.",
-                    "type": "string"
-                },
-                "publisher": {
-                    "type": "string"
-                },
-                "sameAs": {
-                    "description": "URL of a reference Web page that unambiguously indicates the item's identity.  E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.",
-                    "type": "string"
-                },
-                "url": {
-                    "description": "URL of the item.",
-                    "type": "string"
-                },
-                "variableMeasured": {
-                    "type": "string"
-                },
-                "version": {
-                    "type": "string"
-                }
-            },
-            "required": [
-                "conformsTo",
-                "keywords",
-                "license",
-                "description",
-                "name",
-                "url"
-            ],
-            "title": "Dataset",
-            "type": "object"
-        },
-        "Intangible": {
-            "additionalProperties": false,
-            "description": "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.",
-            "properties": {
-                "alternateName": {
-                    "description": "An alias for the item.",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
-                "description": {
-                    "description": "A description of the item.",
-                    "type": "string"
-                },
-                "identifier": {
-                    "description": "A unique identifier for a thing",
-                    "type": "string"
-                },
-                "name": {
-                    "description": "The name of the item.",
-                    "type": "string"
-                },
-                "sameAs": {
-                    "description": "URL of a reference Web page that unambiguously indicates the item's identity.  E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.",
-                    "type": "string"
-                },
-                "url": {
-                    "description": "URL of the item.",
-                    "type": "string"
-                }
-            },
-            "required": [
-                "identifier"
-            ],
-            "title": "Intangible",
-            "type": "object"
-        },
-        "MaterialEntity": {
+        "DateTime": {
             "additionalProperties": false,
             "description": "",
             "properties": {
-                "alternateName": {
-                    "description": "An alias for the item.",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
-                "description": {
-                    "description": "A description of the item.",
-                    "type": "string"
-                },
-                "identifier": {
-                    "description": "A unique identifier for a thing",
-                    "type": "string"
-                },
                 "name": {
-                    "description": "The name of the item.",
-                    "type": "string"
-                },
-                "sameAs": {
-                    "description": "URL of a reference Web page that unambiguously indicates the item's identity.  E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.",
-                    "type": "string"
-                },
-                "url": {
-                    "description": "URL of the item.",
+                    "description": "A descriptive name of the dataset. The name of the item.",
                     "type": "string"
                 }
             },
-            "required": [
-                "identifier"
-            ],
-            "title": "MaterialEntity",
+            "title": "DateTime",
             "type": "object"
         },
-        "PlannedProcess": {
-            "additionalProperties": false,
-            "description": "",
-            "title": "PlannedProcess",
-            "type": "object"
-        },
-        "ReactionStep": {
+        "DefinedTerm": {
             "additionalProperties": false,
             "description": "",
             "properties": {
-                "alternateName": {
-                    "description": "An alias for the item.",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
-                "description": {
-                    "description": "A description of the item.",
+                "identifier": {
+                    "description": "CURIEs that can be resolved using [Identifiers.org](https://identifiers.org/) should be used. The identifier property represents any kind of identifier for any kind of [Thing](https://schema.org/Thing), such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](http://schema.org/docs/datamodel.html#identifierBg) for more details.",
                     "type": "string"
                 },
-                "identifier": {
-                    "description": "A unique identifier for a thing",
+                "inDefinedTermSet": {
                     "type": "string"
                 },
                 "name": {
-                    "description": "The name of the item.",
+                    "description": "A descriptive name of the dataset. The name of the item.",
                     "type": "string"
                 },
-                "sameAs": {
-                    "description": "URL of a reference Web page that unambiguously indicates the item's identity.  E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.",
+                "termCode": {
                     "type": "string"
                 },
                 "url": {
-                    "description": "URL of the item.",
+                    "description": "The location of a page describing the dataset. URL of the item.",
                     "type": "string"
                 }
             },
-            "required": [
-                "identifier"
-            ],
-            "title": "ReactionStep",
+            "title": "DefinedTerm",
             "type": "object"
         },
-        "Thing": {
+        "DefinedTermSet": {
             "additionalProperties": false,
-            "description": "The most generic type of item.",
+            "description": "",
             "properties": {
-                "alternateName": {
-                    "description": "An alias for the item.",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
-                "description": {
-                    "description": "A description of the item.",
-                    "type": "string"
-                },
                 "identifier": {
-                    "description": "A unique identifier for a thing",
+                    "description": "CURIEs that can be resolved using [Identifiers.org](https://identifiers.org/) should be used. The identifier property represents any kind of identifier for any kind of [Thing](https://schema.org/Thing), such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](http://schema.org/docs/datamodel.html#identifierBg) for more details.",
                     "type": "string"
                 },
                 "name": {
-                    "description": "The name of the item.",
-                    "type": "string"
-                },
-                "sameAs": {
-                    "description": "URL of a reference Web page that unambiguously indicates the item's identity.  E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.",
+                    "description": "A descriptive name of the dataset. The name of the item.",
                     "type": "string"
                 },
                 "url": {
-                    "description": "URL of the item.",
+                    "description": "The location of a page describing the dataset. URL of the item.",
                     "type": "string"
                 }
             },
-            "required": [
-                "identifier"
-            ],
-            "title": "Thing",
+            "title": "DefinedTermSet",
+            "type": "object"
+        },
+        "Organization": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "description": {
+                    "description": "A short summary describing a dataset. A description of the item.",
+                    "type": "string"
+                },
+                "legalName": {
+                    "type": "string"
+                },
+                "name": {
+                    "description": "A descriptive name of the dataset. The name of the item.",
+                    "type": "string"
+                },
+                "sameAs": {
+                    "description": " URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.",
+                    "type": "string"
+                }
+            },
+            "title": "Organization",
+            "type": "object"
+        },
+        "Person": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "mainEntityOfPage": {
+                    "type": "string"
+                },
+                "name": {
+                    "description": "A descriptive name of the dataset. The name of the item.",
+                    "type": "string"
+                },
+                "url": {
+                    "description": "The location of a page describing the dataset. URL of the item.",
+                    "type": "string"
+                }
+            },
+            "title": "Person",
+            "type": "object"
+        },
+        "Product": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "name": {
+                    "description": "A descriptive name of the dataset. The name of the item.",
+                    "type": "string"
+                }
+            },
+            "title": "Product",
+            "type": "object"
+        },
+        "PropertyValue": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "identifier": {
+                    "description": "CURIEs that can be resolved using [Identifiers.org](https://identifiers.org/) should be used. The identifier property represents any kind of identifier for any kind of [Thing](https://schema.org/Thing), such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](http://schema.org/docs/datamodel.html#identifierBg) for more details.",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "A descriptive name of the dataset. The name of the item.",
+                    "type": "string"
+                },
+                "unitCode": {
+                    "type": "string"
+                },
+                "unitText": {
+                    "type": "string"
+                },
+                "value": {
+                    "type": "string"
+                },
+                "valuereference": {
+                    "type": "string"
+                }
+            },
+            "title": "PropertyValue",
+            "type": "object"
+        },
+        "Trip": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "name": {
+                    "description": "A descriptive name of the dataset. The name of the item.",
+                    "type": "string"
+                }
+            },
+            "title": "Trip",
             "type": "object"
         }
     },
-    "$id": "https://w3id.org/stroemphi/Dataset_AP",
+    "$id": "https://discovery.biothings.io/view/bioschemas/Dataset",
     "$schema": "http://json-schema.org/draft-07/schema#",
     "additionalProperties": true,
-    "description": "A collection of datasets.",
+    "description": "",
     "metamodel_version": "1.7.0",
     "properties": {
         "alternateName": {
-            "description": "An alias for the item.",
-            "items": {
-                "type": "string"
-            },
-            "type": "array"
+            "description": " An alias for the item.",
+            "type": "string"
         },
         "citation": {
+            "description": "A citation for a publication that describes the dataset. A citation or reference to another creative work, such as another publication, web page, scholarly article, etc.",
             "type": "string"
         },
         "creator": {
-            "description": "The creator/author of this CreativeWork.",
+            "description": "The name of the dataset creator (person or organization). The creator/author of this CreativeWork. This is the same as the Author property for CreativeWork.",
             "type": "string"
         },
-        "datasets": {
-            "additionalProperties": {
-                "$ref": "#/$defs/Dataset__identifier_optional"
-            },
-            "description": "A dataset contained in this catalog.",
-            "type": "object"
-        },
         "dateCreated": {
-            "description": "The date on which the CreativeWork was created or the item was added to a DataFeed.",
+            "description": " The date on which the CreativeWork was created or the item was added to a DataFeed.",
             "type": "string"
         },
         "dateModified": {
+            "description": " The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed.",
             "type": "string"
         },
         "datePublished": {
+            "description": " Date of first broadcast/publication.",
             "type": "string"
         },
         "description": {
-            "description": "A description of the item.",
+            "description": "A short summary describing a dataset. A description of the item.",
+            "type": "string"
+        },
+        "distribution": {
+            "description": " A downloadable form of this dataset, at a specific location, in a specific format.",
             "type": "string"
         },
         "hasPart": {
+            "description": " Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense). \nInverse property: [isPartOf](https://schema.org/isPartOf)",
             "type": "string"
         },
         "identifier": {
-            "description": "A unique identifier for a thing",
+            "description": "CURIEs that can be resolved using [Identifiers.org](https://identifiers.org/) should be used. The identifier property represents any kind of identifier for any kind of [Thing](https://schema.org/Thing), such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](http://schema.org/docs/datamodel.html#identifierBg) for more details.",
+            "type": "string"
+        },
+        "includedInDataCatalog": {
+            "description": " A data catalog which contains this dataset. Supersedes [includedDataCatalog](https://schema.org/includedDataCatalog), [catalog](https://schema.org/catalog).\nInverse property: [dataset](https://schema.org/dataset)",
             "type": "string"
         },
         "isAccessibleForFree": {
+            "description": " A flag to signal that the item, event, or place is accessible for free. Supersedes [free](https://schema.org/free).",
             "type": "string"
         },
         "isBasedOn": {
-            "description": "A resource that was used in the creation of this resource.  This term can be repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html.  Supersedes isBasedOnUrl.",
+            "description": "Use to link a Dataset to the Study that it was generated from. A resource that was used in the creation of this resource. This term can be repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html. \nSupersedes isBasedOnUrl.",
             "type": "string"
         },
         "isPartOf": {
+            "description": " Indicates an item or CreativeWork that this item, or CreativeWork (in some sense), is part of. Inverse property: [hasPart](https://schema.org/hasPart)",
             "type": "string"
         },
         "keywords": {
+            "description": "Keywords should be drawn from a controlled vocabulary, e.g. [EDAM](https://edamontology.org/), and supplied as a DefinedTerm list. Keywords or tags used to describe this content. Multiple entries in a keywords list are typically delimited by commas.",
             "type": "string"
         },
         "license": {
+            "description": "A license under which the dataset is distributed. A license document that applies to this content, typically indicated by URL.",
             "type": "string"
         },
         "maintainer": {
-            "type": "string"
-        },
-        "measurementMethod": {
-            "description": "A subproperty of measurementTechnique that can be used for specifying specific methods, in particular via MeasurementMethodEnum.",
+            "description": " A maintainer of a [Dataset](https://schema.org/Dataset), software package ([SoftwareApplication](https://schema.org/SoftwareApplication)), or other [Project](https://schema.org/Project). A maintainer is a [Person](https://schema.org/Person) or [Organization](https://schema.org/Organization) that manages contributions to, and/or publication of, some (typically complex) artifact. It is common for distributions of software and data to be based on \"upstream\" sources. When [maintainer](https://schema.org/maintainer) is applied to a specific version of something e.g. a particular version or packaging of a [Dataset](https://schema.org/Dataset), it is always possible that the upstream source has a different maintainer. The [isBasedOn](https://schema.org/isBasedOn) property can be used to indicate such relationships between datasets to make the different maintenance roles clear. Similarly in the case of software, a package may have dedicated maintainers working on integration into software distributions such as Ubuntu, as well as upstream maintainers of the underlying work.",
             "type": "string"
         },
         "measurementTechnique": {
-            "description": "A technique, method or technology used in an Observation, StatisticalVariable or Dataset (or DataDownload, DataCatalog),  corresponding to the method used for measuring the corresponding variable(s) (for datasets, described using variableMeasured;  for Observation, a StatisticalVariable).",
+            "description": " A technique or technology used in a [Dataset](https://schema.org/Dataset) (or [DataDownload](https://schema.org/DataDownload), [DataCatalog](https://schema.org/DataCatalog)), corresponding to the method used for measuring the corresponding variable(s) (described using [variableMeasured](https://schema.org/variableMeasured)). This is oriented towards scientific and scholarly dataset publication but may have broader applicability; it is not intended as a full representation of measurement, but rather as a high level summary for dataset discovery.\n\nFor example, if [variableMeasured](https://schema.org/variableMeasured) is: molecule concentration, [measurementTechnique](https://schema.org/measurementTechnique) could be: \"mass spectrometry\" or \"nmr spectroscopy\" or \"colorimetry\" or \"immunofluorescence\".\n\nIf the [variableMeasured](https://schema.org/variableMeasured) is \"depression rating\", the [measurementTechnique](https://schema.org/measurementTechnique) could be \"Zung Scale\" or \"HAM-D\" or \"Beck Depression Inventory\".\n\nIf there are several [variableMeasured](https://schema.org/variableMeasured) properties recorded for some given data object, use a [PropertyValue](https://schema.org/PropertyValue) for each [variableMeasured](https://schema.org/variableMeasured) and attach the corresponding [measurementTechnique](https://schema.org/measurementTechnique).",
             "type": "string"
         },
         "name": {
-            "description": "The name of the item.",
+            "description": "A descriptive name of the dataset. The name of the item.",
             "type": "string"
         },
         "publisher": {
+            "description": " The publisher of the creative work.",
             "type": "string"
         },
         "sameAs": {
-            "description": "URL of a reference Web page that unambiguously indicates the item's identity.  E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.",
+            "description": " URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.",
             "type": "string"
         },
         "url": {
-            "description": "URL of the item.",
+            "description": "The location of a page describing the dataset. URL of the item.",
+            "type": "string"
+        },
+        "variableMeasured": {
+            "description": "What does the dataset measure? (e.g., temperature, pressure). The variableMeasured property can indicate (repeated as necessary) the variables that are measured in some dataset, either described as text or as pairs of identifier and description using PropertyValue.",
             "type": "string"
         },
         "version": {
+            "description": "The version number for this dataset. The version of the CreativeWork embodied by a specified resource.",
             "type": "string"
         }
     },
     "required": [
-        "datasets",
-        "identifier"
+        "description",
+        "identifier",
+        "keywords",
+        "license",
+        "name",
+        "url"
     ],
-    "title": "Dataset_AP",
+    "title": "dataset_ap",
     "type": "object",
-    "version": null
+    "version": "https://bioschemas.org/profiles/Dataset/1.0-RELEASE"
 }

@@ -1,10 +1,9 @@
-BASE <https://w3id.org/stroemphi/Dataset_AP/>
+BASE <https://discovery.biothings.io/view/bioschemas/Dataset/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
-PREFIX linkml: <https://w3id.org/linkml/>
 PREFIX schema1: <http://schema.org/>
-PREFIX dct: <purl.org/dc/terms/>
-PREFIX obi: <http://purl.obolibrary.org/obo/OBI_/>
+PREFIX bioschemas: <https://discovery.biothings.io/view/bioschemas/>
+PREFIX linkml: <https://w3id.org/linkml/>
 
 
 linkml:String xsd:string
@@ -45,153 +44,143 @@ linkml:Jsonpath xsd:string
 
 linkml:Sparqlpath xsd:string
 
-<Assay> CLOSED {
-    (  $<Assay_tes> (  &<PlannedProcess_tes> ;
-          rdf:type [ obi:0000011 ] ? ;
-          <has_input> @<EvaluatedThing> ? ;
-          <has_output> @<Dataset> ?
-       ) ;
-       rdf:type [ obi:0000070 ] ?
-    )
-}
-
-<ChemicalEntity> CLOSED {
-    (  $<ChemicalEntity_tes> (  &<Thing_tes> ;
-          rdf:type [ schema1:Thing ] ?
-       ) ;
-       rdf:type [ <ChemicalEntity> ]
-    )
-}
-
-<ChemicalReaction>  (
-    CLOSED {
-       (  $<ChemicalReaction_tes> (  &<Thing_tes> ;
-             rdf:type [ schema1:Thing ] ?
-          ) ;
-          rdf:type [ <ChemicalReaction> ]
-       )
-    } OR @<ReactionStep>
-)
-
-<CreativeWork>  (
-    CLOSED {
-       (  $<CreativeWork_tes> (  &<Thing_tes> ;
-             rdf:type [ schema1:Thing ] ? ;
-             <citation> @linkml:String ? ;
-             schema1:creator @linkml:String ? ;
-             schema1:dateCreated @linkml:String ? ;
-             <dateModified> @linkml:String ? ;
-             <datePublished> @linkml:String ? ;
-             <hasPart> @linkml:String ? ;
-             <isAccessibleForFree> @linkml:String ? ;
-             schema1:isBasedOn @linkml:String ? ;
-             <isPartOf> @linkml:String ? ;
-             <keywords> @linkml:String ? ;
-             <license> @linkml:String ? ;
-             <maintainer> @linkml:String ? ;
-             <publisher> @linkml:String ? ;
-             <version> @linkml:String ?
-          ) ;
-          rdf:type [ schema1:CreativeWork ]
-       )
-    } OR @<Dataset> OR @<DatasetCollection>
-)
-
-<Dataset> CLOSED {
-    (  $<Dataset_tes> (  &<CreativeWork_tes> ;
-          rdf:type [ schema1:CreativeWork ] ? ;
-          schema1:distribution @linkml:String ? ;
-          schema1:includedInDataCatalog @<DatasetCollection> ? ;
-          schema1:issn @linkml:String ? ;
-          schema1:measurementMethod @linkml:String ? ;
-          schema1:measurementTechnique @linkml:String ? ;
-          schema1:variableMeasured @linkml:String ? ;
-          dct:conformsTo @linkml:String ;
-          schema1:description @linkml:String ;
-          <keywords> @linkml:String ;
-          <license> @linkml:String ;
-          schema1:name @linkml:String ;
-          schema1:url @linkml:Uriorcurie ;
-          schema1:alternateName @linkml:String * ;
-          <citation> @linkml:String ? ;
+<BioschemasDataset> CLOSED {
+    (  $<BioschemasDataset_tes> (  &<Dataset_tes> ;
+          rdf:type [ schema1:Dataset ] ? ;
+          schema1:alternateName @linkml:String ? ;
+          schema1:citation @linkml:String ? ;
           schema1:creator @linkml:String ? ;
-          <datePublished> @linkml:String ? ;
-          schema1:isBasedOn @linkml:String ? ;
-          <publisher> @linkml:String ? ;
-          <version> @linkml:String ? ;
           schema1:dateCreated @linkml:String ? ;
-          <dateModified> @linkml:String ? ;
-          <hasPart> @linkml:String ? ;
-          <isPartOf> @linkml:String ? ;
-          <isAccessibleForFree> @linkml:String ? ;
-          <maintainer> @linkml:String ?
+          schema1:dateModified @linkml:String ? ;
+          schema1:datePublished @linkml:String ? ;
+          schema1:description @linkml:String ;
+          schema1:distribution @linkml:String ? ;
+          schema1:hasPart @linkml:String ? ;
+          schema1:identifier @linkml:String ;
+          schema1:includedInDataCatalog @linkml:String ? ;
+          schema1:isAccessibleForFree @linkml:String ? ;
+          schema1:isBasedOn @linkml:String ? ;
+          schema1:isPartOf @linkml:String ? ;
+          schema1:keywords @linkml:String ;
+          schema1:license @linkml:String ;
+          schema1:maintainer @linkml:String ? ;
+          schema1:measurementTechnique @linkml:String ? ;
+          schema1:name @linkml:String ;
+          schema1:publisher @linkml:String ? ;
+          schema1:sameAs @linkml:String ? ;
+          schema1:url @linkml:String ;
+          schema1:variableMeasured @linkml:String ? ;
+          schema1:version @linkml:String ?
        ) ;
-       rdf:type [ schema1:Dataset ]
+       rdf:type [ bioschemas:Dataset ] ?
     )
 }
 
-<DatasetCollection> CLOSED {
-    (  $<DatasetCollection_tes> (  &<CreativeWork_tes> ;
-          rdf:type [ schema1:CreativeWork ] ? ;
-          schema1:dataset @<Dataset> + ;
-          schema1:measurementMethod @linkml:String ? ;
-          schema1:measurementTechnique @linkml:String ?
+<CategoryCode> CLOSED {
+    (  $<CategoryCode_tes> (  schema1:name @linkml:String ? ;
+          schema1:codeValue @linkml:String ? ;
+          schema1:url @linkml:String ?
        ) ;
-       rdf:type [ schema1:DataCatalog ]
+       rdf:type [ schema1:CategoryCode ] ?
     )
 }
 
-<EvaluatedThing> {
-    (  $<EvaluatedThing_tes> (  &<Thing_tes> ;
-          rdf:type [ schema1:Thing ] ?
+<CreativeWork> CLOSED {
+    (  $<CreativeWork_tes> (  schema1:name @linkml:String ? ;
+          schema1:identifier @linkml:String ? ;
+          schema1:url @linkml:String ?
        ) ;
-       rdf:type [ <EvaluatedThing> ]
+       rdf:type [ schema1:CreativeWork ] ?
     )
 }
 
-<Intangible> CLOSED {
-    (  $<Intangible_tes> (  &<Thing_tes> ;
-          rdf:type [ schema1:Thing ] ?
-       ) ;
-       rdf:type [ schema1:Intangible ]
+<DataCatalog> CLOSED {
+    (  $<DataCatalog_tes> schema1:name @linkml:String ? ;
+       rdf:type [ schema1:DataCatalog ] ?
     )
 }
 
-<MaterialEntity> CLOSED {
-    (  $<MaterialEntity_tes> (  &<Thing_tes> ;
-          rdf:type [ schema1:Thing ] ?
-       ) ;
-       rdf:type [ <MaterialEntity> ]
+<DataDownload> CLOSED {
+    (  $<DataDownload_tes> schema1:name @linkml:String ? ;
+       rdf:type [ schema1:DataDownload ] ?
     )
 }
 
-<PlannedProcess>  (
+<Dataset>  (
     CLOSED {
-       (  $<PlannedProcess_tes> rdf:type . * ;
-          rdf:type [ obi:0000011 ] ?
+       (  $<Dataset_tes> rdf:type . * ;
+          rdf:type [ schema1:Dataset ] ?
        )
-    } OR @<Assay>
+    } OR @<BioschemasDataset>
 )
 
-<ReactionStep> CLOSED {
-    (  $<ReactionStep_tes> (  &<ChemicalReaction_tes> ;
-          rdf:type [ <ChemicalReaction> ] ?
-       ) ;
-       rdf:type [ <ReactionStep> ]
+<DateTime> CLOSED {
+    (  $<DateTime_tes> schema1:name @linkml:String ? ;
+       rdf:type [ schema1:DateTime ] ?
     )
 }
 
-<Thing>  (
-    CLOSED {
-       (  $<Thing_tes> (  schema1:alternateName @linkml:String * ;
-             schema1:description @linkml:String ? ;
-             schema1:name @linkml:String ? ;
-             schema1:sameAs @linkml:String ? ;
-             schema1:url @linkml:Uriorcurie ?
-          ) ;
-          rdf:type [ schema1:Thing ]
-       )
-    } OR @<ChemicalEntity> OR @<ChemicalReaction> OR @<CreativeWork> OR @<EvaluatedThing> OR @<Intangible> OR @<MaterialEntity>
-)
+<DefinedTerm> CLOSED {
+    (  $<DefinedTerm_tes> (  schema1:url @linkml:String ? ;
+          schema1:name @linkml:String ? ;
+          schema1:termCode @linkml:String ? ;
+          schema1:identifier @linkml:String ? ;
+          schema1:inDefinedTermSet @linkml:String ?
+       ) ;
+       rdf:type [ schema1:DefinedTerm ] ?
+    )
+}
+
+<DefinedTermSet> CLOSED {
+    (  $<DefinedTermSet_tes> (  schema1:name @linkml:String ? ;
+          schema1:identifier @linkml:String ? ;
+          schema1:url @linkml:String ?
+       ) ;
+       rdf:type [ schema1:DefinedTermSet ] ?
+    )
+}
+
+<Organization> CLOSED {
+    (  $<Organization_tes> (  schema1:name @linkml:String ? ;
+          schema1:legalName @linkml:String ? ;
+          schema1:description @linkml:String ? ;
+          schema1:sameAs @linkml:String ?
+       ) ;
+       rdf:type [ schema1:Organization ] ?
+    )
+}
+
+<Person> CLOSED {
+    (  $<Person_tes> (  schema1:name @linkml:String ? ;
+          schema1:url @linkml:String ? ;
+          schema1:mainEntityOfPage @linkml:String ?
+       ) ;
+       rdf:type [ schema1:Person ] ?
+    )
+}
+
+<Product> CLOSED {
+    (  $<Product_tes> schema1:name @linkml:String ? ;
+       rdf:type [ schema1:Product ] ?
+    )
+}
+
+<PropertyValue> CLOSED {
+    (  $<PropertyValue_tes> (  schema1:name @linkml:String ? ;
+          schema1:value @linkml:String ? ;
+          schema1:identifier @linkml:String ? ;
+          schema1:valuereference @linkml:String ? ;
+          schema1:unitCode @linkml:String ? ;
+          schema1:unitText @linkml:String ?
+       ) ;
+       rdf:type [ schema1:PropertyValue ] ?
+    )
+}
+
+<Trip> CLOSED {
+    (  $<Trip_tes> schema1:name @linkml:String ? ;
+       rdf:type [ schema1:Trip ] ?
+    )
+}
 
 

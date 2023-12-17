@@ -1,32 +1,51 @@
 {
-   "bioschema": "https://bioschemas.org/properties/",
-   "dataset_ap": "https://w3id.org/stroemphi/Dataset_AP/",
-   "dcat": "http://www.w3.org/ns/dcat#",
-   "dct": "purl.org/dc/terms/",
-   "example": "https://example.org/",
-   "iao": "http://purl.obolibrary.org/obo/IAO_/",
+   "bioschemas": "https://discovery.biothings.io/view/bioschemas/",
+   "dataset_ap": "https://discovery.biothings.io/view/bioschemas/Dataset/",
    "linkml": "https://w3id.org/linkml/",
-   "obi": "http://purl.obolibrary.org/obo/OBI_/",
+   "owl": "http://www.w3.org/2002/07/owl/",
+   "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+   "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
    "schema": "http://schema.org/",
-   "Assay": {
-      "@id": "obi:0000070"
+   "BioschemasDataset": {
+      "@id": "bioschemas:Dataset"
+   },
+   "CategoryCode": {
+      "@id": "schema:CategoryCode"
    },
    "CreativeWork": {
       "@id": "schema:CreativeWork"
    },
+   "DataCatalog": {
+      "@id": "schema:DataCatalog"
+   },
+   "DataDownload": {
+      "@id": "schema:DataDownload"
+   },
    "Dataset": {
       "@id": "schema:Dataset"
    },
-   "DatasetCollection": {
-      "@id": "schema:DataCatalog"
+   "DateTime": {
+      "@id": "schema:DateTime"
    },
-   "Intangible": {
-      "@id": "schema:Intangible"
+   "DefinedTerm": {
+      "@id": "schema:DefinedTerm"
    },
-   "PlannedProcess": {
-      "@id": "obi:0000011"
+   "DefinedTermSet": {
+      "@id": "schema:DefinedTermSet"
    },
-   "Thing": {
-      "@id": "schema:Thing"
+   "Organization": {
+      "@id": "schema:Organization"
+   },
+   "Person": {
+      "@id": "schema:Person"
+   },
+   "Product": {
+      "@id": "schema:Product"
+   },
+   "PropertyValue": {
+      "@id": "schema:PropertyValue"
+   },
+   "Trip": {
+      "@id": "schema:Trip"
    }
 }

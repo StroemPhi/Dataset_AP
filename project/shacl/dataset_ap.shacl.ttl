@@ -1,595 +1,362 @@
-@prefix dataset_ap: <https://w3id.org/stroemphi/Dataset_AP/> .
-@prefix dct: <purl.org/dc/terms/> .
-@prefix obi: <http://purl.obolibrary.org/obo/OBI_/> .
+@prefix bioschemas: <https://discovery.biothings.io/view/bioschemas/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix schema1: <http://schema.org/> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-obi:0000011 a sh:NodeShape ;
+schema1:CategoryCode a sh:NodeShape ;
     sh:closed true ;
     sh:ignoredProperties ( rdf:type ) ;
-    sh:targetClass obi:0000011 .
-
-obi:0000070 a sh:NodeShape ;
-    sh:closed true ;
-    sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:class schema1:Dataset ;
+    sh:property [ sh:datatype xsd:string ;
             sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
             sh:order 1 ;
-            sh:path dataset_ap:has_output ],
-        [ sh:class dataset_ap:EvaluatedThing ;
+            sh:path schema1:codeValue ],
+        [ sh:datatype xsd:string ;
+            sh:description "A descriptive name of the dataset. The name of the item." ;
             sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
             sh:order 0 ;
-            sh:path dataset_ap:has_input ] ;
-    sh:targetClass obi:0000070 .
+            sh:path schema1:name ],
+        [ sh:datatype xsd:string ;
+            sh:description "The location of a page describing the dataset. URL of the item." ;
+            sh:maxCount 1 ;
+            sh:order 2 ;
+            sh:path schema1:url ] ;
+    sh:targetClass schema1:CategoryCode .
 
 schema1:CreativeWork a sh:NodeShape ;
     sh:closed true ;
-    sh:description "The most generic kind of creative work, including books, movies, photographs, software programs, etc." ;
     sh:ignoredProperties ( rdf:type ) ;
     sh:property [ sh:datatype xsd:string ;
-            sh:description "An alias for the item." ;
-            sh:order 15 ;
-            sh:path schema1:alternateName ],
-        [ sh:datatype xsd:string ;
-            sh:description "The date on which the CreativeWork was created or the item was added to a DataFeed." ;
-            sh:maxCount 1 ;
-            sh:order 2 ;
-            sh:path schema1:dateCreated ],
-        [ sh:datatype xsd:string ;
-            sh:description "The creator/author of this CreativeWork." ;
-            sh:maxCount 1 ;
-            sh:order 1 ;
-            sh:path schema1:creator ],
-        [ sh:datatype xsd:string ;
-            sh:description "A resource that was used in the creation of this resource.  This term can be repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html.  Supersedes isBasedOnUrl." ;
-            sh:maxCount 1 ;
-            sh:order 7 ;
-            sh:path schema1:isBasedOn ],
-        [ sh:description "URL of the item." ;
-            sh:maxCount 1 ;
-            sh:order 19 ;
-            sh:path schema1:url ],
-        [ sh:datatype xsd:string ;
-            sh:maxCount 1 ;
-            sh:order 12 ;
-            sh:path dataset_ap:publisher ],
-        [ sh:datatype xsd:string ;
-            sh:maxCount 1 ;
-            sh:order 5 ;
-            sh:path dataset_ap:hasPart ],
-        [ sh:datatype xsd:string ;
-            sh:maxCount 1 ;
-            sh:order 11 ;
-            sh:path dataset_ap:maintainer ],
-        [ sh:datatype xsd:string ;
-            sh:maxCount 1 ;
-            sh:order 10 ;
-            sh:path dataset_ap:license ],
-        [ sh:datatype xsd:string ;
-            sh:description "The name of the item." ;
-            sh:maxCount 1 ;
-            sh:order 17 ;
-            sh:path schema1:name ],
-        [ sh:description "A unique identifier for a thing" ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:order 14 ;
-            sh:path schema1:identifier ],
-        [ sh:datatype xsd:string ;
+            sh:description "A descriptive name of the dataset. The name of the item." ;
             sh:maxCount 1 ;
             sh:order 0 ;
-            sh:path dataset_ap:citation ],
-        [ sh:datatype xsd:string ;
-            sh:description "URL of a reference Web page that unambiguously indicates the item's identity.  E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website." ;
-            sh:maxCount 1 ;
-            sh:order 18 ;
-            sh:path schema1:sameAs ],
-        [ sh:datatype xsd:string ;
-            sh:maxCount 1 ;
-            sh:order 3 ;
-            sh:path dataset_ap:dateModified ],
-        [ sh:datatype xsd:string ;
-            sh:maxCount 1 ;
-            sh:order 9 ;
-            sh:path dataset_ap:keywords ],
-        [ sh:datatype xsd:string ;
-            sh:maxCount 1 ;
-            sh:order 6 ;
-            sh:path dataset_ap:isAccessibleForFree ],
-        [ sh:datatype xsd:string ;
-            sh:description "A description of the item." ;
-            sh:maxCount 1 ;
-            sh:order 16 ;
-            sh:path schema1:description ],
-        [ sh:datatype xsd:string ;
-            sh:maxCount 1 ;
-            sh:order 4 ;
-            sh:path dataset_ap:datePublished ],
-        [ sh:datatype xsd:string ;
-            sh:maxCount 1 ;
-            sh:order 13 ;
-            sh:path dataset_ap:version ],
-        [ sh:datatype xsd:string ;
-            sh:maxCount 1 ;
-            sh:order 8 ;
-            sh:path dataset_ap:isPartOf ] ;
-    sh:targetClass schema1:CreativeWork .
-
-schema1:Intangible a sh:NodeShape ;
-    sh:closed true ;
-    sh:description "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc." ;
-    sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:description "URL of the item." ;
-            sh:maxCount 1 ;
-            sh:order 5 ;
-            sh:path schema1:url ],
-        [ sh:datatype xsd:string ;
-            sh:description "URL of a reference Web page that unambiguously indicates the item's identity.  E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website." ;
-            sh:maxCount 1 ;
-            sh:order 4 ;
-            sh:path schema1:sameAs ],
-        [ sh:datatype xsd:string ;
-            sh:description "The name of the item." ;
-            sh:maxCount 1 ;
-            sh:order 3 ;
             sh:path schema1:name ],
         [ sh:datatype xsd:string ;
-            sh:description "A description of the item." ;
+            sh:description "The location of a page describing the dataset. URL of the item." ;
             sh:maxCount 1 ;
             sh:order 2 ;
-            sh:path schema1:description ],
+            sh:path schema1:url ],
         [ sh:datatype xsd:string ;
-            sh:description "An alias for the item." ;
-            sh:order 1 ;
-            sh:path schema1:alternateName ],
-        [ sh:description "A unique identifier for a thing" ;
+            sh:description "CURIEs that can be resolved using [Identifiers.org](https://identifiers.org/) should be used. The identifier property represents any kind of identifier for any kind of [Thing](https://schema.org/Thing), such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](http://schema.org/docs/datamodel.html#identifierBg) for more details." ;
             sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:order 0 ;
+            sh:order 1 ;
             sh:path schema1:identifier ] ;
-    sh:targetClass schema1:Intangible .
-
-schema1:Thing a sh:NodeShape ;
-    sh:closed true ;
-    sh:description "The most generic type of item." ;
-    sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:datatype xsd:string ;
-            sh:description "The name of the item." ;
-            sh:maxCount 1 ;
-            sh:order 3 ;
-            sh:path schema1:name ],
-        [ sh:description "A unique identifier for a thing" ;
-            sh:maxCount 1 ;
-            sh:order 0 ;
-            sh:path schema1:identifier ],
-        [ sh:datatype xsd:string ;
-            sh:description "An alias for the item." ;
-            sh:order 1 ;
-            sh:path schema1:alternateName ],
-        [ sh:description "URL of the item." ;
-            sh:maxCount 1 ;
-            sh:order 5 ;
-            sh:path schema1:url ],
-        [ sh:datatype xsd:string ;
-            sh:description "URL of a reference Web page that unambiguously indicates the item's identity.  E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website." ;
-            sh:maxCount 1 ;
-            sh:order 4 ;
-            sh:path schema1:sameAs ],
-        [ sh:datatype xsd:string ;
-            sh:description "A description of the item." ;
-            sh:maxCount 1 ;
-            sh:order 2 ;
-            sh:path schema1:description ] ;
-    sh:targetClass schema1:Thing .
-
-dataset_ap:ChemicalEntity a sh:NodeShape ;
-    sh:closed true ;
-    sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:description "A unique identifier for a thing" ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:order 0 ;
-            sh:path schema1:identifier ],
-        [ sh:datatype xsd:string ;
-            sh:description "The name of the item." ;
-            sh:maxCount 1 ;
-            sh:order 3 ;
-            sh:path schema1:name ],
-        [ sh:datatype xsd:string ;
-            sh:description "A description of the item." ;
-            sh:maxCount 1 ;
-            sh:order 2 ;
-            sh:path schema1:description ],
-        [ sh:datatype xsd:string ;
-            sh:description "URL of a reference Web page that unambiguously indicates the item's identity.  E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website." ;
-            sh:maxCount 1 ;
-            sh:order 4 ;
-            sh:path schema1:sameAs ],
-        [ sh:description "URL of the item." ;
-            sh:maxCount 1 ;
-            sh:order 5 ;
-            sh:path schema1:url ],
-        [ sh:datatype xsd:string ;
-            sh:description "An alias for the item." ;
-            sh:order 1 ;
-            sh:path schema1:alternateName ] ;
-    sh:targetClass dataset_ap:ChemicalEntity .
-
-dataset_ap:ChemicalReaction a sh:NodeShape ;
-    sh:closed true ;
-    sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:description "URL of the item." ;
-            sh:maxCount 1 ;
-            sh:order 5 ;
-            sh:path schema1:url ],
-        [ sh:description "A unique identifier for a thing" ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:order 0 ;
-            sh:path schema1:identifier ],
-        [ sh:datatype xsd:string ;
-            sh:description "A description of the item." ;
-            sh:maxCount 1 ;
-            sh:order 2 ;
-            sh:path schema1:description ],
-        [ sh:datatype xsd:string ;
-            sh:description "URL of a reference Web page that unambiguously indicates the item's identity.  E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website." ;
-            sh:maxCount 1 ;
-            sh:order 4 ;
-            sh:path schema1:sameAs ],
-        [ sh:datatype xsd:string ;
-            sh:description "The name of the item." ;
-            sh:maxCount 1 ;
-            sh:order 3 ;
-            sh:path schema1:name ],
-        [ sh:datatype xsd:string ;
-            sh:description "An alias for the item." ;
-            sh:order 1 ;
-            sh:path schema1:alternateName ] ;
-    sh:targetClass dataset_ap:ChemicalReaction .
-
-dataset_ap:MaterialEntity a sh:NodeShape ;
-    sh:closed true ;
-    sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:datatype xsd:string ;
-            sh:description "An alias for the item." ;
-            sh:order 1 ;
-            sh:path schema1:alternateName ],
-        [ sh:datatype xsd:string ;
-            sh:description "The name of the item." ;
-            sh:maxCount 1 ;
-            sh:order 3 ;
-            sh:path schema1:name ],
-        [ sh:datatype xsd:string ;
-            sh:description "A description of the item." ;
-            sh:maxCount 1 ;
-            sh:order 2 ;
-            sh:path schema1:description ],
-        [ sh:datatype xsd:string ;
-            sh:description "URL of a reference Web page that unambiguously indicates the item's identity.  E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website." ;
-            sh:maxCount 1 ;
-            sh:order 4 ;
-            sh:path schema1:sameAs ],
-        [ sh:description "A unique identifier for a thing" ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:order 0 ;
-            sh:path schema1:identifier ],
-        [ sh:description "URL of the item." ;
-            sh:maxCount 1 ;
-            sh:order 5 ;
-            sh:path schema1:url ] ;
-    sh:targetClass dataset_ap:MaterialEntity .
-
-dataset_ap:ReactionStep a sh:NodeShape ;
-    sh:closed true ;
-    sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:description "A unique identifier for a thing" ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:order 0 ;
-            sh:path schema1:identifier ],
-        [ sh:datatype xsd:string ;
-            sh:description "URL of a reference Web page that unambiguously indicates the item's identity.  E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website." ;
-            sh:maxCount 1 ;
-            sh:order 4 ;
-            sh:path schema1:sameAs ],
-        [ sh:datatype xsd:string ;
-            sh:description "An alias for the item." ;
-            sh:order 1 ;
-            sh:path schema1:alternateName ],
-        [ sh:datatype xsd:string ;
-            sh:description "A description of the item." ;
-            sh:maxCount 1 ;
-            sh:order 2 ;
-            sh:path schema1:description ],
-        [ sh:description "URL of the item." ;
-            sh:maxCount 1 ;
-            sh:order 5 ;
-            sh:path schema1:url ],
-        [ sh:datatype xsd:string ;
-            sh:description "The name of the item." ;
-            sh:maxCount 1 ;
-            sh:order 3 ;
-            sh:path schema1:name ] ;
-    sh:targetClass dataset_ap:ReactionStep .
+    sh:targetClass schema1:CreativeWork .
 
 schema1:DataCatalog a sh:NodeShape ;
     sh:closed true ;
-    sh:description "A collection of datasets." ;
     sh:ignoredProperties ( rdf:type ) ;
     sh:property [ sh:datatype xsd:string ;
+            sh:description "A descriptive name of the dataset. The name of the item." ;
             sh:maxCount 1 ;
-            sh:order 3 ;
-            sh:path dataset_ap:citation ],
-        [ sh:datatype xsd:string ;
-            sh:description "An alias for the item." ;
-            sh:order 18 ;
-            sh:path schema1:alternateName ],
-        [ sh:datatype xsd:string ;
-            sh:maxCount 1 ;
-            sh:order 7 ;
-            sh:path dataset_ap:datePublished ],
-        [ sh:datatype xsd:string ;
-            sh:description "URL of a reference Web page that unambiguously indicates the item's identity.  E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website." ;
-            sh:maxCount 1 ;
-            sh:order 21 ;
-            sh:path schema1:sameAs ],
-        [ sh:datatype xsd:string ;
-            sh:maxCount 1 ;
-            sh:order 9 ;
-            sh:path dataset_ap:isAccessibleForFree ],
-        [ sh:description "URL of the item." ;
-            sh:maxCount 1 ;
-            sh:order 22 ;
-            sh:path schema1:url ],
-        [ sh:datatype xsd:string ;
-            sh:description "A resource that was used in the creation of this resource.  This term can be repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html.  Supersedes isBasedOnUrl." ;
-            sh:maxCount 1 ;
-            sh:order 10 ;
-            sh:path schema1:isBasedOn ],
-        [ sh:datatype xsd:string ;
-            sh:maxCount 1 ;
-            sh:order 6 ;
-            sh:path dataset_ap:dateModified ],
-        [ sh:datatype xsd:string ;
-            sh:maxCount 1 ;
-            sh:order 11 ;
-            sh:path dataset_ap:isPartOf ],
-        [ sh:datatype xsd:string ;
-            sh:maxCount 1 ;
-            sh:order 13 ;
-            sh:path dataset_ap:license ],
-        [ sh:datatype xsd:string ;
-            sh:description "A subproperty of measurementTechnique that can be used for specifying specific methods, in particular via MeasurementMethodEnum." ;
-            sh:maxCount 1 ;
-            sh:order 1 ;
-            sh:path schema1:measurementMethod ],
-        [ sh:datatype xsd:string ;
-            sh:maxCount 1 ;
-            sh:order 15 ;
-            sh:path dataset_ap:publisher ],
-        [ sh:description "A unique identifier for a thing" ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:order 17 ;
-            sh:path schema1:identifier ],
-        [ sh:class schema1:Dataset ;
-            sh:description "A dataset contained in this catalog." ;
-            sh:minCount 1 ;
-            sh:nodeKind sh:IRI ;
             sh:order 0 ;
-            sh:path schema1:dataset ],
-        [ sh:datatype xsd:string ;
-            sh:description "A description of the item." ;
-            sh:maxCount 1 ;
-            sh:order 19 ;
-            sh:path schema1:description ],
-        [ sh:datatype xsd:string ;
-            sh:description "A technique, method or technology used in an Observation, StatisticalVariable or Dataset (or DataDownload, DataCatalog),  corresponding to the method used for measuring the corresponding variable(s) (for datasets, described using variableMeasured;  for Observation, a StatisticalVariable)." ;
-            sh:maxCount 1 ;
-            sh:order 2 ;
-            sh:path schema1:measurementTechnique ],
-        [ sh:datatype xsd:string ;
-            sh:maxCount 1 ;
-            sh:order 16 ;
-            sh:path dataset_ap:version ],
-        [ sh:datatype xsd:string ;
-            sh:maxCount 1 ;
-            sh:order 12 ;
-            sh:path dataset_ap:keywords ],
-        [ sh:datatype xsd:string ;
-            sh:description "The creator/author of this CreativeWork." ;
-            sh:maxCount 1 ;
-            sh:order 4 ;
-            sh:path schema1:creator ],
-        [ sh:datatype xsd:string ;
-            sh:maxCount 1 ;
-            sh:order 14 ;
-            sh:path dataset_ap:maintainer ],
-        [ sh:datatype xsd:string ;
-            sh:description "The date on which the CreativeWork was created or the item was added to a DataFeed." ;
-            sh:maxCount 1 ;
-            sh:order 5 ;
-            sh:path schema1:dateCreated ],
-        [ sh:datatype xsd:string ;
-            sh:description "The name of the item." ;
-            sh:maxCount 1 ;
-            sh:order 20 ;
-            sh:path schema1:name ],
-        [ sh:datatype xsd:string ;
-            sh:maxCount 1 ;
-            sh:order 8 ;
-            sh:path dataset_ap:hasPart ] ;
+            sh:path schema1:name ] ;
     sh:targetClass schema1:DataCatalog .
 
-dataset_ap:EvaluatedThing a sh:NodeShape ;
-    sh:closed false ;
+schema1:DataDownload a sh:NodeShape ;
+    sh:closed true ;
     sh:ignoredProperties ( rdf:type ) ;
     sh:property [ sh:datatype xsd:string ;
-            sh:description "A description of the item." ;
+            sh:description "A descriptive name of the dataset. The name of the item." ;
             sh:maxCount 1 ;
-            sh:order 2 ;
-            sh:path schema1:description ],
-        [ sh:description "URL of the item." ;
-            sh:maxCount 1 ;
-            sh:order 5 ;
-            sh:path schema1:url ],
-        [ sh:datatype xsd:string ;
-            sh:description "The name of the item." ;
-            sh:maxCount 1 ;
-            sh:order 3 ;
-            sh:path schema1:name ],
-        [ sh:datatype xsd:string ;
-            sh:description "URL of a reference Web page that unambiguously indicates the item's identity.  E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website." ;
-            sh:maxCount 1 ;
-            sh:order 4 ;
-            sh:path schema1:sameAs ],
-        [ sh:description "A unique identifier for a thing" ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
             sh:order 0 ;
-            sh:path schema1:identifier ],
-        [ sh:datatype xsd:string ;
-            sh:description "An alias for the item." ;
-            sh:order 1 ;
-            sh:path schema1:alternateName ] ;
-    sh:targetClass dataset_ap:EvaluatedThing .
+            sh:path schema1:name ] ;
+    sh:targetClass schema1:DataDownload .
 
 schema1:Dataset a sh:NodeShape ;
     sh:closed true ;
-    sh:description "Represents a Dataset" ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:targetClass schema1:Dataset .
+
+schema1:DateTime a sh:NodeShape ;
+    sh:closed true ;
     sh:ignoredProperties ( rdf:type ) ;
     sh:property [ sh:datatype xsd:string ;
-            sh:description "The creator/author of this CreativeWork." ;
+            sh:description "A descriptive name of the dataset. The name of the item." ;
             sh:maxCount 1 ;
-            sh:order 8 ;
-            sh:path schema1:creator ],
+            sh:order 0 ;
+            sh:path schema1:name ] ;
+    sh:targetClass schema1:DateTime .
+
+schema1:DefinedTerm a sh:NodeShape ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:description "A descriptive name of the dataset. The name of the item." ;
+            sh:maxCount 1 ;
+            sh:order 1 ;
+            sh:path schema1:name ],
         [ sh:datatype xsd:string ;
+            sh:description "CURIEs that can be resolved using [Identifiers.org](https://identifiers.org/) should be used. The identifier property represents any kind of identifier for any kind of [Thing](https://schema.org/Thing), such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](http://schema.org/docs/datamodel.html#identifierBg) for more details." ;
             sh:maxCount 1 ;
-            sh:order 10 ;
-            sh:path dataset_ap:dateModified ],
+            sh:order 3 ;
+            sh:path schema1:identifier ],
         [ sh:datatype xsd:string ;
+            sh:description "The location of a page describing the dataset. URL of the item." ;
             sh:maxCount 1 ;
-            sh:order 13 ;
-            sh:path dataset_ap:isAccessibleForFree ],
-        [ sh:datatype xsd:string ;
-            sh:maxCount 1 ;
-            sh:order 20 ;
-            sh:path dataset_ap:version ],
-        [ sh:datatype xsd:string ;
-            sh:maxCount 1 ;
-            sh:order 18 ;
-            sh:path dataset_ap:maintainer ],
-        [ sh:datatype xsd:string ;
-            sh:description "The International Standard Serial Number (ISSN) that identifies this serial publication.  You can repeat this property to identify different formats of, or the linking ISSN (ISSN-L) for, this serial publication." ;
-            sh:maxCount 1 ;
-            sh:order 2 ;
-            sh:path schema1:issn ],
-        [ sh:datatype xsd:string ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:order 6 ;
-            sh:path dct:conformsTo ],
-        [ sh:datatype xsd:string ;
-            sh:maxCount 1 ;
-            sh:order 12 ;
-            sh:path dataset_ap:hasPart ],
-        [ sh:datatype xsd:string ;
-            sh:description "A description of the item." ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:order 23 ;
-            sh:path schema1:description ],
-        [ sh:datatype xsd:string ;
-            sh:description "An alias for the item." ;
-            sh:order 22 ;
-            sh:path schema1:alternateName ],
-        [ sh:datatype xsd:string ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:order 16 ;
-            sh:path dataset_ap:keywords ],
-        [ sh:datatype xsd:string ;
-            sh:maxCount 1 ;
-            sh:order 11 ;
-            sh:path dataset_ap:datePublished ],
-        [ sh:description "URL of the item." ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:order 26 ;
+            sh:order 0 ;
             sh:path schema1:url ],
         [ sh:datatype xsd:string ;
-            sh:description "URL of a reference Web page that unambiguously indicates the item's identity.  E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website." ;
             sh:maxCount 1 ;
-            sh:order 25 ;
+            sh:order 4 ;
+            sh:path schema1:inDefinedTermSet ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:order 2 ;
+            sh:path schema1:termCode ] ;
+    sh:targetClass schema1:DefinedTerm .
+
+schema1:DefinedTermSet a sh:NodeShape ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:description "The location of a page describing the dataset. URL of the item." ;
+            sh:maxCount 1 ;
+            sh:order 2 ;
+            sh:path schema1:url ],
+        [ sh:datatype xsd:string ;
+            sh:description "CURIEs that can be resolved using [Identifiers.org](https://identifiers.org/) should be used. The identifier property represents any kind of identifier for any kind of [Thing](https://schema.org/Thing), such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](http://schema.org/docs/datamodel.html#identifierBg) for more details." ;
+            sh:maxCount 1 ;
+            sh:order 1 ;
+            sh:path schema1:identifier ],
+        [ sh:datatype xsd:string ;
+            sh:description "A descriptive name of the dataset. The name of the item." ;
+            sh:maxCount 1 ;
+            sh:order 0 ;
+            sh:path schema1:name ] ;
+    sh:targetClass schema1:DefinedTermSet .
+
+schema1:Organization a sh:NodeShape ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:description "A descriptive name of the dataset. The name of the item." ;
+            sh:maxCount 1 ;
+            sh:order 0 ;
+            sh:path schema1:name ],
+        [ sh:datatype xsd:string ;
+            sh:description " URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website." ;
+            sh:maxCount 1 ;
+            sh:order 3 ;
             sh:path schema1:sameAs ],
         [ sh:datatype xsd:string ;
-            sh:description "Use to link a Dataset to the Study that it was generated from." ;
+            sh:description "A short summary describing a dataset. A description of the item." ;
             sh:maxCount 1 ;
-            sh:order 14 ;
-            sh:path schema1:isBasedOn ],
+            sh:order 2 ;
+            sh:path schema1:description ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:order 1 ;
+            sh:path schema1:legalName ] ;
+    sh:targetClass schema1:Organization .
+
+schema1:Person a sh:NodeShape ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:description "A descriptive name of the dataset. The name of the item." ;
+            sh:maxCount 1 ;
+            sh:order 0 ;
+            sh:path schema1:name ],
+        [ sh:datatype xsd:string ;
+            sh:description "The location of a page describing the dataset. URL of the item." ;
+            sh:maxCount 1 ;
+            sh:order 1 ;
+            sh:path schema1:url ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:order 2 ;
+            sh:path schema1:mainEntityOfPage ] ;
+    sh:targetClass schema1:Person .
+
+schema1:Product a sh:NodeShape ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:description "A descriptive name of the dataset. The name of the item." ;
+            sh:maxCount 1 ;
+            sh:order 0 ;
+            sh:path schema1:name ] ;
+    sh:targetClass schema1:Product .
+
+schema1:PropertyValue a sh:NodeShape ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:order 4 ;
+            sh:path schema1:unitCode ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:order 1 ;
+            sh:path schema1:value ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:order 3 ;
+            sh:path schema1:valuereference ],
+        [ sh:datatype xsd:string ;
+            sh:description "CURIEs that can be resolved using [Identifiers.org](https://identifiers.org/) should be used. The identifier property represents any kind of identifier for any kind of [Thing](https://schema.org/Thing), such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](http://schema.org/docs/datamodel.html#identifierBg) for more details." ;
+            sh:maxCount 1 ;
+            sh:order 2 ;
+            sh:path schema1:identifier ],
+        [ sh:datatype xsd:string ;
+            sh:description "A descriptive name of the dataset. The name of the item." ;
+            sh:maxCount 1 ;
+            sh:order 0 ;
+            sh:path schema1:name ],
         [ sh:datatype xsd:string ;
             sh:maxCount 1 ;
             sh:order 5 ;
-            sh:path schema1:variableMeasured ],
-        [ sh:datatype xsd:string ;
+            sh:path schema1:unitText ] ;
+    sh:targetClass schema1:PropertyValue .
+
+schema1:Trip a sh:NodeShape ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:description "A descriptive name of the dataset. The name of the item." ;
+            sh:maxCount 1 ;
+            sh:order 0 ;
+            sh:path schema1:name ] ;
+    sh:targetClass schema1:Trip .
+
+bioschemas:Dataset a sh:NodeShape ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:description "Keywords should be drawn from a controlled vocabulary, e.g. [EDAM](https://edamontology.org/), and supplied as a DefinedTerm list. Keywords or tags used to describe this content. Multiple entries in a keywords list are typically delimited by commas." ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
-            sh:order 17 ;
-            sh:path dataset_ap:license ],
+            sh:order 14 ;
+            sh:path schema1:keywords ],
         [ sh:datatype xsd:string ;
-            sh:description "A subproperty of measurementTechnique that can be used for specifying specific methods, in particular via MeasurementMethodEnum." ;
+            sh:description """ A technique or technology used in a [Dataset](https://schema.org/Dataset) (or [DataDownload](https://schema.org/DataDownload), [DataCatalog](https://schema.org/DataCatalog)), corresponding to the method used for measuring the corresponding variable(s) (described using [variableMeasured](https://schema.org/variableMeasured)). This is oriented towards scientific and scholarly dataset publication but may have broader applicability; it is not intended as a full representation of measurement, but rather as a high level summary for dataset discovery.
+
+For example, if [variableMeasured](https://schema.org/variableMeasured) is: molecule concentration, [measurementTechnique](https://schema.org/measurementTechnique) could be: "mass spectrometry" or "nmr spectroscopy" or "colorimetry" or "immunofluorescence".
+
+If the [variableMeasured](https://schema.org/variableMeasured) is "depression rating", the [measurementTechnique](https://schema.org/measurementTechnique) could be "Zung Scale" or "HAM-D" or "Beck Depression Inventory".
+
+If there are several [variableMeasured](https://schema.org/variableMeasured) properties recorded for some given data object, use a [PropertyValue](https://schema.org/PropertyValue) for each [variableMeasured](https://schema.org/variableMeasured) and attach the corresponding [measurementTechnique](https://schema.org/measurementTechnique).""" ;
+            sh:maxCount 1 ;
+            sh:order 17 ;
+            sh:path schema1:measurementTechnique ],
+        [ sh:datatype xsd:string ;
+            sh:description " Indicates an item or CreativeWork that this item, or CreativeWork (in some sense), is part of. Inverse property: [hasPart](https://schema.org/hasPart)" ;
+            sh:maxCount 1 ;
+            sh:order 13 ;
+            sh:path schema1:isPartOf ],
+        [ sh:datatype xsd:string ;
+            sh:description " Date of first broadcast/publication." ;
+            sh:maxCount 1 ;
+            sh:order 5 ;
+            sh:path schema1:datePublished ],
+        [ sh:datatype xsd:string ;
+            sh:description " A flag to signal that the item, event, or place is accessible for free. Supersedes [free](https://schema.org/free)." ;
+            sh:maxCount 1 ;
+            sh:order 11 ;
+            sh:path schema1:isAccessibleForFree ],
+        [ sh:datatype xsd:string ;
+            sh:description " The date on which the CreativeWork was created or the item was added to a DataFeed." ;
             sh:maxCount 1 ;
             sh:order 3 ;
-            sh:path schema1:measurementMethod ],
-        [ sh:description "A unique identifier for a thing" ;
+            sh:path schema1:dateCreated ],
+        [ sh:datatype xsd:string ;
+            sh:description "A citation for a publication that describes the dataset. A citation or reference to another creative work, such as another publication, web page, scholarly article, etc." ;
+            sh:maxCount 1 ;
+            sh:order 1 ;
+            sh:path schema1:citation ],
+        [ sh:datatype xsd:string ;
+            sh:description "The version number for this dataset. The version of the CreativeWork embodied by a specified resource." ;
+            sh:maxCount 1 ;
+            sh:order 23 ;
+            sh:path schema1:version ],
+        [ sh:datatype xsd:string ;
+            sh:description " URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website." ;
+            sh:maxCount 1 ;
+            sh:order 20 ;
+            sh:path schema1:sameAs ],
+        [ sh:datatype xsd:string ;
+            sh:description "A license under which the dataset is distributed. A license document that applies to this content, typically indicated by URL." ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:order 15 ;
+            sh:path schema1:license ],
+        [ sh:datatype xsd:string ;
+            sh:description " A maintainer of a [Dataset](https://schema.org/Dataset), software package ([SoftwareApplication](https://schema.org/SoftwareApplication)), or other [Project](https://schema.org/Project). A maintainer is a [Person](https://schema.org/Person) or [Organization](https://schema.org/Organization) that manages contributions to, and/or publication of, some (typically complex) artifact. It is common for distributions of software and data to be based on \"upstream\" sources. When [maintainer](https://schema.org/maintainer) is applied to a specific version of something e.g. a particular version or packaging of a [Dataset](https://schema.org/Dataset), it is always possible that the upstream source has a different maintainer. The [isBasedOn](https://schema.org/isBasedOn) property can be used to indicate such relationships between datasets to make the different maintenance roles clear. Similarly in the case of software, a package may have dedicated maintainers working on integration into software distributions such as Ubuntu, as well as upstream maintainers of the underlying work." ;
+            sh:maxCount 1 ;
+            sh:order 16 ;
+            sh:path schema1:maintainer ],
+        [ sh:datatype xsd:string ;
+            sh:description " A downloadable form of this dataset, at a specific location, in a specific format." ;
+            sh:maxCount 1 ;
+            sh:order 7 ;
+            sh:path schema1:distribution ],
+        [ sh:datatype xsd:string ;
+            sh:description "A short summary describing a dataset. A description of the item." ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:order 6 ;
+            sh:path schema1:description ],
+        [ sh:datatype xsd:string ;
+            sh:description "The location of a page describing the dataset. URL of the item." ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:order 21 ;
-            sh:path schema1:identifier ],
+            sh:path schema1:url ],
         [ sh:datatype xsd:string ;
+            sh:description """Use to link a Dataset to the Study that it was generated from. A resource that was used in the creation of this resource. This term can be repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html. 
+Supersedes isBasedOnUrl.""" ;
             sh:maxCount 1 ;
-            sh:order 19 ;
-            sh:path dataset_ap:publisher ],
+            sh:order 12 ;
+            sh:path schema1:isBasedOn ],
         [ sh:datatype xsd:string ;
-            sh:description "The name of the item." ;
+            sh:description "CURIEs that can be resolved using [Identifiers.org](https://identifiers.org/) should be used. The identifier property represents any kind of identifier for any kind of [Thing](https://schema.org/Thing), such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](http://schema.org/docs/datamodel.html#identifierBg) for more details." ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
-            sh:order 24 ;
-            sh:path schema1:name ],
-        [ sh:datatype xsd:string ;
-            sh:description "The date on which the CreativeWork was created or the item was added to a DataFeed." ;
-            sh:maxCount 1 ;
             sh:order 9 ;
-            sh:path schema1:dateCreated ],
-        [ sh:class schema1:DataCatalog ;
-            sh:description "A data catalog which contains this dataset. Supersedes includedDataCatalog, `catalog`.  Inverse property [[dataset]]" ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 1 ;
-            sh:path schema1:includedInDataCatalog ],
+            sh:path schema1:identifier ],
         [ sh:datatype xsd:string ;
-            sh:description "A downloadable form of this dataset, at a specific location, in a specific format.  This property can be repeated if different variations are available.  There is no expectation that different downloadable distributions must contain exactly equivalent information  (see also DCAT on this point).  Different distributions might include or exclude different subsets of the entire dataset, for example." ;
+            sh:description "The name of the dataset creator (person or organization). The creator/author of this CreativeWork. This is the same as the Author property for CreativeWork." ;
             sh:maxCount 1 ;
-            sh:order 0 ;
-            sh:path schema1:distribution ],
+            sh:order 2 ;
+            sh:path schema1:creator ],
         [ sh:datatype xsd:string ;
-            sh:maxCount 1 ;
-            sh:order 7 ;
-            sh:path dataset_ap:citation ],
-        [ sh:datatype xsd:string ;
-            sh:description "A technique, method or technology used in an Observation, StatisticalVariable or Dataset (or DataDownload, DataCatalog),  corresponding to the method used for measuring the corresponding variable(s) (for datasets, described using variableMeasured;  for Observation, a StatisticalVariable)." ;
+            sh:description " The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed." ;
             sh:maxCount 1 ;
             sh:order 4 ;
-            sh:path schema1:measurementTechnique ],
+            sh:path schema1:dateModified ],
         [ sh:datatype xsd:string ;
+            sh:description """ Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense). 
+Inverse property: [isPartOf](https://schema.org/isPartOf)""" ;
             sh:maxCount 1 ;
-            sh:order 15 ;
-            sh:path dataset_ap:isPartOf ] ;
-    sh:targetClass schema1:Dataset .
+            sh:order 8 ;
+            sh:path schema1:hasPart ],
+        [ sh:datatype xsd:string ;
+            sh:description "A descriptive name of the dataset. The name of the item." ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:order 18 ;
+            sh:path schema1:name ],
+        [ sh:datatype xsd:string ;
+            sh:description " The publisher of the creative work." ;
+            sh:maxCount 1 ;
+            sh:order 19 ;
+            sh:path schema1:publisher ],
+        [ sh:datatype xsd:string ;
+            sh:description """ A data catalog which contains this dataset. Supersedes [includedDataCatalog](https://schema.org/includedDataCatalog), [catalog](https://schema.org/catalog).
+Inverse property: [dataset](https://schema.org/dataset)""" ;
+            sh:maxCount 1 ;
+            sh:order 10 ;
+            sh:path schema1:includedInDataCatalog ],
+        [ sh:datatype xsd:string ;
+            sh:description " An alias for the item." ;
+            sh:maxCount 1 ;
+            sh:order 0 ;
+            sh:path schema1:alternateName ],
+        [ sh:datatype xsd:string ;
+            sh:description "What does the dataset measure? (e.g., temperature, pressure). The variableMeasured property can indicate (repeated as necessary) the variables that are measured in some dataset, either described as text or as pairs of identifier and description using PropertyValue." ;
+            sh:maxCount 1 ;
+            sh:order 22 ;
+            sh:path schema1:variableMeasured ] ;
+    sh:targetClass bioschemas:Dataset .
 
